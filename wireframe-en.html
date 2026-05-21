@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carreras Law Firm - Personal Injury Attorney | Free Consultation</title>
+  <link rel="icon" type="image/png" href="assets/profile/profile-blue-logomark.png">
+  <style>
+    @font-face { font-family: "General Sans"; src: url("assets/fonts/GeneralSans-Light.otf") format("opentype"); font-weight: 300; font-display: swap; }
+    @font-face { font-family: "General Sans"; src: url("assets/fonts/GeneralSans-Regular.otf") format("opentype"); font-weight: 400; font-display: swap; }
+    @font-face { font-family: "General Sans"; src: url("assets/fonts/GeneralSans-Medium.otf") format("opentype"); font-weight: 500; font-display: swap; }
+    @font-face { font-family: "General Sans"; src: url("assets/fonts/GeneralSans-Semibold.otf") format("opentype"); font-weight: 600; font-display: swap; }
+    @font-face { font-family: "General Sans"; src: url("assets/fonts/GeneralSans-Bold.otf") format("opentype"); font-weight: 700; font-display: swap; }
+    @font-face { font-family: "Manrope"; src: url("assets/fonts/Manrope-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+    @font-face { font-family: "Manrope"; src: url("assets/fonts/Manrope-Medium.ttf") format("truetype"); font-weight: 500; font-display: swap; }
+    @font-face { font-family: "Manrope"; src: url("assets/fonts/Manrope-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: swap; }
+    @font-face { font-family: "Manrope"; src: url("assets/fonts/Manrope-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+
+    :root {
+      --klein: #002FA7; --klein-hover: #003ED1; --cream: #FEF9F6; --black: #0F0F0F;
+      --cream-2: #F4EFEB; --cream-3: #E8E2DC; --ink: #0F0F0F;
+      --ink-60: rgba(15,15,15,.60); --ink-40: rgba(15,15,15,.40); --ink-10: rgba(15,15,15,.08);
+      --on-blue: #FEF9F6; --on-blue-muted: rgba(254,249,246,.55); --on-blue-line: rgba(254,249,246,.18);
+      --display: "General Sans", system-ui, sans-serif; --body: "Manrope", system-ui, sans-serif;
+      --r-md: 14px; --r-lg: 22px; --r-xl: 32px;
+      --ease: cubic-bezier(.32,.72,.24,1); --dur: 240ms;
+      --gutter: clamp(20px, 4vw, 64px); --max-w: 1240px;
+      --shadow-blue: 0 12px 32px rgba(0,47,167,.18);
+      --success: #1A7F37;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--cream); color: var(--ink); font-family: var(--body); letter-spacing: -0.02em; -webkit-font-smoothing: antialiased; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    .icon-svg { display: inline-flex; align-items: center; justify-content: center; }
+    .icon-svg svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ─── Buttons ─── */
+    .btn { font-family: var(--display); font-weight: 500; font-size: 15px; letter-spacing: -0.02em; border: none; border-radius: 999px; padding: 14px 28px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; transition: background var(--dur) var(--ease), color var(--dur) var(--ease), transform 140ms var(--ease); }
+    .btn:active { transform: translateY(1px); }
+    .btn--primary { background: var(--klein); color: var(--cream); }
+    .btn--primary:hover { background: var(--klein-hover); }
+    .btn--primary-lg { background: var(--klein); color: var(--cream); font-size: 17px; padding: 18px 32px; }
+    .btn--primary-lg:hover { background: var(--klein-hover); }
+    .btn--secondary { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+    .btn--secondary:hover { background: var(--ink); color: var(--cream); }
+    .btn--secondary-light { background: transparent; color: var(--cream); border: 1.5px solid var(--cream); }
+    .btn--secondary-light:hover { background: var(--cream); color: var(--ink); }
+    .btn--ghost { background: transparent; color: var(--klein); padding: 14px 4px; }
+    .btn--sm { font-size: 13px; padding: 10px 16px; }
+    .btn--full { width: 100%; justify-content: center; }
+
+    /* ─── Header ─── */
+    .header { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 16px var(--gutter); background: rgba(254,249,246,.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--ink-10); }
+    .header__logo img { height: 22px; }
+    .header__nav { display: flex; gap: 28px; font-size: 14px; }
+    .header__nav a { transition: color var(--dur) var(--ease); }
+    .header__nav a:hover { color: var(--klein); }
+    .header__right { display: flex; gap: 14px; align-items: center; }
+    .header__lang { font-size: 12px; letter-spacing: .06em; color: var(--ink-60); text-transform: uppercase; cursor: pointer; }
+    .header__lang b { color: var(--ink); }
+    .header__phone { font-size: 14px; font-weight: 600; color: var(--ink); display: flex; align-items: center; gap: 6px; }
+    .header__hamburger { display: none; background: none; border: none; padding: 4px; cursor: pointer; color: var(--ink); }
+    .header__hamburger svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ─── Mobile nav overlay ─── */
+    .mobile-nav { display: none; position: fixed; inset: 0; z-index: 100; background: var(--black); color: var(--cream); flex-direction: column; padding: 0; opacity: 0; transition: opacity .28s var(--ease); }
+    .mobile-nav.open { display: flex; opacity: 1; }
+    .mobile-nav__top { display: flex; justify-content: space-between; align-items: center; padding: 16px var(--gutter); }
+    .mobile-nav__close { background: none; border: none; padding: 8px; cursor: pointer; color: var(--cream); }
+    .mobile-nav__close svg { width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+    .mobile-nav__links { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 var(--gutter); gap: 0; }
+    .mobile-nav__links a { font-family: var(--display); font-weight: 500; font-size: 36px; letter-spacing: -0.03em; padding: 18px 0; border-bottom: 1px solid rgba(254,249,246,.1); display: block; color: var(--cream); transition: color .2s var(--ease); }
+    .mobile-nav__links a:first-child { border-top: 1px solid rgba(254,249,246,.1); }
+    .mobile-nav__links a:hover { color: rgba(254,249,246,.6); }
+    .mobile-nav__actions { padding: 0 var(--gutter) 40px; display: flex; flex-direction: column; gap: 12px; }
+    .mobile-nav__actions .btn--primary { background: var(--klein); color: var(--cream); }
+    .mobile-nav__actions .btn--secondary { border-color: rgba(254,249,246,.3); color: var(--cream); }
+    .mobile-nav__actions .btn--secondary:hover { background: var(--cream); color: var(--ink); }
+
+    /* ─── Hero ─── */
+    .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: 85vh; }
+    .hero__left { position: relative; }
+    .hero__left img { width: 100%; height: 100%; object-fit: cover; }
+    .hero__left::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, transparent 60%, var(--cream) 100%); }
+    .hero__right { padding: 64px var(--gutter) 64px 48px; display: flex; flex-direction: column; justify-content: center; gap: 32px; }
+    .hero__eyebrow { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-60); font-weight: 500; }
+    .hero__title { font-family: var(--display); font-weight: 600; font-size: clamp(36px, 4.2vw, 60px); letter-spacing: -0.03em; line-height: 0.96; margin: 0; }
+    .hero__title .ghost { color: var(--ink-40); }
+    .hero__sub { font-size: 17px; line-height: 1.45; color: var(--ink-60); margin: 0; max-width: 48ch; }
+
+    /* ─── Intake Form ─── */
+    .intake { background: #fff; border: 1px solid var(--cream-3); border-radius: var(--r-lg); padding: 28px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 4px 24px rgba(15,15,15,.06); }
+    .intake__header { display: flex; justify-content: space-between; align-items: center; }
+    .intake__badge { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--klein); font-weight: 600; }
+    .intake__free { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--success); font-weight: 600; display: flex; align-items: center; gap: 5px; }
+    .intake__free svg { width: 14px; height: 14px; stroke: var(--success); }
+    .intake h3 { font-family: var(--display); font-weight: 600; font-size: 24px; letter-spacing: -0.03em; line-height: 1.1; margin: 0; }
+    .intake p { font-size: 14px; color: var(--ink-60); margin: 0; line-height: 1.45; }
+    .intake .lbl { display: flex; flex-direction: column; gap: 5px; font-size: 11px; letter-spacing: .06em; color: var(--ink-60); text-transform: uppercase; font-weight: 500; }
+    .intake .field { font-family: var(--body); font-size: 15px; letter-spacing: -0.02em; color: var(--ink); background: var(--cream); border: 1.5px solid var(--cream-3); border-radius: 10px; padding: 13px 14px; transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease); width: 100%; }
+    .intake .field:focus { outline: none; border-color: var(--klein); box-shadow: 0 0 0 4px rgba(0,47,167,.08); }
+    .intake .field::placeholder { color: var(--ink-40); }
+    .intake .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .intake__trust { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-40); margin-top: 4px; }
+    .intake__trust svg { width: 14px; height: 14px; stroke: var(--ink-40); flex-shrink: 0; }
+
+    /* ─── Confirmation state ─── */
+    .confirmation { display: none; flex-direction: column; gap: 20px; }
+    .confirmation.active { display: flex; }
+    .form-fields { display: flex; flex-direction: column; gap: 16px; }
+    .form-fields.hidden { display: none; }
+    .conf__case { background: rgba(0,47,167,.04); border: 1px solid rgba(0,47,167,.12); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; }
+    .conf__case-id { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--klein); font-weight: 600; }
+    .conf__case-status { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--success); font-weight: 600; }
+    .conf__greeting { font-family: var(--display); font-weight: 600; font-size: 28px; letter-spacing: -0.03em; line-height: 1.05; margin: 0; }
+    .conf__timer { background: var(--cream); border: 1.5px solid var(--cream-3); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 14px; }
+    .conf__timer-label { font-size: 13px; color: var(--ink-60); }
+    .conf__timer-value { font-family: var(--display); font-weight: 700; font-size: 32px; letter-spacing: -0.02em; color: var(--klein); }
+    .conf__timer-dots { display: flex; gap: 4px; margin-left: auto; }
+    .conf__timer-dots span { width: 6px; height: 6px; border-radius: 999px; background: var(--klein); animation: pulse 1.4s ease-in-out infinite; }
+    .conf__timer-dots span:nth-child(2) { animation-delay: .2s; }
+    .conf__timer-dots span:nth-child(3) { animation-delay: .4s; }
+    @keyframes pulse { 0%,100% { opacity: .3; } 50% { opacity: 1; } }
+    .conf__checklist { display: flex; flex-direction: column; gap: 0; }
+    .conf__checklist-title { font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: -0.02em; margin: 0 0 4px; }
+    .conf__checklist-sub { font-size: 13px; color: var(--ink-60); margin: 0 0 14px; }
+    .conf__check { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid var(--ink-10); font-size: 14px; cursor: pointer; user-select: none; transition: color var(--dur) var(--ease); }
+    .conf__check:last-child { border-bottom: 1px solid var(--ink-10); }
+    .conf__check .circle { width: 22px; height: 22px; border-radius: 999px; border: 1.5px solid var(--cream-3); flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all var(--dur) var(--ease); }
+    .conf__check .circle svg { width: 12px; height: 12px; stroke: #fff; opacity: 0; transition: opacity var(--dur) var(--ease); }
+    .conf__check.checked .circle { background: var(--klein); border-color: var(--klein); }
+    .conf__check.checked .circle svg { opacity: 1; }
+    .conf__check.checked { color: var(--ink-40); }
+    .conf__check .pts { margin-left: auto; font-size: 11px; letter-spacing: .04em; color: var(--ink-40); }
+    .conf__progress { display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 600; color: var(--klein); margin-top: 8px; }
+    .conf__bar { width: 100%; height: 4px; background: var(--cream-3); border-radius: 999px; overflow: hidden; margin-top: 6px; }
+    .conf__bar-fill { height: 100%; background: var(--klein); border-radius: 999px; transition: width .4s var(--ease); }
+
+    /* ─── Benefits ─── */
+    .benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 80px var(--gutter) 0; }
+    .benefit { background: #fff; border: 1px solid var(--ink-10); border-radius: var(--r-lg); padding: 32px 28px; display: flex; flex-direction: column; gap: 14px; transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
+    .benefit:hover { border-color: var(--klein); box-shadow: var(--shadow-blue); }
+    .benefit__icon { width: 48px; height: 48px; border-radius: 14px; background: rgba(0,47,167,.06); display: flex; align-items: center; justify-content: center; color: var(--klein); }
+    .benefit__icon svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .benefit h3 { font-family: var(--display); font-weight: 600; font-size: 22px; letter-spacing: -0.03em; margin: 0; line-height: 1.1; }
+    .benefit p { font-size: 14px; line-height: 1.55; color: var(--ink-60); margin: 0; }
+    .benefit__tag { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--success); font-weight: 600; margin-top: auto; }
+    .benefit__tag svg { width: 13px; height: 13px; stroke: var(--success); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ─── Urgency ─── */
+    .urgency { margin: 80px var(--gutter) 0; background: var(--cream-2); border-radius: var(--r-xl); padding: 48px 56px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .urgency__left { display: flex; flex-direction: column; gap: 10px; }
+    .urgency__badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #B94600; font-weight: 600; }
+    .urgency__badge svg { width: 14px; height: 14px; stroke: #B94600; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .urgency h2 { font-family: var(--display); font-weight: 600; font-size: clamp(28px, 3vw, 40px); letter-spacing: -0.03em; line-height: 1; margin: 0; }
+    .urgency p { font-size: 15px; line-height: 1.5; color: var(--ink-60); margin: 0; max-width: 52ch; }
+
+    /* ─── Section base ─── */
+    .section { padding: 96px var(--gutter); }
+    .section--blue { background: var(--klein); color: var(--cream); margin: 0 var(--gutter); padding: 64px 56px 80px; border-radius: var(--r-xl); }
+    .section__bar { display: flex; justify-content: space-between; align-items: center; font-size: 12px; letter-spacing: .04em; color: var(--ink-60); padding-bottom: 20px; border-bottom: 1px solid var(--ink-10); margin-bottom: 36px; }
+    .section__bar--light { color: rgba(254,249,246,.6); border-color: var(--on-blue-line); }
+    .section__title { font-family: var(--display); font-weight: 600; font-size: clamp(40px, 5vw, 72px); letter-spacing: -0.03em; line-height: 0.95; margin: 0 0 20px; max-width: 18ch; }
+    .section__title .ghost { color: var(--ink-40); }
+    .section__title--light .ghost { color: var(--on-blue-muted); }
+    .section__lede { font-size: 18px; line-height: 1.4; color: var(--ink-60); max-width: 56ch; margin: 0 0 48px; }
+
+    /* ─── Practice areas ─── */
+    .areas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .area { border: 1px solid var(--ink-10); border-radius: var(--r-md); padding: 24px; background: #fff; display: flex; flex-direction: column; gap: 12px; transition: border-color var(--dur) var(--ease); }
+    .area:hover { border-color: var(--ink); }
+    .area__head { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--ink-60); }
+    .area__head .num { font-weight: 600; letter-spacing: .04em; }
+    .area__head .icon-svg { color: var(--klein); }
+    .area h3 { font-family: var(--display); font-weight: 600; font-size: 22px; letter-spacing: -0.03em; margin: 0; line-height: 1.1; }
+    .area p { font-size: 14px; line-height: 1.5; color: var(--ink-60); margin: 0; }
+    .area__link { color: var(--klein); font-size: 13px; font-weight: 500; margin-top: auto; transition: color var(--dur) var(--ease); }
+    .area__link:hover { color: var(--ink); }
+
+    /* ─── Process ─── */
+    .process { list-style: none; padding: 0; margin: 24px 0 0; }
+    .process li { display: grid; grid-template-columns: 80px 1fr; gap: 32px; padding: 24px 0; border-top: 1px solid var(--on-blue-line); }
+    .process li:last-child { border-bottom: 1px solid var(--on-blue-line); }
+    .process .n { font-family: var(--display); font-weight: 600; font-size: 36px; letter-spacing: -0.03em; color: rgba(254,249,246,.45); line-height: 1; }
+    .process h4 { font-family: var(--display); font-weight: 600; font-size: 28px; letter-spacing: -0.03em; margin: 0 0 6px; line-height: 1; }
+    .process p { font-size: 15px; line-height: 1.5; color: rgba(254,249,246,.78); margin: 0; max-width: 60ch; }
+
+    /* ─── Cases ─── */
+    .cases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .case-card { border: 1px solid var(--ink-10); border-radius: var(--r-md); padding: 20px; background: var(--cream-2); }
+    .case-card__amount { font-family: var(--display); font-weight: 600; font-size: 36px; letter-spacing: -0.03em; line-height: 1; color: var(--klein); }
+    .case-card p { font-size: 14px; line-height: 1.4; margin: 14px 0 0; }
+    .case-card__tag { display: inline-block; margin-top: 16px; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-60); background: var(--cream); padding: 4px 10px; border-radius: 999px; }
+    .disclaimer { margin-top: 24px; font-size: 12px; color: var(--ink-40); max-width: 60ch; }
+
+    /* ─── About / Markin ─── */
+    .about { margin: 0 var(--gutter); background: var(--black); color: var(--cream); border-radius: var(--r-xl); overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; min-height: 460px; }
+    .about__photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.02); }
+    .about__copy { padding: 64px; display: flex; flex-direction: column; gap: 18px; justify-content: center; }
+    .about__copy .eyebrow { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: rgba(254,249,246,.5); }
+    .about__copy h2 { font-family: var(--display); font-weight: 600; font-size: clamp(40px, 5vw, 72px); letter-spacing: -0.04em; line-height: 0.9; margin: 0; }
+    .about__copy p { font-size: 17px; line-height: 1.5; color: rgba(254,249,246,.78); margin: 0; max-width: 50ch; }
+
+    /* ─── Contact channels ─── */
+    .channels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 0 var(--gutter); margin-top: 80px; }
+    .channel { border: 1px solid var(--ink-10); border-radius: var(--r-lg); padding: 24px; background: #fff; display: flex; flex-direction: column; gap: 10px; text-align: center; align-items: center; transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
+    .channel:hover { border-color: var(--klein); box-shadow: var(--shadow-blue); }
+    .channel__icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(0,47,167,.06); display: flex; align-items: center; justify-content: center; color: var(--klein); }
+    .channel__icon svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .channel h4 { font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: -0.02em; margin: 0; }
+    .channel p { font-size: 13px; color: var(--ink-60); margin: 0; line-height: 1.4; }
+
+    /* ─── Testimonials ─── */
+    .testimonials { padding: 96px var(--gutter) 0; }
+    .testimonials__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 36px; }
+    .testimonial { background: var(--cream-2); border-radius: var(--r-lg); padding: 28px; display: flex; flex-direction: column; gap: 16px; }
+    .testimonial__stars { display: flex; gap: 2px; color: #E5A100; }
+    .testimonial__stars svg { width: 16px; height: 16px; fill: currentColor; stroke: none; }
+    .testimonial__text { font-size: 15px; line-height: 1.55; color: var(--ink); flex: 1; }
+    .testimonial__author { display: flex; align-items: center; gap: 12px; }
+    .testimonial__avatar { width: 36px; height: 36px; border-radius: 999px; background: var(--klein); color: var(--cream); display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 600; font-size: 14px; }
+    .testimonial__name { font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: -0.02em; }
+    .testimonial__detail { font-size: 12px; color: var(--ink-60); }
+
+    /* ─── FAQ ─── */
+    .faq { display: flex; flex-direction: column; gap: 0; max-width: 780px; }
+    .faq__item { border-top: 1px solid var(--ink-10); }
+    .faq__item:last-child { border-bottom: 1px solid var(--ink-10); }
+    .faq__q { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; cursor: pointer; font-family: var(--display); font-weight: 500; font-size: 18px; letter-spacing: -0.02em; user-select: none; }
+    .faq__q .plus { font-size: 24px; color: var(--ink-40); transition: transform var(--dur) var(--ease); }
+    .faq__item.open .plus { transform: rotate(45deg); }
+    .faq__a { max-height: 0; overflow: hidden; transition: max-height .35s var(--ease); }
+    .faq__a-inner { padding: 0 0 20px; font-size: 15px; line-height: 1.55; color: var(--ink-60); max-width: 60ch; }
+    .faq__item.open .faq__a { max-height: 300px; }
+
+    /* ─── CTA band ─── */
+    .cta-band { background: var(--klein); color: var(--cream); padding: 64px var(--gutter); text-align: center; margin: 0 var(--gutter); border-radius: var(--r-xl); }
+    .cta-band h2 { font-family: var(--display); font-weight: 600; font-size: clamp(32px, 4vw, 56px); letter-spacing: -0.03em; line-height: 0.98; margin: 0 0 12px; }
+    .cta-band p { font-size: 17px; color: rgba(254,249,246,.78); margin: 0 0 28px; }
+
+    /* ─── Footer ─── */
+    .footer { background: var(--cream-2); padding: 64px var(--gutter) 28px; margin-top: 96px; border-top: 1px solid var(--ink-10); }
+    .footer__row { display: grid; grid-template-columns: 240px 1fr; gap: 64px; }
+    .footer__mark { height: 32px; }
+    .footer__cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .footer__cols .lbl { display: block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-40); margin-bottom: 14px; }
+    .footer__cols a { display: block; font-size: 14px; line-height: 1.5; color: var(--ink); margin-bottom: 6px; transition: color var(--dur) var(--ease); }
+    .footer__cols a:hover { color: var(--klein); }
+    .footer__bot { display: flex; justify-content: space-between; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--ink-10); font-size: 12px; color: var(--ink-40); }
+
+    /* ─── Sticky CTA ─── */
+    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 60; background: rgba(254,249,246,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid var(--ink-10); padding: 12px var(--gutter); display: flex; align-items: center; justify-content: space-between; }
+    .sticky-cta__text { font-family: var(--display); font-weight: 600; font-size: 15px; letter-spacing: -0.02em; }
+    .sticky-cta__text span { color: var(--ink-60); font-weight: 400; font-size: 13px; display: block; }
+
+    /* ═══════ RESPONSIVE ═══════ */
+    @media (max-width: 1024px) {
+      .areas { grid-template-columns: repeat(2, 1fr); }
+      .cases { grid-template-columns: repeat(2, 1fr); }
+      .testimonials__grid { grid-template-columns: repeat(2, 1fr); }
+      .channels { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      :root { --gutter: 20px; }
+      .header__nav { display: none; }
+      .header__phone { display: none; }
+      .header__hamburger { display: block; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero__left { height: 320px; }
+      .hero__left::after { background: linear-gradient(to bottom, transparent 50%, var(--cream) 100%); }
+      .hero__right { padding: 32px var(--gutter); }
+      .hero__title { font-size: 36px; }
+      .intake .row-2 { grid-template-columns: 1fr; }
+      .benefits { grid-template-columns: 1fr; padding: 48px var(--gutter) 0; }
+      .urgency { flex-direction: column; padding: 32px 24px; margin: 48px var(--gutter) 0; text-align: center; align-items: center; }
+      .urgency__left { align-items: center; }
+      .section { padding: 64px var(--gutter); }
+      .section--blue { margin: 0 12px; padding: 40px 24px 56px; border-radius: 20px; }
+      .section__title { font-size: 36px; }
+      .areas { grid-template-columns: 1fr; }
+      .process li { grid-template-columns: 48px 1fr; gap: 16px; }
+      .process .n { font-size: 24px; }
+      .process h4 { font-size: 22px; }
+      .cases { grid-template-columns: 1fr; }
+      .case-card__amount { font-size: 28px; }
+      .about { grid-template-columns: 1fr; margin: 0 12px; }
+      .about__photo { height: 320px; }
+      .about__photo img { height: 320px; }
+      .about__copy { padding: 32px 24px; }
+      .about__copy h2 { font-size: 48px; }
+      .channels { grid-template-columns: 1fr; margin-top: 48px; }
+      .testimonials__grid { grid-template-columns: 1fr; }
+      .faq__q { font-size: 16px; }
+      .cta-band { margin: 0 12px; padding: 48px 24px; border-radius: 20px; }
+      .cta-band h2 { font-size: 28px; }
+      .footer__row { grid-template-columns: 1fr; gap: 32px; }
+      .footer__cols { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .footer__bot { flex-direction: column; gap: 6px; }
+      .sticky-cta { padding: 10px 16px; }
+    }
+    /* ─── SMS Consent Modal ─── */
+    .consent-overlay { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(15,15,15,.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); align-items: center; justify-content: center; padding: 20px; }
+    .consent-overlay.open { display: flex; }
+    .consent-modal { background: #fff; border-radius: var(--r-xl); padding: 36px; max-width: 440px; width: 100%; display: flex; flex-direction: column; gap: 18px; box-shadow: 0 24px 64px rgba(0,0,0,.2); position: relative; }
+    .consent-modal__close { position: absolute; top: 16px; right: 16px; background: none; border: none; cursor: pointer; color: var(--ink-40); padding: 4px; }
+    .consent-modal__close svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .consent-modal h3 { font-family: var(--display); font-weight: 600; font-size: 22px; letter-spacing: -0.03em; margin: 0; line-height: 1.1; }
+    .consent-modal p { font-size: 14px; color: var(--ink-60); margin: 0; line-height: 1.45; }
+    .consent-modal .lbl { display: flex; flex-direction: column; gap: 5px; font-size: 11px; letter-spacing: .06em; color: var(--ink-60); text-transform: uppercase; font-weight: 500; }
+    .consent-modal .field { font-family: var(--body); font-size: 15px; letter-spacing: -0.02em; color: var(--ink); background: var(--cream); border: 1.5px solid var(--cream-3); border-radius: 10px; padding: 13px 14px; transition: border-color var(--dur) var(--ease); width: 100%; }
+    .consent-modal .field:focus { outline: none; border-color: var(--klein); box-shadow: 0 0 0 4px rgba(0,47,167,.08); }
+    .consent-checkbox { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--ink-60); line-height: 1.4; cursor: pointer; }
+    .consent-checkbox input[type="checkbox"] { width: 18px; height: 18px; margin-top: 1px; flex-shrink: 0; accent-color: var(--klein); cursor: pointer; }
+    .consent-checkbox a { color: var(--klein); text-decoration: underline; }
+
+    @media (max-width: 480px) {
+      .hero__title { font-size: 30px; }
+      .hero__sub { font-size: 15px; }
+      .intake { padding: 20px; }
+      .intake h3 { font-size: 20px; }
+      .conf__timer-value { font-size: 26px; }
+      .conf__greeting { font-size: 22px; }
+      .section__title { font-size: 28px; }
+      .process h4 { font-size: 20px; }
+      .about__copy h2 { font-size: 36px; }
+      .footer__cols { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════ Header ═══════ -->
+  <header class="header">
+    <a class="header__logo" href="#"><img src="assets/logos/wordmark-v2-black.png" alt="Carreras Law Firm"></a>
+    <nav class="header__nav">
+      <a href="#areas">Practice Areas</a>
+      <a href="#process">How We Work</a>
+      <a href="#results">Results</a>
+      <a href="#markin">About</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="header__right">
+      <span class="header__lang" onclick="toggleLang()" id="langToggle"><b>EN</b>&nbsp;&middot;&nbsp;ES</span>
+      <a class="btn btn--primary btn--sm" href="#intake">Free Consultation</a>
+      <button class="header__hamburger" onclick="toggleMobileNav()">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════ Mobile Nav ═══════ -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav__top">
+      <img src="assets/logos/wordmark-v2-black.png" alt="Carreras Law Firm" style="height:22px;filter:invert(1) brightness(2)">
+      <button class="mobile-nav__close" onclick="toggleMobileNav()">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="mobile-nav__links">
+      <a href="#areas" onclick="toggleMobileNav()">Practice Areas</a>
+      <a href="#process" onclick="toggleMobileNav()">How We Work</a>
+      <a href="#results" onclick="toggleMobileNav()">Results</a>
+      <a href="#markin" onclick="toggleMobileNav()">About</a>
+      <a href="#faq" onclick="toggleMobileNav()">FAQ</a>
+    </div>
+    <div class="mobile-nav__actions">
+      <a class="btn btn--primary btn--full" href="#intake" onclick="toggleMobileNav()">Free Consultation</a>
+      <a class="btn btn--secondary btn--full" href="tel:+13466802695">
+        <svg style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.6" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (346) 680-2695
+      </a>
+      <span class="header__lang" onclick="toggleLang()" style="text-align:center;padding:10px 0;color:rgba(254,249,246,.6)"><b style="color:#FEF9F6">EN</b>&nbsp;&middot;&nbsp;ES</span>
+    </div>
+  </div>
+
+  <!-- ═══════ Hero + Intake Form ═══════ -->
+  <section class="hero" id="intake">
+    <div class="hero__left">
+      <img src="assets/photography/markin-portrait-01.jpg" alt="Markin Carreras, Attorney at Law">
+    </div>
+    <div class="hero__right">
+      <span class="hero__eyebrow" data-en="Personal Injury · Houston & Rio Grande Valley, TX" data-es="Lesiones Personales · Houston y Rio Grande Valley, TX">Personal Injury &middot; Houston &amp; Rio Grande Valley, TX</span>
+      <div style="display:flex;align-items:center;gap:14px;margin-top:-12px;">
+        <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-40);font-weight:500" data-en="Member of" data-es="Miembro de">Member of</span>
+        <a href="https://www.htla.org/" target="_blank" rel="noreferrer"><img src="assets/associations/htla-logo.avif" alt="Houston Trial Lawyers Association" style="height:32px;opacity:.65;transition:opacity .24s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.65"></a>
+        <a href="https://www.ttla.com/" target="_blank" rel="noreferrer"><img src="assets/associations/ttla-logo.webp" alt="Texas Trial Lawyers Association" style="height:32px;opacity:.65;transition:opacity .24s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.65"></a>
+        <a href="https://www.hyla.org/" target="_blank" rel="noreferrer"><img src="assets/associations/hyla-logo.png" alt="Houston Young Lawyers Association" style="height:32px;opacity:.65;transition:opacity .24s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.65"></a>
+        <a href="https://www.mabah.com/" target="_blank" rel="noreferrer"><img src="assets/associations/maba-logo.png" alt="Mexican American Bar Association" style="height:32px;opacity:.65;transition:opacity .24s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.65"></a>
+      </div>
+      <h1 class="hero__title" data-en="Injured? <span class='ghost'>Get a specialist, not a call center.</span>" data-es="¿Choque? <span class='ghost'>Habla con un especialista, no un call center.</span>">Injured? <span class="ghost">Get a specialist, not a call center.</span></h1>
+      <p class="hero__sub" data-en="We handle personal injury cases on contingency. You pay nothing unless we win. One call, same-day response, guaranteed attorney access." data-es="Si tuviste un choque de auto, nosotros peleamos con la aseguradora por ti. No pagas nada a menos que ganemos. Una llamada, respuesta el mismo día.">We handle personal injury cases on contingency. You pay nothing unless we win. One call, same-day response, guaranteed attorney access.</p>
+
+      <!-- INTAKE FORM -->
+      <div class="intake" id="intakeForm">
+        <div class="intake__header">
+          <span class="intake__badge" data-en="Free Case Review" data-es="Evaluación Gratuita">Free Case Review</span>
+          <span class="intake__free">
+            <svg viewBox="0 0 24 24" style="fill:none;stroke-linecap:round;stroke-linejoin:round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span data-en="100% Confidential" data-es="100% Confidencial">100% Confidential</span>
+          </span>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="form-fields" id="formFields">
+          <h3 data-en="Get your free consultation." data-es="Consulta gratuita.">Get your free consultation.</h3>
+          <p data-en="Tell us how to reach you. A specialist calls you back within minutes." data-es="Déjanos tus datos. Un especialista te llama en minutos.">Tell us how to reach you. A specialist calls you back within minutes.</p>
+          <div class="row-2">
+            <label class="lbl"><span data-en="Full Name" data-es="Nombre Completo">Full Name</span>
+              <input class="field" id="inName" placeholder="Maria de la Garza" autocomplete="name">
+            </label>
+            <label class="lbl"><span data-en="Phone" data-es="Teléfono">Phone</span>
+              <input class="field" id="inPhone" placeholder="(956) 555-0123" autocomplete="tel">
+            </label>
+          </div>
+          <label class="lbl"><span data-en="Email" data-es="Correo">Email</span> <span style="font-weight:400;text-transform:none;letter-spacing:0" data-en="(optional)" data-es="(opcional)">(optional)</span>
+            <input class="field" id="inEmail" placeholder="maria@email.com" autocomplete="email">
+          </label>
+          <button class="btn btn--primary-lg btn--full" onclick="submitIntake()">
+            <svg style="width:18px;height:18px;stroke:var(--cream);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>
+            <span data-en="Get My Free Consultation" data-es="Solicitar Consulta Gratuita">Get My Free Consultation</span>
+          </button>
+          <div class="intake__trust">
+            <svg viewBox="0 0 24 24" style="fill:none;stroke-linecap:round;stroke-linejoin:round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span data-en="Your information is protected. No spam, no obligations." data-es="Tu información está protegida. Sin spam, sin compromisos.">Your information is protected. No spam, no obligations.</span>
+          </div>
+          <div class="intake__trust" id="immigrationNote" style="display:none;color:var(--klein);">
+            <svg viewBox="0 0 24 24" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke:var(--klein)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span style="color:var(--klein);font-weight:500">Tu estatus migratorio no es relevante para esta llamada. No te preocupes por eso.</span>
+          </div>
+        </div>
+
+        <!-- Step 2: Confirmation -->
+        <div class="confirmation" id="confirmation">
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--success);font-weight:600;display:flex;align-items:center;gap:5px;">
+              <svg style="width:14px;height:14px;stroke:var(--success);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-en="Submitted" data-es="Enviado">Submitted</span>
+            </span>
+            <a href="tel:+13466802695" class="btn btn--primary btn--sm" style="padding:10px 14px;border-radius:999px;">
+              <svg style="width:16px;height:16px;stroke:var(--cream);fill:none;stroke-width:1.6" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+          </div>
+          <h3 class="conf__greeting" id="confGreeting">Thank you!</h3>
+          <div class="conf__timer">
+            <div>
+              <div class="conf__timer-label" data-en="A specialist is calling you in" data-es="Un especialista te llama en">A specialist is calling you in</div>
+              <div class="conf__timer-value" id="timerDisplay">5:00</div>
+            </div>
+            <div class="conf__timer-dots"><span></span><span></span><span></span></div>
+          </div>
+          <div class="conf__checklist">
+            <div class="conf__checklist-title" data-en="While you wait, prepare for your call" data-es="Mientras esperas, prepárate para tu llamada">While you wait, prepare for your call</div>
+            <div class="conf__checklist-sub" data-en="Having this ready helps us evaluate your case faster." data-es="Tener esto listo nos ayuda a evaluar tu caso más rápido.">Having this ready helps us evaluate your case faster.</div>
+            <div class="conf__check" onclick="toggleCheck(this)">
+              <div class="circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span data-en="Have your driver's license handy" data-es="Ten tu identificación a la mano">Have your driver's license handy</span>
+              <span class="pts">Helpful</span>
+            </div>
+            <div class="conf__check" onclick="toggleCheck(this)">
+              <div class="circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span data-en="Gather photos of the crash (if any)" data-es="Reúne fotos del choque (si tienes)">Gather photos of the crash (if any)</span>
+              <span class="pts">Optional</span>
+            </div>
+            <div class="conf__check" onclick="toggleCheck(this)">
+              <div class="circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span data-en="Police report or case number" data-es="Reporte policial o número de caso">Police report or case number</span>
+              <span class="pts">Helpful</span>
+            </div>
+            <div class="conf__check" onclick="toggleCheck(this)">
+              <div class="circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span data-en="Write down any injuries you felt" data-es="Anota las lesiones que sentiste">Write down any injuries you felt</span>
+              <span class="pts">Critical</span>
+            </div>
+          </div>
+          <div class="conf__progress"><span id="checkCount">0/4 ready</span></div>
+          <div class="conf__bar"><div class="conf__bar-fill" id="checkBar" style="width:0%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ Benefits ═══════ -->
+  <div class="benefits">
+    <div class="benefit">
+      <div class="benefit__icon"><svg viewBox="0 0 24 24"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></div>
+      <h3 data-en="Medical care, no upfront cost" data-es="Atención médica sin costo inicial">Medical care, no upfront cost</h3>
+      <p data-en="We connect you with doctors who treat now and get paid from your settlement. You focus on healing, not bills." data-es="Te conectamos con doctores que te atienden ahora y cobran del acuerdo. Tú te enfocas en recuperarte.">We connect you with doctors who treat now and get paid from your settlement. You focus on healing, not bills.</p>
+      <span class="benefit__tag"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> <span data-en="Covered from day one" data-es="Cubierto desde el día uno">Covered from day one</span></span>
+    </div>
+    <div class="benefit">
+      <div class="benefit__icon"><svg viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-2-3.2-2H7v9m12 0H7m12 0a2 2 0 1 1-4 0m4 0a2 2 0 0 0-4 0M7 17a2 2 0 1 1-4 0m4 0a2 2 0 0 0-4 0M1 14h4"/><path d="M6 8H4a2 2 0 0 0-2 2v4"/></svg></div>
+      <h3 data-en="Vehicle & property sorted" data-es="Vehículo y propiedad resueltos">Vehicle &amp; property sorted</h3>
+      <p data-en="Your car needs repair or replacement? We handle the property damage claim so you're not stuck without a ride." data-es="¿Tu carro necesita reparación? Nos encargamos del reclamo de daños para que no te quedes sin transporte.">Your car needs repair or replacement? We handle the property damage claim so you're not stuck without a ride.</p>
+      <span class="benefit__tag"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> <span data-en="We handle the claim" data-es="Nosotros manejamos el reclamo">We handle the claim</span></span>
+    </div>
+    <div class="benefit">
+      <div class="benefit__icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+      <h3 data-en="Lost wages & expenses recovered" data-es="Salarios perdidos y gastos recuperados">Lost wages &amp; expenses recovered</h3>
+      <p data-en="If the crash kept you from working, we fight for every dollar of lost income plus out-of-pocket expenses." data-es="Si el choque te impidió trabajar, peleamos por cada dólar de ingreso perdido y gastos de bolsillo.">If the crash kept you from working, we fight for every dollar of lost income plus out-of-pocket expenses.</p>
+      <span class="benefit__tag"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> <span data-en="Documented & claimed" data-es="Documentado y reclamado">Documented &amp; claimed</span></span>
+    </div>
+  </div>
+
+  <!-- ═══════ Contact Channels (reach us your way) ═══════ -->
+  <div class="channels" id="contact" style="margin-top:80px">
+    <a class="channel" href="tel:+13466802695">
+      <div class="channel__icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+      <h4 data-en="Call us" data-es="Llámanos">Call us</h4>
+      <p data-en="Speak directly with an attorney. Same-day response." data-es="Habla directo con un abogado. Respuesta el mismo día.">Speak directly with an attorney. Same-day response.</p>
+    </a>
+    <a class="channel" href="sms:+13466802695">
+      <div class="channel__icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <h4 data-en="Text us" data-es="Mándanos un texto">Text us</h4>
+      <p data-en="Prefer texting? We'll keep the conversation going on your terms." data-es="¿Prefieres texto? Mantenemos la conversación como te funcione.">Prefer texting? We'll keep the conversation going on your terms.</p>
+    </a>
+    <a class="channel" href="https://wa.me/13466802695" target="_blank" rel="noreferrer" style="border-color:rgba(37,211,102,.2)">
+      <div class="channel__icon" style="background:rgba(37,211,102,.1);color:#25D366"><svg viewBox="0 0 24 24" style="stroke:none;fill:#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+      <h4 data-en="WhatsApp" data-es="WhatsApp">WhatsApp</h4>
+      <p data-en="Message or call us on WhatsApp. Quick and easy." data-es="Escríbenos o llámanos por WhatsApp. Rápido y fácil.">Message or call us on WhatsApp. Quick and easy.</p>
+    </a>
+    <a class="channel" href="mailto:info@carreraslawfirm.com">
+      <div class="channel__icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <h4 data-en="Email us" data-es="Escríbenos">Email us</h4>
+      <p data-en="Send us the details. We respond within hours, not days." data-es="Mándanos los detalles. Respondemos en horas, no días.">Send us the details. We respond within hours, not days.</p>
+    </a>
+    <a class="channel" href="https://calendar.app.google/SapEjTV8U5ir7yfs7" target="_blank" rel="noreferrer">
+      <div class="channel__icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+      <h4 data-en="Book a video consultation" data-es="Agenda una videollamada">Book a video consultation</h4>
+      <p data-en="Schedule an online appointment. Pick a time that works for you." data-es="Agenda una cita en línea. Elige el horario que te funcione.">Schedule an online appointment. Pick a time that works for you.</p>
+    </a>
+    <a class="channel" href="https://maps.google.com/?q=440+Louisiana+St+Suite+972+Houston+TX+77002" target="_blank" rel="noreferrer">
+      <div class="channel__icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <h4 data-en="Visit our office" data-es="Visita nuestra oficina">Visit our office</h4>
+      <p>440 Louisiana St., Suite 972<br>Houston, TX 77002</p>
+    </a>
+    <a class="channel" href="https://drive.google.com/uc?export=download&id=1CPcfrh-4d4_hfvUZLu3CajHxWGuhhzSu">
+      <div class="channel__icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+      <h4 data-en="Save our number" data-es="Guarda nuestro número">Save our number</h4>
+      <p data-en="Download our contact card to your phone." data-es="Descarga nuestra tarjeta de contacto a tu teléfono.">Download our contact card to your phone.</p>
+    </a>
+  </div>
+  <p style="text-align:center;font-size:14px;color:var(--ink-60);margin-top:24px;padding:0 var(--gutter);" data-en="We adapt to your preferred channel. Call, text, WhatsApp, email, or in-person - we meet you where you're most comfortable." data-es="Nos adaptamos a tu canal preferido. Llamada, texto, WhatsApp, correo o en persona - te atendemos como te funcione mejor."><em>We adapt to your preferred communication channel. Whether it's a call, text, email, or in-person - we meet you where you're most comfortable.</em></p>
+
+  <!-- ═══════ Urgency ═══════ -->
+  <div class="urgency">
+    <div class="urgency__left">
+      <span class="urgency__badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span data-en="Time-sensitive" data-es="Tiempo limitado">Time-sensitive</span></span>
+      <h2 data-en="The moment matters." data-es="El momento importa.">The moment matters.</h2>
+      <p data-en="In Texas, evidence disappears, witnesses forget, and the statute of limitations is ticking. The sooner you call, the stronger your case. Insurance adjusters are already working - you should have someone working for you too." data-es="En Texas, la evidencia desaparece, los testigos olvidan y el plazo legal corre. Entre más pronto llames, más fuerte tu caso. Los ajustadores ya están trabajando - tú también necesitas a alguien de tu lado.">In Texas, evidence disappears, witnesses forget, and the statute of limitations is ticking. The sooner you call, the stronger your case. Insurance adjusters are already working - you should have someone working for you too.</p>
+    </div>
+    <a class="btn btn--primary-lg" href="#intake">
+      <svg style="width:18px;height:18px;stroke:var(--cream);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span data-en="Get My Free Consultation" data-es="Consulta Gratuita">Get My Free Consultation</span>
+    </a>
+  </div>
+
+  <!-- ═══════ Crash Photo Strip ═══════ -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin:80px var(--gutter) 0;border-radius:var(--r-xl);overflow:hidden;">
+    <img src="assets/crashes/crash-01.jpg" alt="Car crash damage" style="width:100%;height:220px;object-fit:cover;filter:grayscale(.4)">
+    <img src="assets/crashes/crash-02.jpg" alt="Vehicle collision" style="width:100%;height:220px;object-fit:cover;filter:grayscale(.4)">
+    <img src="assets/crashes/crash-03.jpg" alt="Crash scene" style="width:100%;height:220px;object-fit:cover;filter:grayscale(.4)">
+  </div>
+
+  <!-- ═══════ Practice Areas ═══════ -->
+  <section class="section" id="areas">
+    <div class="section__bar"><span data-en="Practice Areas" data-es="Áreas de Práctica">Practice Areas</span><span data-en="Personal Injury" data-es="Lesiones Personales">Personal Injury</span></div>
+    <h2 class="section__title" data-en="What we handle." data-es="Lo que manejamos.">What we handle.</h2>
+    <p class="section__lede" data-en="Personal injury. That's what we do. If you got hurt because of someone else's fault, that's our territory." data-es="Lesiones personales. Eso es lo que hacemos. Si te lastimaste por culpa de alguien más, ese es nuestro territorio.">Personal injury. That's what we do. If you got hurt because of someone else's fault, that's our territory.</p>
+    <div class="areas">
+      <article class="area">
+        <div class="area__head"><span class="num">01</span><span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-2-3.2-2H7v9m12 0H7m12 0a2 2 0 1 1-4 0m4 0a2 2 0 0 0-4 0M7 17a2 2 0 1 1-4 0m4 0a2 2 0 0 0-4 0M1 14h4"/><path d="M6 8H4a2 2 0 0 0-2 2v4"/></svg></span></div>
+        <h3 data-en="Car Crashes" data-es="Choques de Auto">Car Crashes</h3>
+        <p data-en="Recovering what the insurance company doesn't want to pay. Medical bills, therapy, lost income." data-es="Recuperando lo que la aseguradora no quiere pagar. Facturas médicas, terapia, ingresos perdidos.">Recovering what the insurance company doesn't want to pay. Medical bills, therapy, lost income.</p>
+        <a href="#intake" class="area__link" data-en="Tell us what happened →" data-es="Cuéntanos qué pasó →">Tell us what happened &rarr;</a>
+      </article>
+      <article class="area">
+        <div class="area__head"><span class="num">02</span><span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M5 18h1M19 18h1M14 2v4a1 1 0 0 0 1 1h2M2 9v5a1 1 0 0 0 1 1h2M22 15V9a1 1 0 0 0-1-1h-2l-2-4h-6l-2 4H6a1 1 0 0 0-1 1v6"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/><path d="M9 18h6"/></svg></span></div>
+        <h3 data-en="Commercial Trucks" data-es="Camiones Comerciales">Commercial Trucks</h3>
+        <p data-en="18-wheelers, delivery vehicles, company trucks. More parties, more coverage, more at stake." data-es="Tráileres, vehículos de reparto, camiones de empresa. Más partes, más cobertura, más en juego.">18-wheelers, delivery vehicles, company trucks. More parties, more coverage, more at stake.</p>
+        <a href="#intake" class="area__link" data-en="Tell us what happened →" data-es="Cuéntanos qué pasó →">Tell us what happened &rarr;</a>
+      </article>
+      <article class="area">
+        <div class="area__head"><span class="num">03</span><span class="icon-svg"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg></span></div>
+        <h3 data-en="Uber / Lyft Injuries" data-es="Lesiones Uber / Lyft">Uber / Lyft Injuries</h3>
+        <p data-en="Rideshare crashes involve multiple insurance policies. We know exactly which one applies to your situation." data-es="Los choques de apps de transporte involucran múltiples pólizas. Sabemos exactamente cuál aplica a tu situación.">Rideshare crashes involve multiple insurance policies. We know exactly which one applies to your situation.</p>
+        <a href="#intake" class="area__link" data-en="Tell us what happened →" data-es="Cuéntanos qué pasó →">Tell us what happened &rarr;</a>
+      </article>
+      <article class="area">
+        <div class="area__head"><span class="num">04</span><span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></div>
+        <h3 data-en="Slip & Falls" data-es="Caídas y Resbalones">Slip &amp; Falls</h3>
+        <p data-en="Wet floors, broken stairs, unmarked hazards. Property owners are responsible for keeping their premises safe." data-es="Pisos mojados, escaleras rotas, peligros sin señalar. Los dueños de propiedades son responsables de mantener sus instalaciones seguras.">Wet floors, broken stairs, unmarked hazards. Property owners are responsible for keeping their premises safe.</p>
+        <a href="#intake" class="area__link" data-en="Tell us what happened →" data-es="Cuéntanos qué pasó →">Tell us what happened &rarr;</a>
+      </article>
+      <article class="area">
+        <div class="area__head"><span class="num">05</span><span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span></div>
+        <h3 data-en="Workplace Injuries" data-es="Lesiones Laborales">Workplace Injuries</h3>
+        <p data-en="Hurt on the job? You may have claims beyond workers' comp. We evaluate every option to maximize your recovery." data-es="¿Te lastimaste en el trabajo? Puedes tener reclamos más allá de compensación laboral. Evaluamos cada opción para maximizar tu recuperación.">Hurt on the job? You may have claims beyond workers' comp. We evaluate every option to maximize your recovery.</p>
+        <a href="#intake" class="area__link" data-en="Tell us what happened →" data-es="Cuéntanos qué pasó →">Tell us what happened &rarr;</a>
+      </article>
+      <article class="area">
+        <div class="area__head"><span class="num">06</span><span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M12 22c-4.97 0-9-2.24-9-5v-4c0-2.76 4.03-5 9-5s9 2.24 9 5v4c0 2.76-4.03 5-9 5z"/><path d="M9 12l-2-1.5c-.5-.4-.8-1-.8-1.7 0-1.5 1.8-2.8 4-2.8h3.6c2.2 0 4 1.3 4 2.8 0 .7-.3 1.3-.8 1.7L15 12"/><circle cx="9" cy="9" r="1"/><circle cx="15" cy="9" r="1"/></svg></span></div>
+        <h3 data-en="Dog Bites" data-es="Mordeduras de Perro">Dog Bites</h3>
+        <p data-en="Dog owners are liable for injuries caused by their animals. Medical bills, scarring, and emotional trauma are all recoverable." data-es="Los dueños de perros son responsables por lesiones causadas por sus animales. Gastos médicos, cicatrices y trauma emocional son recuperables.">Dog owners are liable for injuries caused by their animals. Medical bills, scarring, and emotional trauma are all recoverable.</p>
+        <a href="#intake" class="area__link" data-en="Tell us what happened →" data-es="Cuéntanos qué pasó →">Tell us what happened &rarr;</a>
+      </article>
+      <article class="area">
+        <div class="area__head"><span class="num">07</span><span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="17" y1="8" x2="17" y2="14"/><line x1="14" y1="11" x2="20" y2="11"/></svg></span></div>
+        <h3 data-en="Wrongful Death" data-es="Muerte por Negligencia">Wrongful Death</h3>
+        <p data-en="When negligence takes a life, families deserve justice and financial stability. We fight for the compensation your family needs." data-es="Cuando la negligencia cobra una vida, las familias merecen justicia y estabilidad financiera. Peleamos por la compensación que tu familia necesita.">When negligence takes a life, families deserve justice and financial stability. We fight for the compensation your family needs.</p>
+        <a href="#intake" class="area__link" data-en="Tell us what happened →" data-es="Cuéntanos qué pasó →">Tell us what happened &rarr;</a>
+      </article>
+      <article class="area">
+        <div class="area__head"><span class="num">08</span><span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span></div>
+        <h3 data-en="Catastrophic Injuries" data-es="Lesiones Catastróficas">Catastrophic Injuries</h3>
+        <p data-en="Spinal cord injuries, traumatic brain injuries, amputations. Life-altering injuries require aggressive legal representation." data-es="Lesiones de médula espinal, traumatismo craneal, amputaciones. Lesiones que cambian la vida requieren representación legal agresiva.">Spinal cord injuries, traumatic brain injuries, amputations. Life-altering injuries require aggressive legal representation.</p>
+        <a href="#intake" class="area__link" data-en="Tell us what happened →" data-es="Cuéntanos qué pasó →">Tell us what happened &rarr;</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══════ How We Work ═══════ -->
+  <section class="section section--blue" id="process" style="margin-top:0">
+    <div class="section__bar section__bar--light"><span data-en="How We Work" data-es="Cómo Trabajamos">How We Work</span><span data-en="Our Process" data-es="Nuestro Proceso">Our Process</span></div>
+    <h2 class="section__title section__title--light" data-en="Five steps. <span class='ghost'>From call to recovery.</span>" data-es="Cinco pasos. <span class='ghost'>De la llamada a tu recuperación.</span>">Five steps. <span class="ghost">From call to recovery.</span></h2>
+    <ol class="process">
+      <li><span class="n">01</span><div><h4 data-en="We talk." data-es="Hablamos.">We talk.</h4><p data-en="One call. No commitment. You tell us what happened, we tell you if you have a case. From that moment, the insurance company talks to us, not you." data-es="Una llamada. Sin compromiso. Nos cuentas qué pasó, te decimos si tienes caso. Desde ese momento, la aseguradora habla con nosotros, no contigo.">One call. No commitment. You tell us what happened, we tell you if you have a case. From that moment, the insurance company talks to us, not you.</p></div></li>
+      <li><span class="n">02</span><div><h4 data-en="We investigate." data-es="Investigamos.">We investigate.</h4><p data-en="We dig into the policies, gather evidence, pull surveillance footage, obtain police reports, and build the foundation of your case. This is where we find out what your claim is really worth." data-es="Revisamos las pólizas, reunimos evidencia, obtenemos videos de vigilancia, reportes policiales y construimos los cimientos de tu caso. Aquí es donde descubrimos cuánto vale realmente tu reclamo.">We dig into the policies, gather evidence, pull surveillance footage, obtain police reports, and build the foundation of your case. This is where we find out what your claim is really worth.</p></div></li>
+      <li><span class="n">03</span><div><h4 data-en="We get you to the doctor." data-es="Te llevamos al doctor.">We get you to the doctor.</h4><p data-en="No out-of-pocket costs. We connect you with doctors who treat now and get paid from your settlement. Your medical records become key evidence for your case." data-es="Sin gastos de tu bolsillo. Te conectamos con doctores que te atienden ahora y cobran del acuerdo. Tus expedientes médicos se convierten en evidencia clave para tu caso.">No out-of-pocket costs. We connect you with doctors who treat now and get paid from your settlement. Your medical records become key evidence for your case.</p></div></li>
+      <li><span class="n">04</span><div><h4 data-en="We build your demand." data-es="Armamos tu demanda.">We build your demand.</h4><p data-en="Attorney expertise, investigation results, and medical documentation come together into one demand package. This is what forces the insurance company to take your case seriously." data-es="Experiencia legal, resultados de la investigación y documentación médica se unen en un paquete de demanda. Esto es lo que obliga a la aseguradora a tomar tu caso en serio.">Attorney expertise, investigation results, and medical documentation come together into one demand package. This is what forces the insurance company to take your case seriously.</p></div></li>
+      <li><span class="n">05</span><div><h4 data-en="You collect - or we litigate." data-es="Cobras - o vamos a juicio.">You collect - or we litigate.</h4><p data-en="If we reach a fair settlement, we pay the doctors, the hospital, our fee - what's left is yours. If the insurance company won't negotiate fairly, we take it to court. We're prepared for both." data-es="Si logramos un acuerdo justo, pagamos a los doctores, al hospital, nuestros honorarios - lo que queda es tuyo. Si la aseguradora no negocia de buena fe, vamos a juicio. Estamos preparados para ambos.">If we reach a fair settlement, we pay the doctors, the hospital, our fee - what's left is yours. If the insurance company won't negotiate fairly, we take it to court. We're prepared for both.</p></div></li>
+    </ol>
+  </section>
+
+  <!-- ═══════ Case Results (approximate ranges) ═══════ -->
+  <section class="section" id="results">
+    <div class="section__bar"><span data-en="Understanding Case Values" data-es="Entendiendo Valores de Caso">Understanding Case Values</span><span data-en="Educational reference" data-es="Referencia educativa">Educational reference</span></div>
+    <h2 class="section__title" data-en="How case values <span class='ghost'>are typically determined.</span>" data-es="Cómo se determinan <span class='ghost'>los valores de un caso.</span>">How case values <span class="ghost">are typically determined.</span></h2>
+    <div class="cases">
+      <div class="case-card">
+        <div class="case-card__amount">$15K–$75K</div>
+        <p data-en="Rear-end collisions with soft tissue injuries, whiplash, and minor fractures." data-es="Choques por alcance con lesiones de tejidos blandos, latigazo cervical y fracturas menores.">Rear-end collisions with soft tissue injuries, whiplash, and minor fractures.</p>
+        <span class="case-card__tag" data-en="Most common" data-es="Más común">Most common</span>
+      </div>
+      <div class="case-card">
+        <div class="case-card__amount">$75K–$250K</div>
+        <p data-en="Intersection crashes, multi-vehicle collisions, herniated discs, surgeries required." data-es="Choques en intersección, choques de múltiples vehículos, hernias de disco, cirugías requeridas.">Intersection crashes, multi-vehicle collisions, herniated discs, surgeries required.</p>
+        <span class="case-card__tag" data-en="Moderate severity" data-es="Severidad moderada">Moderate severity</span>
+      </div>
+      <div class="case-card">
+        <div class="case-card__amount">$250K–$1M+</div>
+        <p data-en="Commercial truck crashes, catastrophic injuries, long-term disability, multiple surgeries." data-es="Choques con camiones comerciales, lesiones catastróficas, discapacidad a largo plazo, múltiples cirugías.">Commercial truck crashes, catastrophic injuries, long-term disability, multiple surgeries.</p>
+        <span class="case-card__tag" data-en="High severity" data-es="Alta severidad">High severity</span>
+      </div>
+    </div>
+    <p class="disclaimer" data-en="DISCLAIMER: These ranges are for educational purposes only and do not represent a guarantee or prediction of any outcome. Every case is different. Actual recovery depends on many factors including injury severity, liability, available insurance coverage, medical treatment, and other case-specific circumstances. Past results do not guarantee future outcomes. Contact us for a free consultation to discuss your specific situation." data-es="AVISO: Estos rangos son solo con fines educativos y no representan una garantía ni predicción de resultados. Cada caso es diferente. La recuperación real depende de muchos factores incluyendo severidad de lesiones, responsabilidad, cobertura de seguro disponible, tratamiento médico y otras circunstancias específicas. Resultados pasados no garantizan resultados futuros. Contáctanos para una consulta gratuita sobre tu situación específica.">DISCLAIMER: These ranges are for educational purposes only and do not represent a guarantee or prediction of any outcome. Every case is different. Actual recovery depends on many factors including injury severity, liability, available insurance coverage, medical treatment, and other case-specific circumstances. Past results do not guarantee future outcomes. Contact us for a free consultation to discuss your specific situation.</p>
+  </section>
+
+  <!-- ═══════ About Markin ═══════ -->
+  <section class="about" id="markin">
+    <div class="about__photo"><img src="assets/photography/markin-portrait-05.jpg" alt="Markin Carreras"></div>
+    <div class="about__copy">
+      <span class="eyebrow" data-en="Meet the Founder" data-es="Conoce al Fundador">Meet the Founder</span>
+      <h2>Markin.</h2>
+      <p data-en="Personal injury attorney. Bilingual. Based in Houston, serving the Rio Grande Valley. I built this firm to prove that speed, clarity, and human dignity are not optional in legal work." data-es="Abogado de lesiones personales. Bilingüe. En Houston, sirviendo al Rio Grande Valley. Fundé esta firma para demostrar que la rapidez, claridad y el trato digno no son opcionales.">Personal injury attorney. Bilingual. Based in Houston, serving the Rio Grande Valley. I built this firm to prove that speed, clarity, and human dignity are not optional in legal work.</p>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;color:rgba(254,249,246,.5);margin-top:4px;">
+        <span data-en="B.S. Criminal Justice, UTSA · J.D., University of Houston Law Center" data-es="Lic. Justicia Criminal, UTSA · J.D., University of Houston Law Center">B.S. Criminal Justice, UTSA &middot; J.D., University of Houston Law Center</span>
+        <span data-en="State Bar of Texas · U.S. District Court, Southern & Eastern Districts of Texas" data-es="Barra de Abogados de Texas · Tribunal Federal, Distritos Sur y Este de Texas">State Bar of Texas &middot; U.S. District Court, Southern &amp; Eastern Districts of Texas</span>
+        <span data-en="TTLA · HTLA · MABA · HYLA" data-es="TTLA · HTLA · MABA · HYLA">TTLA &middot; HTLA &middot; MABA &middot; HYLA</span>
+      </div>
+      <p style="color:rgba(254,249,246,.6);font-size:15px;margin-top:12px;" data-en="Every week I record short videos about how insurance companies operate in Texas. Not to impress - so you know what to say and what not to say when they call." data-es="Cada semana grabo videos cortos sobre cómo operan las aseguradoras en Texas. No para impresionar - para que sepas qué decir y qué no decir cuando llamen.">Every week I record short videos about how insurance companies operate in Texas. Not to impress - so you know what to say and what not to say when they call.</p>
+      <div style="display:flex;gap:16px;margin-top:8px;">
+        <a href="https://www.youtube.com/@CarrerasLawFirm" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:rgba(254,249,246,.6);transition:color .24s" onmouseover="this.style.color='#FEF9F6'" onmouseout="this.style.color='rgba(254,249,246,.6)'">
+          <svg style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.35 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+          YouTube
+        </a>
+        <a href="https://www.instagram.com/carreraslawfirm" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:rgba(254,249,246,.6);transition:color .24s" onmouseover="this.style.color='#FEF9F6'" onmouseout="this.style.color='rgba(254,249,246,.6)'">
+          <svg style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ Testimonials ═══════ -->
+  <section class="testimonials" id="testimonials">
+    <div class="section__bar"><span data-en="Client Reviews" data-es="Opiniones de Clientes">Client Reviews</span><span data-en="Real clients, real cases" data-es="Clientes reales, casos reales">Real clients, real cases</span></div>
+    <h2 class="section__title" data-en="What our clients say." data-es="Lo que dicen nuestros clientes.">What our clients say.</h2>
+    <div class="testimonials__grid">
+      <div class="testimonial">
+        <div class="testimonial__stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="testimonial__text" data-en="Markin's team handled everything - the insurance, the doctors, the paperwork. I didn't have to worry about a thing. They kept me updated the whole time." data-es="El equipo de Markin se encargó de todo - el seguro, los doctores, el papeleo. No tuve que preocuparme por nada. Me mantuvieron informado todo el tiempo.">Markin's team handled everything - the insurance, the doctors, the paperwork. I didn't have to worry about a thing. They kept me updated the whole time.</div>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">RG</div>
+          <div><div class="testimonial__name">Roberto G.</div><div class="testimonial__detail" data-en="Car crash · McAllen, TX" data-es="Choque de auto · McAllen, TX">Car crash · McAllen, TX</div></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial__stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="testimonial__text" data-en="I got rear-ended on I-10. My insurance tried to lowball me. Carreras Law Firm got involved and the settlement covered all my medical bills, therapy, and then some. The bilingual team made everything easier for my mom." data-es="Me chocaron por detrás en la I-10. Mi seguro intentó darme menos. Carreras Law Firm se involucró y el acuerdo cubrió todas mis facturas médicas, terapia, y más. El equipo bilingüe hizo todo más fácil para mi mamá.">I got rear-ended on I-10. My insurance tried to lowball me. Carreras Law Firm got involved and the settlement covered all my medical bills, therapy, and then some. The bilingual team made everything easier for my mom.</div>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">AL</div>
+          <div><div class="testimonial__name">Ana L.</div><div class="testimonial__detail" data-en="Rear-end collision · Houston, TX" data-es="Choque por alcance · Houston, TX">Rear-end collision · Houston, TX</div></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial__stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="testimonial__text" data-en="I got hit by an 18-wheeler on 281. Couldn't work for months. They got me to a doctor the same week, no cost. The settlement covered everything and I still had money left. I tell everyone about them." data-es="Me pegó un tráiler en la 281. No pude trabajar por meses. Me consiguieron doctor la misma semana, sin costo. El acuerdo cubrió todo y me sobró dinero. Se los recomiendo a todos.">I got hit by an 18-wheeler on 281. Couldn't work for months. They got me to a doctor the same week, no cost. The settlement covered everything and I still had money left. I tell everyone about them.</div>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">JM</div>
+          <div><div class="testimonial__name">José M.</div><div class="testimonial__detail" data-en="Truck crash · Pharr, TX" data-es="Choque con tráiler · Pharr, TX">Truck crash · Pharr, TX</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FAQ ═══════ -->
+  <section class="section" id="faq">
+    <div class="section__bar"><span data-en="Frequently Asked Questions" data-es="Preguntas Frecuentes">Frequently Asked Questions</span><span></span></div>
+    <h2 class="section__title" data-en="Questions <span class='ghost'>you should be asking.</span>" data-es="Preguntas <span class='ghost'>que deberías hacer.</span>">Questions <span class="ghost">you should be asking.</span></h2>
+    <div class="faq">
+      <div class="faq__item">
+        <div class="faq__q" onclick="toggleFaq(this)"><span data-en="How much does it cost to hire you?" data-es="¿Cuánto cuesta contratarlos?">How much does it cost to hire you?</span> <span class="plus">+</span></div>
+        <div class="faq__a"><div class="faq__a-inner" data-en="Nothing upfront. We work on contingency: 35% of the recovery before litigation, 40% after a lawsuit is filed. If we don't win, you owe us nothing. We cover all case expenses out of pocket." data-es="Nada. No pagas ni un peso por adelantado. Solo cobramos si ganamos tu caso: 35% de lo que se recupera antes de ir a juicio, 40% si se presenta demanda. Si no ganamos, no nos debes nada.">Nothing upfront. We work on contingency: 35% of the recovery before litigation, 40% after a lawsuit is filed. If we don't win, you owe us nothing. We cover all case expenses out of pocket.</div></div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q" onclick="toggleFaq(this)"><span data-en="How long does a case take?" data-es="¿Cuánto tarda un caso?">How long does a case take?</span> <span class="plus">+</span></div>
+        <div class="faq__a"><div class="faq__a-inner" data-en="The average personal injury case takes about 12 months. About 10% resolve in under 6 months, 60% between 6 and 12 months, and 30% take longer. We prioritize speed without sacrificing your recovery." data-es="Un caso promedio toma unos 12 meses. Algunos se resuelven en menos de 6 meses, la mayoría entre 6 y 12, y algunos toman más. Nos movemos rápido sin sacrificar lo que te toca.">The average personal injury case takes about 12 months. About 10% resolve in under 6 months, 60% between 6 and 12 months, and 30% take longer. We prioritize speed without sacrificing your recovery.</div></div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q" onclick="toggleFaq(this)"><span data-en="Do I have to pay for medical treatment?" data-es="¿Tengo que pagar el tratamiento médico?">Do I have to pay for medical treatment?</span> <span class="plus">+</span></div>
+        <div class="faq__a"><div class="faq__a-inner" data-en="No. We connect you with doctors who work on a lien basis, meaning they get paid from the settlement, not from your pocket. You get the treatment you need without upfront costs." data-es="No. Te conectamos con doctores que trabajan con gravamen médico, es decir, cobran del acuerdo, no de tu bolsillo. Recibes el tratamiento que necesitas sin costos por adelantado.">No. We connect you with doctors who work on a lien basis, meaning they get paid from the settlement, not from your pocket. You get the treatment you need without upfront costs.</div></div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q" onclick="toggleFaq(this)"><span data-en="What if the insurance company already called me?" data-es="¿Qué pasa si la aseguradora ya me llamó?">What if the insurance company already called me?</span> <span class="plus">+</span></div>
+        <div class="faq__a"><div class="faq__a-inner" data-en="Don't worry, but stop talking to them. Anything you say is recorded and can be used against your claim. Once you sign with us, the adjuster speaks to us, not to you. That's one of the first protections we put in place." data-es="No te preocupes, pero deja de hablar con ellos. Todo lo que digas está grabado y puede usarse en contra de tu reclamo. Una vez que firmes con nosotros, el ajustador habla con nosotros, no contigo. Esa es una de las primeras protecciones que ponemos.">Don't worry, but stop talking to them. Anything you say is recorded and can be used against your claim. Once you sign with us, the adjuster speaks to us, not to you. That's one of the first protections we put in place.</div></div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q" onclick="toggleFaq(this)"><span data-en="Do you speak Spanish?" data-es="¿Hablan español?">Do you speak Spanish?</span> <span class="plus">+</span></div>
+        <div class="faq__a"><div class="faq__a-inner" data-en="Yes. We're fully bilingual. Our entire team speaks Spanish and English. It's not a feature for us, it's our baseline. We serve the Rio Grande Valley and Houston's Hispanic community." data-es="Sí. Somos completamente bilingües. Todo nuestro equipo habla español e inglés. No es una característica - es nuestra base. Servimos al Rio Grande Valley y a la comunidad hispana de Houston.">Yes. We're fully bilingual. Our entire team speaks Spanish and English. It's not a feature for us, it's our baseline. We serve the Rio Grande Valley and Houston's Hispanic community.</div></div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q" onclick="toggleFaq(this)"><span data-en="Will I actually talk to a lawyer?" data-es="¿Voy a hablar con un abogado de verdad?">Will I actually talk to a lawyer?</span> <span class="plus">+</span></div>
+        <div class="faq__a"><div class="faq__a-inner" data-en="Guaranteed. You get attorney access at every critical decision point in your case: during the investigation, at every settlement offer, and through all litigation milestones. You're never just talking to a case manager - you have direct access to your attorney when it matters." data-es="Garantizado. Tienes acceso al abogado en cada punto de decisión crítico de tu caso: durante la investigación, en cada oferta de acuerdo, y en todos los hitos del litigio. Nunca hablas solo con un administrador de casos - tienes acceso directo a tu abogado cuando importa.">Guaranteed. You get attorney access at every critical decision point in your case: during the investigation, at every settlement offer, and through all litigation milestones. You're never just talking to a case manager - you have direct access to your attorney when it matters.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CTA Band ═══════ -->
+  <section class="cta-band">
+    <h2 data-en="Injured? Let's talk today." data-es="¿Tuviste un choque? Hablemos hoy.">Injured? Let's talk today.</h2>
+    <p data-en="One call. No commitment. Free consultation. Same-day response guaranteed." data-es="Una llamada. Sin compromiso. Consulta gratuita. Respuesta el mismo día garantizada.">One call. No commitment. Free consultation. Same-day response guaranteed.</p>
+    <a class="btn btn--secondary-light" href="#intake" style="font-size:17px;padding:18px 32px;"><span data-en="Get My Free Consultation →" data-es="Consulta Gratuita →">Get My Free Consultation &rarr;</span></a>
+  </section>
+
+  <!-- ═══════ Footer ═══════ -->
+  <footer class="footer">
+    <div class="footer__row">
+      <div>
+        <img class="footer__mark" src="assets/logos/wordmark-v2-black.png" alt="Carreras Law Firm">
+        <div style="display:flex;gap:16px;align-items:center;margin-top:20px;">
+          <a href="https://www.htla.org/" target="_blank" rel="noreferrer"><img src="assets/associations/htla-logo.avif" alt="HTLA Member" style="height:40px;opacity:.7;transition:opacity .24s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"></a>
+          <a href="https://www.ttla.com/" target="_blank" rel="noreferrer"><img src="assets/associations/ttla-logo.webp" alt="TTLA Member" style="height:40px;opacity:.7;transition:opacity .24s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"></a>
+          <a href="https://www.hyla.org/" target="_blank" rel="noreferrer"><img src="assets/associations/hyla-logo.png" alt="HYLA Member" style="height:40px;opacity:.7;transition:opacity .24s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"></a>
+          <a href="https://www.mabah.com/" target="_blank" rel="noreferrer"><img src="assets/associations/maba-logo.png" alt="MABA Member" style="height:40px;opacity:.7;transition:opacity .24s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"></a>
+        </div>
+      </div>
+      <div class="footer__cols">
+        <div>
+          <span class="lbl" data-en="The Firm" data-es="La Firma">The Firm</span>
+          <a href="#areas" data-en="Practice Areas" data-es="Áreas de Práctica">Practice Areas</a>
+          <a href="#markin" data-en="About Markin" data-es="Sobre Markin">About Markin</a>
+          <a href="#results" data-en="Case Values" data-es="Valores de Caso">Case Values</a>
+          <a href="#process" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</a>
+          <a href="#faq" data-en="FAQ" data-es="Preguntas Frecuentes">FAQ</a>
+        </div>
+        <div>
+          <span class="lbl" data-en="Contact" data-es="Contacto">Contact</span>
+          <a href="tel:+13466802695">(346) 680-2695</a>
+          <a href="sms:+13466802695" data-en="Text us" data-es="Enviar texto">Text us</a>
+          <a href="https://wa.me/13466802695" target="_blank" rel="noreferrer">WhatsApp</a>
+          <a href="mailto:info@carreraslawfirm.com">info@carreraslawfirm.com</a>
+          <a href="https://maps.google.com/?q=440+Louisiana+St+Suite+972+Houston+TX+77002" target="_blank" rel="noreferrer">440 Louisiana St., Suite 972<br>Houston, TX 77002</a>
+        </div>
+        <div>
+          <span class="lbl" data-en="Connect" data-es="Síguenos">Connect</span>
+          <a href="https://www.youtube.com/@CarrerasLawFirm" target="_blank" rel="noreferrer">YouTube</a>
+          <a href="https://www.instagram.com/carreraslawfirm" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://calendar.app.google/SapEjTV8U5ir7yfs7" target="_blank" rel="noreferrer" data-en="Book Video Consultation" data-es="Agendar Videollamada">Book Video Consultation</a>
+          <a href="https://drive.google.com/uc?export=download&id=1CPcfrh-4d4_hfvUZLu3CajHxWGuhhzSu" data-en="Save Our Number" data-es="Guarda Nuestro Número">Save Our Number</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>Carreras Law Firm PLLC</span>
+      <span style="display:flex;gap:16px;">
+        <a href="terms.html" style="color:var(--ink-40);transition:color .24s" onmouseover="this.style.color='var(--klein)'" onmouseout="this.style.color='var(--ink-40)'">Terms of Service</a>
+        <a href="privacy.html" style="color:var(--ink-40);transition:color .24s" onmouseover="this.style.color='var(--klein)'" onmouseout="this.style.color='var(--ink-40)'">Privacy Policy</a>
+      </span>
+      <span>&copy; 2026. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <!-- ═══════ Sticky Bottom CTA ═══════ -->
+  <div class="sticky-cta" id="stickyCta" style="display:none">
+    <div class="sticky-cta__text"><span data-en="Free consultation" data-es="Consulta gratuita">Free consultation</span> <span data-en="No fees unless we win" data-es="Sin costo si no ganamos">No fees unless we win</span></div>
+    <a class="btn btn--primary btn--sm" href="#intake"><span data-en="Talk to an Attorney →" data-es="Habla con un Abogado →">Talk to an Attorney &rarr;</span></a>
+  </div>
+
+  <!-- ═══════ SMS Consent Modal ═══════ -->
+  <div class="consent-overlay" id="consentOverlay">
+    <div class="consent-modal">
+      <button class="consent-modal__close" onclick="closeConsent()">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <h3 data-en="One last step" data-es="Un último paso">One last step</h3>
+      <p data-en="We'd like to keep you updated about your case via text message." data-es="Nos gustaría mantenerte informado sobre tu caso por mensaje de texto.">We'd like to keep you updated about your case via text message.</p>
+      <div id="consentFields" style="display:flex;flex-direction:column;gap:12px;">
+        <label class="lbl"><span data-en="Full Name" data-es="Nombre Completo">Full Name</span>
+          <input class="field" id="consentName" placeholder="Maria de la Garza" autocomplete="name">
+        </label>
+        <label class="lbl"><span data-en="Phone" data-es="Teléfono">Phone</span>
+          <input class="field" id="consentPhone" placeholder="(956) 555-0123" autocomplete="tel">
+        </label>
+      </div>
+      <label class="consent-checkbox">
+        <input type="checkbox" id="consentCheck">
+        <span data-en="I agree to receive SMS/text messages from Carreras Law Firm. Message & data rates may apply. Reply STOP to opt out. By checking this box, I accept the <a href='terms.html' target='_blank'>Terms of Service</a> and <a href='privacy.html' target='_blank'>Privacy Policy</a>." data-es="Acepto recibir mensajes SMS/texto de Carreras Law Firm. Pueden aplicar cargos por mensajes y datos. Responde STOP para cancelar. Al marcar esta casilla, acepto los <a href='terms.html' target='_blank'>Términos de Servicio</a> y la <a href='privacy.html' target='_blank'>Política de Privacidad</a>.">I agree to receive SMS/text messages from Carreras Law Firm. Message &amp; data rates may apply. Reply STOP to opt out. By checking this box, I accept the <a href="terms.html" target="_blank">Terms of Service</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>.</span>
+      </label>
+      <button class="btn btn--primary-lg btn--full" id="consentSubmit" onclick="submitConsent()">
+        <span data-en="Continue" data-es="Continuar">Continue</span>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // ─── Language toggle ───
+    let currentLang = 'en';
+    function toggleLang() {
+      currentLang = currentLang === 'en' ? 'es' : 'en';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const text = el.getAttribute('data-' + currentLang);
+        if (text) {
+          if (el.tagName === 'INPUT') { el.placeholder = text; }
+          else { el.innerHTML = text; }
+        }
+      });
+      document.querySelectorAll('.header__lang').forEach(el => {
+        el.innerHTML = currentLang === 'en' ? '<b>EN</b>&nbsp;&middot;&nbsp;ES' : 'EN&nbsp;&middot;&nbsp;<b>ES</b>';
+      });
+      document.documentElement.lang = currentLang;
+      // Show immigration note only in Spanish
+      const immNote = document.getElementById('immigrationNote');
+      if (immNote) immNote.style.display = currentLang === 'es' ? 'flex' : 'none';
+    }
+
+    // ─── Mobile nav ───
+    function toggleMobileNav() {
+      document.getElementById('mobileNav').classList.toggle('open');
+    }
+
+    // ─── Intake form submission ───
+    function submitIntake() {
+      const name = document.getElementById('inName').value.trim();
+      const phone = document.getElementById('inPhone').value.trim();
+      if (!name || !phone) {
+        if (!name) document.getElementById('inName').style.borderColor = '#7A1F0F';
+        if (!phone) document.getElementById('inPhone').style.borderColor = '#7A1F0F';
+        return;
+      }
+      // Show consent popup with name/phone already filled
+      openConsent({
+        hasName: name,
+        hasPhone: phone,
+        callback: () => {
+          document.getElementById('formFields').classList.add('hidden');
+          document.getElementById('confirmation').classList.add('active');
+          const first = name.split(' ')[0];
+          const greeting = currentLang === 'es' ? '¡Gracias, ' + first + '!' : 'Thank you, ' + first + '!';
+          document.getElementById('confGreeting').textContent = greeting;
+          startTimer(5 * 60);
+        }
+      });
+    }
+
+    // ─── Timer ───
+    let timerInterval;
+    function startTimer(seconds) {
+      let remaining = seconds;
+      updateTimerDisplay(remaining);
+      timerInterval = setInterval(() => {
+        remaining--;
+        if (remaining <= 0) { clearInterval(timerInterval); remaining = 0; }
+        updateTimerDisplay(remaining);
+      }, 1000);
+    }
+    function updateTimerDisplay(sec) {
+      const m = Math.floor(sec / 60);
+      const s = sec % 60;
+      document.getElementById('timerDisplay').textContent = m + ':' + String(s).padStart(2, '0');
+    }
+
+    // ─── Checklist ───
+    function toggleCheck(el) {
+      el.classList.toggle('checked');
+      const total = document.querySelectorAll('.conf__check').length;
+      const done = document.querySelectorAll('.conf__check.checked').length;
+      document.getElementById('checkCount').textContent = done + '/' + total + ' ready';
+      document.getElementById('checkBar').style.width = (done / total * 100) + '%';
+    }
+
+    // ─── FAQ accordion ───
+    function toggleFaq(el) {
+      el.parentElement.classList.toggle('open');
+    }
+
+    // ─── Sticky CTA on scroll ───
+    window.addEventListener('scroll', () => {
+      const hero = document.querySelector('.hero');
+      const sticky = document.getElementById('stickyCta');
+      if (window.scrollY > hero.offsetHeight) { sticky.style.display = 'flex'; }
+      else { sticky.style.display = 'none'; }
+    });
+
+    // Reset field borders on focus
+    document.querySelectorAll('.intake .field').forEach(f => {
+      f.addEventListener('focus', () => { f.style.borderColor = ''; });
+    });
+
+    // ─── SMS Consent Modal ───
+    let consentCallback = null;
+    let consentHasContactInfo = false;
+
+    function openConsent(opts) {
+      // opts: { hasName, hasPhone, callback, action }
+      consentHasContactInfo = opts.hasName && opts.hasPhone;
+      const fields = document.getElementById('consentFields');
+      if (consentHasContactInfo) {
+        fields.style.display = 'none';
+        if (opts.hasName) document.getElementById('consentName').value = opts.hasName;
+        if (opts.hasPhone) document.getElementById('consentPhone').value = opts.hasPhone;
+      } else {
+        fields.style.display = 'flex';
+        document.getElementById('consentName').value = '';
+        document.getElementById('consentPhone').value = '';
+      }
+      document.getElementById('consentCheck').checked = false;
+      consentCallback = opts.callback || null;
+      document.getElementById('consentOverlay').classList.add('open');
+    }
+
+    function closeConsent() {
+      document.getElementById('consentOverlay').classList.remove('open');
+    }
+
+    function submitConsent() {
+      const check = document.getElementById('consentCheck');
+      if (!check.checked) {
+        check.style.outline = '2px solid #7A1F0F';
+        check.style.outlineOffset = '2px';
+        setTimeout(() => { check.style.outline = ''; check.style.outlineOffset = ''; }, 2000);
+        return;
+      }
+      if (!consentHasContactInfo) {
+        const n = document.getElementById('consentName').value.trim();
+        const p = document.getElementById('consentPhone').value.trim();
+        if (!n || !p) {
+          if (!n) document.getElementById('consentName').style.borderColor = '#7A1F0F';
+          if (!p) document.getElementById('consentPhone').style.borderColor = '#7A1F0F';
+          return;
+        }
+      }
+      // Save callback before closing (closeConsent doesn't clear it anymore)
+      const cb = consentCallback;
+      closeConsent();
+      consentCallback = null;
+      if (cb) cb();
+    }
+
+    // Intercept contact channel clicks for consent
+    document.querySelectorAll('.channel[href^="tel:"], .channel[href^="sms:"], .channel[href*="wa.me"]').forEach(ch => {
+      ch.addEventListener('click', function(e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        openConsent({
+          hasName: false,
+          hasPhone: false,
+          callback: () => { window.location.href = href; }
+        });
+      });
+    });
+
+    // Reset consent modal field borders on focus
+    document.querySelectorAll('.consent-modal .field').forEach(f => {
+      f.addEventListener('focus', () => { f.style.borderColor = ''; });
+    });
+
+    // Close consent modal on overlay click
+    document.getElementById('consentOverlay').addEventListener('click', function(e) {
+      if (e.target === this) closeConsent();
+    });
+  </script>
+</body>
+</html>

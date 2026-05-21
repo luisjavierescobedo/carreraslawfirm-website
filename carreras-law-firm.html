@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carreras Law Firm — Injury & Insurance</title>
+  <link rel="icon" type="image/png" href="assets/logos/logomark-v1-blue.png">
+  <style>
+    /* =========================================================================
+       Carreras Law Firm — Design Tokens
+       ========================================================================= */
+    @font-face { font-family: "General Sans"; src: url("assets/fonts/GeneralSans-Light.otf") format("opentype"); font-weight: 300; font-style: normal; font-display: swap; }
+    @font-face { font-family: "General Sans"; src: url("assets/fonts/GeneralSans-Regular.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: "General Sans"; src: url("assets/fonts/GeneralSans-Italic.otf") format("opentype"); font-weight: 400; font-style: italic; font-display: swap; }
+    @font-face { font-family: "General Sans"; src: url("assets/fonts/GeneralSans-Medium.otf") format("opentype"); font-weight: 500; font-style: normal; font-display: swap; }
+    @font-face { font-family: "General Sans"; src: url("assets/fonts/GeneralSans-Semibold.otf") format("opentype"); font-weight: 600; font-style: normal; font-display: swap; }
+    @font-face { font-family: "General Sans"; src: url("assets/fonts/GeneralSans-Bold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Manrope"; src: url("assets/fonts/Manrope-Light.ttf") format("truetype"); font-weight: 300; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Manrope"; src: url("assets/fonts/Manrope-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Manrope"; src: url("assets/fonts/Manrope-Medium.ttf") format("truetype"); font-weight: 500; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Manrope"; src: url("assets/fonts/Manrope-SemiBold.ttf") format("truetype"); font-weight: 600; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Manrope"; src: url("assets/fonts/Manrope-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+
+    :root {
+      --clf-klein-blue: #002FA7;
+      --clf-light-blue: #4185D0;
+      --clf-cream: #FEF9F6;
+      --clf-black: #0F0F0F;
+      --clf-error: #7A1F0F;
+      --clf-cream-2: #F4EFEB;
+      --clf-cream-3: #E8E2DC;
+      --clf-ink: #0F0F0F;
+      --clf-ink-60: rgba(15, 15, 15, 0.60);
+      --clf-ink-40: rgba(15, 15, 15, 0.40);
+      --clf-ink-10: rgba(15, 15, 15, 0.08);
+      --clf-on-blue: #FEF9F6;
+      --clf-on-blue-muted: rgba(254, 249, 246, 0.55);
+      --clf-on-blue-hairline: rgba(254, 249, 246, 0.18);
+      --clf-on-blue-fill: rgba(254, 249, 246, 0.08);
+      --clf-font-display: "General Sans", "Inter", system-ui, sans-serif;
+      --clf-font-body: "Manrope", "Inter", system-ui, sans-serif;
+      --clf-radius-xs: 4px;
+      --clf-radius-sm: 8px;
+      --clf-radius-md: 14px;
+      --clf-radius-lg: 22px;
+      --clf-radius-xl: 32px;
+      --clf-radius-pill: 999px;
+      --clf-shadow-1: 0 1px 2px rgba(15,15,15,.04), 0 2px 6px rgba(15,15,15,.04);
+      --clf-shadow-2: 0 4px 12px rgba(15,15,15,.06), 0 12px 32px rgba(15,15,15,.06);
+      --clf-shadow-blue: 0 12px 32px rgba(0,47,167,.18);
+      --clf-ease: cubic-bezier(0.32, 0.72, 0.24, 1);
+      --clf-dur-fast: 140ms;
+      --clf-dur-base: 240ms;
+      --clf-dur-slow: 420ms;
+      --clf-gutter: clamp(20px, 4vw, 64px);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--clf-cream); color: var(--clf-ink); font-family: var(--clf-font-body); letter-spacing: -0.02em; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    .clf-app { min-height: 100vh; }
+
+    /* ─── Buttons ─── */
+    .btn {
+      font-family: var(--clf-font-display); font-weight: 500; font-size: 15px;
+      letter-spacing: -0.02em; border: none; border-radius: 999px;
+      padding: 14px 24px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px;
+      white-space: nowrap;
+      transition: background var(--clf-dur-base) var(--clf-ease), color var(--clf-dur-base) var(--clf-ease), transform var(--clf-dur-fast) var(--clf-ease);
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn--sm { font-size: 13px; padding: 10px 16px; }
+    .btn--primary { background: var(--clf-klein-blue); color: var(--clf-cream); }
+    .btn--primary:hover { background: #003ED1; }
+    .btn--secondary { background: transparent; color: var(--clf-ink); border: 1.5px solid var(--clf-ink); }
+    .btn--secondary:hover { background: var(--clf-ink); color: var(--clf-cream); }
+    .btn--secondary-light { background: transparent; color: var(--clf-cream); border: 1.5px solid var(--clf-cream); }
+    .btn--secondary-light:hover { background: var(--clf-cream); color: var(--clf-ink); }
+    .btn--ghost { background: transparent; color: var(--clf-klein-blue); padding: 14px 4px; }
+    .btn--ghost-light { background: transparent; color: var(--clf-cream); padding: 14px 4px; }
+
+    /* ─── Header ─── */
+    .clf-header {
+      position: sticky; top: 0; z-index: 50;
+      display: grid; grid-template-columns: 1fr 2fr 1fr; align-items: center;
+      padding: 18px var(--clf-gutter);
+      background: rgba(254, 249, 246, 0.85);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(15, 15, 15, 0.06);
+    }
+    .clf-header__brand img { height: 26px; }
+    .clf-header__nav { display: flex; gap: 28px; justify-content: center; font-size: 14px; letter-spacing: -0.015em; white-space: nowrap; }
+    .clf-header__nav a { transition: color var(--clf-dur-base) var(--clf-ease); }
+    .clf-header__nav a:hover { color: var(--clf-klein-blue); }
+    .clf-header__right { display: flex; gap: 18px; align-items: center; justify-content: flex-end; }
+    .clf-header__lang { font-size: 12px; letter-spacing: 0.06em; color: var(--clf-ink-60); text-transform: uppercase; }
+    .clf-header__lang b { color: var(--clf-ink); }
+
+    /* ─── Hero ─── */
+    .clf-hero {
+      display: grid; grid-template-columns: 1.05fr 1fr;
+      gap: 0; padding: 0 var(--clf-gutter); margin-top: 24px;
+    }
+    .clf-hero__photo {
+      background: #0F0F0F; border-radius: var(--clf-radius-lg);
+      overflow: hidden; aspect-ratio: 4/5;
+    }
+    .clf-hero__photo img { width: 100%; height: 100%; object-fit: cover; }
+    .clf-hero__panel {
+      background: var(--clf-klein-blue); color: var(--clf-cream);
+      border-radius: var(--clf-radius-lg);
+      padding: 56px 56px 40px;
+      display: flex; flex-direction: column; gap: 24px; justify-content: space-between;
+      margin-left: -32px; align-self: stretch;
+      box-shadow: var(--clf-shadow-blue);
+    }
+    .clf-hero__eyebrow {
+      display: flex; gap: 18px; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(254,249,246,.7);
+    }
+    .clf-hero__title {
+      font-family: var(--clf-font-display); font-weight: 600; font-size: clamp(34px, 4vw, 58px);
+      line-height: 0.98; letter-spacing: -0.03em; margin: 0;
+    }
+    .clf-hero__title-ghost { color: rgba(254, 249, 246, 0.55); }
+    .clf-hero__actions { display: flex; gap: 12px; align-items: center; }
+    .clf-hero__foot { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; padding-top: 24px; border-top: 1px solid rgba(254,249,246,.18); font-size: 12.5px; line-height: 1.5; color: rgba(254,249,246,.78); }
+    .clf-hero__foot b { color: var(--clf-cream); font-weight: 600; }
+
+    /* ─── Section primitives ─── */
+    .clf-section { padding: 96px var(--clf-gutter); max-width: 100%; }
+    .clf-section--blue { background: var(--clf-klein-blue); color: var(--clf-cream); margin: 96px var(--clf-gutter) 0; padding: 64px 56px 80px; border-radius: var(--clf-radius-xl); }
+    .clf-section__head {
+      display: grid; grid-template-columns: 60px 160px 1fr auto; gap: 20px;
+      align-items: center; font-size: 12px; letter-spacing: 0.04em; color: var(--clf-ink-60);
+      padding-bottom: 20px; border-bottom: 1px solid var(--clf-ink-10);
+    }
+    .clf-section__head--on-blue { color: rgba(254,249,246,.7); border-color: rgba(254,249,246,.2); }
+    .clf-section__head .right { text-align: right; }
+    .clf-section__num { font-family: var(--clf-font-body); }
+    .clf-section__title {
+      font-family: var(--clf-font-display); font-weight: 600; font-size: clamp(40px, 5vw, 72px);
+      letter-spacing: -0.03em; line-height: 0.95; margin: 36px 0 24px; max-width: 16ch;
+    }
+    .clf-section__title--on-blue .ghost { color: rgba(254, 249, 246, 0.55); }
+    .clf-section__lede { font-size: 18px; line-height: 1.4; color: var(--clf-ink-60); max-width: 56ch; margin: 0 0 48px; }
+
+    /* ─── Principios ─── */
+    .clf-principios { display: flex; flex-direction: column; gap: 0; margin-top: 24px; }
+    .clf-principios__row {
+      display: grid; grid-template-columns: 240px 1fr; gap: 32px; align-items: start;
+      padding: 24px 0; border-top: 1px solid rgba(254,249,246,.18);
+    }
+    .clf-principios__row:last-child { border-bottom: 1px solid rgba(254,249,246,.18); }
+    .clf-principios__row h3 { font-family: var(--clf-font-display); font-weight: 600; font-size: 36px; letter-spacing: -0.03em; color: var(--clf-cream); margin: 0; line-height: 1; }
+    .clf-principios__row p { font-size: 15px; line-height: 1.5; color: rgba(254,249,246,.92); margin: 0; max-width: 60ch; }
+
+    /* ─── Practice areas ─── */
+    .clf-areas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .clf-area {
+      border: 1px solid var(--clf-ink-10); border-radius: var(--clf-radius-md);
+      padding: 24px; background: #FFFFFF;
+      display: flex; flex-direction: column; gap: 12px;
+      transition: border-color var(--clf-dur-base) var(--clf-ease), transform var(--clf-dur-base) var(--clf-ease);
+    }
+    .clf-area:hover { border-color: var(--clf-ink); }
+    .clf-area header { display: flex; justify-content: space-between; align-items: center; color: var(--clf-ink-60); font-size: 12px; }
+    .clf-area header .num { font-weight: 600; letter-spacing: 0.04em; }
+    .clf-area header .icon { color: var(--clf-klein-blue); }
+    .clf-area h3 { font-family: var(--clf-font-display); font-weight: 600; font-size: 22px; letter-spacing: -0.03em; margin: 0; line-height: 1.1; }
+    .clf-area p { font-size: 14px; line-height: 1.5; color: var(--clf-ink-60); margin: 0; }
+    .clf-area .link { color: var(--clf-klein-blue); font-size: 13px; font-weight: 500; margin-top: auto; transition: color var(--clf-dur-base) var(--clf-ease); }
+    .clf-area .link:hover { color: var(--clf-ink); }
+
+    /* ─── Cases ─── */
+    .clf-cases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 24px; }
+    .clf-case { border: 1px solid var(--clf-ink-10); border-radius: var(--clf-radius-md); padding: 20px; background: var(--clf-cream-2); }
+    .clf-case__amount { font-family: var(--clf-font-display); font-weight: 600; font-size: 36px; letter-spacing: -0.03em; line-height: 1; color: var(--clf-klein-blue); }
+    .clf-case p { font-size: 14px; line-height: 1.4; color: var(--clf-ink); margin: 14px 0 0; }
+    .clf-case__weeks { display: inline-block; margin-top: 16px; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--clf-ink-60); }
+    .clf-disclaimer { margin-top: 24px; font-size: 12px; color: var(--clf-ink-40); max-width: 60ch; }
+
+    /* ─── Process ─── */
+    .clf-process { list-style: none; padding: 0; margin: 24px 0 0; display: flex; flex-direction: column; gap: 0; }
+    .clf-process li {
+      display: grid; grid-template-columns: 80px 1fr; gap: 32px;
+      padding: 24px 0; border-top: 1px solid rgba(254,249,246,.18);
+    }
+    .clf-process li:last-child { border-bottom: 1px solid rgba(254,249,246,.18); }
+    .clf-process .n { font-family: var(--clf-font-display); font-weight: 600; font-size: 36px; letter-spacing: -0.03em; color: rgba(254,249,246,.5); line-height: 1; }
+    .clf-process h4 { font-family: var(--clf-font-display); font-weight: 600; font-size: 28px; letter-spacing: -0.03em; margin: 0 0 6px; line-height: 1; }
+    .clf-process p { font-size: 15px; line-height: 1.5; color: rgba(254,249,246,.78); margin: 0; max-width: 60ch; }
+
+    /* ─── Markin teaser ─── */
+    .clf-markin {
+      margin: 96px var(--clf-gutter) 0; background: var(--clf-black); color: var(--clf-cream);
+      border-radius: var(--clf-radius-xl); overflow: hidden;
+      display: grid; grid-template-columns: 1fr 1fr; min-height: 460px;
+    }
+    .clf-markin__photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.02); }
+    .clf-markin__copy { padding: 64px; display: flex; flex-direction: column; gap: 18px; justify-content: center; }
+    .clf-markin__copy .eyebrow { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(254, 249, 246, 0.55); }
+    .clf-markin__copy h2 { font-family: var(--clf-font-display); font-weight: 600; font-size: clamp(48px, 6vw, 96px); letter-spacing: -0.04em; line-height: 0.9; margin: 0; }
+    .clf-markin__copy p { font-size: 17px; line-height: 1.5; color: rgba(254,249,246,.78); margin: 0; max-width: 50ch; }
+    .clf-markin__copy .btn { align-self: flex-start; margin-top: 12px; }
+
+    /* ─── Footer ─── */
+    .clf-footer { background: var(--clf-cream-2); padding: 64px var(--clf-gutter) 28px; margin-top: 96px; border-top: 1px solid var(--clf-ink-10); }
+    .clf-footer .row { display: grid; grid-template-columns: 240px 1fr; gap: 64px; align-items: start; }
+    .clf-footer .mark { height: 32px; }
+    .clf-footer .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .clf-footer .cols .lbl { display: block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--clf-ink-40); margin-bottom: 14px; }
+    .clf-footer .cols a { display: block; font-size: 14px; line-height: 1.5; color: var(--clf-ink); margin-bottom: 6px; transition: color var(--clf-dur-base) var(--clf-ease); }
+    .clf-footer .cols a:hover { color: var(--clf-klein-blue); }
+    .clf-footer .bot { display: flex; justify-content: space-between; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--clf-ink-10); font-size: 12px; color: var(--clf-ink-40); }
+
+    /* ─── Modal ─── */
+    .clf-modal { position: fixed; inset: 0; background: rgba(15,15,15,.55); display: none; align-items: center; justify-content: center; z-index: 100; padding: 24px; backdrop-filter: blur(4px); }
+    .clf-modal.open { display: flex; }
+    .clf-modal__card { width: min(560px, 100%); background: var(--clf-cream); border-radius: var(--clf-radius-xl); padding: 32px; display: flex; flex-direction: column; gap: 14px; max-height: 90vh; overflow: auto; }
+    .clf-modal__card header { display: flex; justify-content: space-between; align-items: center; }
+    .clf-modal__card .eyebrow { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--clf-ink-60); }
+    .clf-modal__card .x { background: var(--clf-cream-2); border: none; width: 32px; height: 32px; border-radius: 999px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; color: var(--clf-ink); }
+    .clf-modal__card .x:hover { background: var(--clf-cream-3); }
+    .clf-modal__card h3 { font-family: var(--clf-font-display); font-weight: 600; font-size: 32px; letter-spacing: -0.03em; line-height: 1; margin: 4px 0 0; }
+    .clf-modal__card > p { font-size: 15px; line-height: 1.5; color: var(--clf-ink-60); margin: 0; }
+    .clf-modal__card .lbl { display: flex; flex-direction: column; gap: 6px; font-size: 11px; letter-spacing: 0.08em; color: var(--clf-ink-60); text-transform: uppercase; }
+    .clf-modal__card .field { font-family: var(--clf-font-body); font-size: 15px; letter-spacing: -0.02em; color: var(--clf-ink); background: #fff; border: 1.5px solid var(--clf-cream-3); border-radius: 8px; padding: 12px 14px; transition: border-color var(--clf-dur-base) var(--clf-ease), box-shadow var(--clf-dur-base) var(--clf-ease); width: 100%; }
+    .clf-modal__card .field:focus { outline: none; border-color: var(--clf-klein-blue); box-shadow: 0 0 0 4px rgba(0,47,167,.10); }
+    .clf-modal__card .checkgrid { display: flex; flex-wrap: wrap; gap: 8px; }
+    .clf-modal__card .chip { font-family: var(--clf-font-body); font-size: 12.5px; letter-spacing: -0.01em; background: var(--clf-cream-2); border: 1px solid var(--clf-cream-3); border-radius: 999px; padding: 8px 14px; cursor: pointer; transition: background var(--clf-dur-base) var(--clf-ease), color var(--clf-dur-base) var(--clf-ease); }
+    .clf-modal__card .chip:hover { background: var(--clf-ink); color: var(--clf-cream); border-color: transparent; }
+    .clf-modal__card .chip.selected { background: var(--clf-klein-blue); color: var(--clf-cream); border-color: transparent; }
+    .clf-modal__card footer { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
+    .clf-modal__card .confirm { display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: rgba(0,47,167,.06); border-radius: 8px; color: var(--clf-klein-blue); font-weight: 600; font-size: 14px; }
+
+    /* ─── Step visibility ─── */
+    .step { display: none; }
+    .step.active { display: contents; }
+
+    /* ─── SVG icon helper ─── */
+    .icon-svg { display: inline-flex; align-items: center; justify-content: center; }
+    .icon-svg svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+</head>
+<body>
+  <div class="clf-app">
+
+    <!-- ═══════ Header ═══════ -->
+    <header class="clf-header">
+      <a class="clf-header__brand" href="#">
+        <img src="assets/logos/logotipo-v2-blue.png" alt="Carreras Law Firm">
+      </a>
+      <nav class="clf-header__nav">
+        <a href="#firm">La firma</a>
+        <a href="#cases">Casos</a>
+        <a href="#process">Como trabajamos</a>
+        <a href="#markin">Markin</a>
+        <a href="#contact">Contacto</a>
+      </nav>
+      <div class="clf-header__right">
+        <span class="clf-header__lang">EN&nbsp;&middot;&nbsp;<b>ES</b></span>
+        <button class="btn btn--primary btn--sm" onclick="openIntake()">Pide tu consulta</button>
+      </div>
+    </header>
+
+    <!-- ═══════ Hero ═══════ -->
+    <section class="clf-hero">
+      <div class="clf-hero__photo">
+        <img src="assets/photography/markin-portrait-01.jpg" alt="">
+      </div>
+      <div class="clf-hero__panel">
+        <div class="clf-hero__eyebrow">
+          <span>0.0</span>
+          <span>Injury &amp; Insurance &middot; Rio Grande Valley, TX</span>
+        </div>
+        <h1 class="clf-hero__title">
+          Humanizar la figura del abogado. <span class="clf-hero__title-ghost">Transformar la gestion legal en una experiencia mas clara, cercana y comprensible.</span>
+        </h1>
+        <div class="clf-hero__actions">
+          <button class="btn btn--primary" onclick="openIntake()">Pide tu consulta</button>
+          <a class="btn btn--ghost-light" href="#process">Como trabajamos &rarr;</a>
+        </div>
+        <div class="clf-hero__foot">
+          <div><b>440 Louisiana St., Suite 972</b><br>Houston, TX 77002</div>
+          <div><b>(346) 680 2695</b><br>markin@carreraslawfirm.com</div>
+          <div><b>Atendemos en espanol</b><br>Llamada gratis &middot; respuesta el mismo dia</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ Principios Rectores ═══════ -->
+    <section class="clf-section clf-section--blue" id="firm">
+      <div class="clf-section__head clf-section__head--on-blue">
+        <span class="clf-section__num">1.3</span>
+        <span>Fundamentos</span>
+        <span>Principios Rectores</span>
+        <span class="right">Carreras Law Firm</span>
+      </div>
+      <h2 class="clf-section__title clf-section__title--on-blue">PRINCIPIOS<br>RECTORES</h2>
+      <div class="clf-principios">
+        <div class="clf-principios__row">
+          <h3>Humanidad</h3>
+          <p>Detras de la estructura hay una persona y detras del metodo hay un proceso transparente.</p>
+        </div>
+        <div class="clf-principios__row">
+          <h3>Confianza</h3>
+          <p>No se exige, se construye. La confianza es el resultado de un sistema que cumple lo que promete y no desaparece cuando surgen dificultades.</p>
+        </div>
+        <div class="clf-principios__row">
+          <h3>Sistema</h3>
+          <p>El orden no es burocracia, es proteccion. Un diseno operativo que permite saber donde esta cada caso.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ Practice Areas ═══════ -->
+    <section class="clf-section" id="cases">
+      <div class="clf-section__head">
+        <span class="clf-section__num">2.0</span>
+        <span>Practica</span>
+        <span>Areas de representacion</span>
+        <span class="right">Injury &amp; Insurance</span>
+      </div>
+      <h2 class="clf-section__title">Lo que hacemos.</h2>
+      <p class="clf-section__lede">Negligencia. Eso es lo que tienen en comun todos los casos que tomamos. Si alguien tuvo que cuidar y no cuido, eso es nuestro terreno.</p>
+      <div class="clf-areas">
+        <article class="clf-area">
+          <header>
+            <span class="num">01</span>
+            <span class="icon icon-svg"><svg viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-2-3.2-2H7v9m12 0H7m12 0a2 2 0 1 1-4 0m4 0a2 2 0 0 0-4 0M7 17a2 2 0 1 1-4 0m4 0a2 2 0 0 0-4 0M1 14h4"/><path d="M6 8H4a2 2 0 0 0-2 2v4"/></svg></span>
+          </header>
+          <h3>Choques de auto</h3>
+          <p>Recuperar lo que la aseguradora no quiere pagar. Medicos, terapia, perdida de ingresos.</p>
+          <a href="#" class="link">Cuentanos que paso &rarr;</a>
+        </article>
+        <article class="clf-area">
+          <header>
+            <span class="num">02</span>
+            <span class="icon icon-svg"><svg viewBox="0 0 24 24"><path d="M5 18h1M19 18h1M14 2v4a1 1 0 0 0 1 1h2M2 9v5a1 1 0 0 0 1 1h2M22 15V9a1 1 0 0 0-1-1h-2l-2-4h-6l-2 4H6a1 1 0 0 0-1 1v6"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/><path d="M9 18h6"/></svg></span>
+          </header>
+          <h3>Camiones comerciales</h3>
+          <p>18-wheelers, repartidores, vehiculos de empresa. Mas jugadores, mas exposicion.</p>
+          <a href="#" class="link">Cuentanos que paso &rarr;</a>
+        </article>
+        <article class="clf-area">
+          <header>
+            <span class="num">03</span>
+            <span class="icon icon-svg"><svg viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg></span>
+          </header>
+          <h3>Resbalones y caidas</h3>
+          <p>Tiendas, edificios, propiedades comerciales. El dueno es responsable de lo que pasa adentro.</p>
+          <a href="#" class="link">Cuentanos que paso &rarr;</a>
+        </article>
+        <article class="clf-area">
+          <header>
+            <span class="num">04</span>
+            <span class="icon icon-svg"><svg viewBox="0 0 24 24"><path d="M2 18v3h3"/><path d="M2 11v-1a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v1"/><path d="M12 4v4"/><path d="M10 4h4"/><path d="M2 15h20"/><path d="M22 18v3h-3"/></svg></span>
+          </header>
+          <h3>Lesiones laborales</h3>
+          <p>Compensacion del trabajador y terceros responsables. No firmes nada sin leerlo dos veces.</p>
+          <a href="#" class="link">Cuentanos que paso &rarr;</a>
+        </article>
+        <article class="clf-area">
+          <header>
+            <span class="num">05</span>
+            <span class="icon icon-svg"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m14.5 9-5 5"/><path d="m9.5 9 5 5"/></svg></span>
+          </header>
+          <h3>Disputas con aseguradoras</h3>
+          <p>Reclamos negados, retraso en pagos, mala fe. Cuando la poliza dice una cosa y hacen otra.</p>
+          <a href="#" class="link">Cuentanos que paso &rarr;</a>
+        </article>
+        <article class="clf-area">
+          <header>
+            <span class="num">06</span>
+            <span class="icon icon-svg"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg></span>
+          </header>
+          <h3>Lesiones por uber / lyft</h3>
+          <p>Rideshare tiene tres polizas distintas segun el momento. Sabemos cual aplica.</p>
+          <a href="#" class="link">Cuentanos que paso &rarr;</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══════ Case Results ═══════ -->
+    <section class="clf-section">
+      <div class="clf-section__head">
+        <span class="clf-section__num">2.1</span>
+        <span>Resultados</span>
+        <span>Acuerdos recientes</span>
+        <span class="right">Texas &middot; 2024-2025</span>
+      </div>
+      <div class="clf-cases">
+        <div class="clf-case">
+          <div class="clf-case__amount">$184,000</div>
+          <p>Choque por alcance, Expressway 83.</p>
+          <span class="clf-case__weeks">11 semanas</span>
+        </div>
+        <div class="clf-case">
+          <div class="clf-case__amount">$72,500</div>
+          <p>Resbalon en tienda de abarrotes, Pharr.</p>
+          <span class="clf-case__weeks">6 semanas</span>
+        </div>
+        <div class="clf-case">
+          <div class="clf-case__amount">$310,000</div>
+          <p>Camion de carga en la 281, fractura de femur.</p>
+          <span class="clf-case__weeks">9 meses</span>
+        </div>
+        <div class="clf-case">
+          <div class="clf-case__amount">$48,200</div>
+          <p>Aseguradora demoro el pago 14 meses. Mala fe.</p>
+          <span class="clf-case__weeks">3 meses</span>
+        </div>
+      </div>
+      <p class="clf-disclaimer">Resultados anteriores no garantizan resultados futuros. Cada caso depende de sus hechos.</p>
+    </section>
+
+    <!-- ═══════ Process ═══════ -->
+    <section class="clf-section clf-section--blue" id="process">
+      <div class="clf-section__head clf-section__head--on-blue">
+        <span class="clf-section__num">3.0</span>
+        <span>Operacion</span>
+        <span>Como trabajamos</span>
+        <span class="right">Sistema</span>
+      </div>
+      <h2 class="clf-section__title clf-section__title--on-blue">Cinco pasos.<br><span class="ghost">El orden no es burocracia, es proteccion.</span></h2>
+      <ol class="clf-process">
+        <li><span class="n">01</span><div><h4>Hablamos.</h4><p>Una llamada. Sin compromiso. Tu cuentas lo que paso, yo te digo si tienes un caso.</p></div></li>
+        <li><span class="n">02</span><div><h4>Firmamos.</h4><p>Carta de representacion. Desde ese momento la aseguradora nos habla a nosotros, no a ti.</p></div></li>
+        <li><span class="n">03</span><div><h4>Te llevamos al medico.</h4><p>Sin costo de tu bolsillo. La aseguradora paga al final, no tu al principio.</p></div></li>
+        <li><span class="n">04</span><div><h4>Negociamos.</h4><p>Con evidencia, con cuentas claras, con la poliza en la mano. No con promesas.</p></div></li>
+        <li><span class="n">05</span><div><h4>Cobras.</h4><p>Pagamos al medico, al hospital, a la firma. Lo que queda es tuyo y se firma antes.</p></div></li>
+      </ol>
+    </section>
+
+    <!-- ═══════ Markin Teaser ═══════ -->
+    <section class="clf-markin" id="markin">
+      <div class="clf-markin__photo">
+        <img src="assets/photography/markin-portrait-01.jpg" alt="Markin Carreras">
+      </div>
+      <div class="clf-markin__copy">
+        <span class="eyebrow">El detras de la firma</span>
+        <h2>Markin.</h2>
+        <p>Cada semana grabo videos cortos sobre como trabajan las aseguradoras en Texas. No para impresionar. Para que sepas que decir y que no decir cuando llamen.</p>
+        <a class="btn btn--secondary-light" href="markin.html">Ver los videos &rarr;</a>
+      </div>
+    </section>
+
+    <!-- ═══════ Footer ═══════ -->
+    <footer class="clf-footer" id="contact">
+      <div class="row">
+        <img class="mark" src="assets/logos/logotipo-v2-blue.png" alt="">
+        <div class="cols">
+          <div>
+            <span class="lbl">La firma</span>
+            <a href="#">Areas de practica</a>
+            <a href="#">Sobre Markin</a>
+            <a href="#">Casos recientes</a>
+          </div>
+          <div>
+            <span class="lbl">Contacto</span>
+            <a href="tel:3466802695">(346) 680 2695</a>
+            <a href="mailto:markin@carreraslawfirm.com">markin@carreraslawfirm.com</a>
+            <a>440 Louisiana St., Suite 972<br>Houston, TX 77002</a>
+          </div>
+          <div>
+            <span class="lbl">Disclaimers</span>
+            <a href="#">Resultados pasados</a>
+            <a href="#">Aviso de privacidad</a>
+            <a>Texas Bar #24XXXXXX</a>
+          </div>
+        </div>
+      </div>
+      <div class="bot">
+        <span>Carreras Law Firm PLLC</span>
+        <span>&copy; 2026</span>
+      </div>
+    </footer>
+
+    <!-- ═══════ Intake Modal ═══════ -->
+    <div class="clf-modal" id="intakeModal">
+      <div class="clf-modal__card" onclick="event.stopPropagation()">
+        <header>
+          <span class="eyebrow" id="modalStep">1/3 &middot; Consulta gratuita</span>
+          <button class="x" onclick="closeIntake()">&times;</button>
+        </header>
+
+        <!-- Step 1 -->
+        <div class="step active" id="step1">
+          <h3>Como te llamas?</h3>
+          <p>Una llamada, sin compromiso. Te respondemos hoy.</p>
+          <label class="lbl">NOMBRE COMPLETO
+            <input class="field" id="intakeName" placeholder="Maria de la Garza">
+          </label>
+          <label class="lbl">TELEFONO
+            <input class="field" id="intakePhone" placeholder="(956) 555 0123">
+          </label>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step" id="step2">
+          <h3>Que paso?</h3>
+          <p>Una o dos frases. Lo demas lo hablamos por telefono.</p>
+          <textarea class="field" rows="5" id="intakeWhat" placeholder="Me chocaron por detras en la 281, me dolia el cuello al dia siguiente..."></textarea>
+          <div class="checkgrid">
+            <button class="chip" type="button" onclick="this.classList.toggle('selected')">Choque de auto</button>
+            <button class="chip" type="button" onclick="this.classList.toggle('selected')">Camion / 18-wheeler</button>
+            <button class="chip" type="button" onclick="this.classList.toggle('selected')">Resbalon / caida</button>
+            <button class="chip" type="button" onclick="this.classList.toggle('selected')">Lesion laboral</button>
+            <button class="chip" type="button" onclick="this.classList.toggle('selected')">Aseguradora me nego</button>
+            <button class="chip" type="button" onclick="this.classList.toggle('selected')">Otra cosa</button>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step" id="step3">
+          <h3 id="step3Title">Listo.</h3>
+          <p id="step3Body">Te llamamos dentro de las proximas 4 horas. Si prefieres, marca tu: <b>(346) 680&nbsp;2695</b>.</p>
+          <div class="confirm">
+            <span class="icon-svg"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>Consulta enviada</span>
+          </div>
+        </div>
+
+        <footer id="modalFooter">
+          <button class="btn btn--primary btn--sm" onclick="nextStep()">Siguiente</button>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentStep = 1;
+
+    function openIntake() {
+      currentStep = 1;
+      updateModal();
+      document.getElementById('intakeModal').classList.add('open');
+    }
+    function closeIntake() {
+      document.getElementById('intakeModal').classList.remove('open');
+    }
+    function nextStep() {
+      if (currentStep < 3) { currentStep++; updateModal(); }
+      else { closeIntake(); }
+    }
+    function prevStep() {
+      if (currentStep > 1) { currentStep--; updateModal(); }
+    }
+    function updateModal() {
+      document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+      document.getElementById('step' + currentStep).classList.add('active');
+      document.getElementById('modalStep').innerHTML = currentStep + '/3 &middot; Consulta gratuita';
+
+      const name = (document.getElementById('intakeName').value || '').split(' ')[0] || 'amig@';
+      const phone = document.getElementById('intakePhone').value || 'tu numero';
+      if (currentStep === 3) {
+        document.getElementById('step3Title').textContent = 'Listo, ' + name + '.';
+        document.getElementById('step3Body').innerHTML = 'Te llamamos al <b>' + phone + '</b> dentro de las proximas 4 horas. Si prefieres, marca tu: <b>(346) 680&nbsp;2695</b>.';
+      }
+
+      let footerHTML = '';
+      if (currentStep > 1 && currentStep < 3) footerHTML += '<button class="btn btn--secondary btn--sm" onclick="prevStep()">Atras</button>';
+      if (currentStep < 3) footerHTML += '<button class="btn btn--primary btn--sm" onclick="nextStep()">' + (currentStep === 2 ? 'Enviar' : 'Siguiente') + '</button>';
+      if (currentStep === 3) footerHTML += '<button class="btn btn--primary btn--sm" onclick="closeIntake()">Cerrar</button>';
+      document.getElementById('modalFooter').innerHTML = footerHTML;
+    }
+
+    // Close modal on background click
+    document.getElementById('intakeModal').addEventListener('click', function(e) {
+      if (e.target === this) closeIntake();
+    });
+  </script>
+</body>
+</html>

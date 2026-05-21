@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Markin — Carreras Law Firm</title>
+  <link rel="icon" type="image/png" href="assets/logos/logomark-v1-blue.png">
+  <style>
+    /* =========================================================================
+       Carreras Law Firm — Design Tokens
+       ========================================================================= */
+    @font-face { font-family: "General Sans"; src: url("assets/fonts/GeneralSans-Light.otf") format("opentype"); font-weight: 300; font-style: normal; font-display: swap; }
+    @font-face { font-family: "General Sans"; src: url("assets/fonts/GeneralSans-Regular.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: "General Sans"; src: url("assets/fonts/GeneralSans-Italic.otf") format("opentype"); font-weight: 400; font-style: italic; font-display: swap; }
+    @font-face { font-family: "General Sans"; src: url("assets/fonts/GeneralSans-Medium.otf") format("opentype"); font-weight: 500; font-style: normal; font-display: swap; }
+    @font-face { font-family: "General Sans"; src: url("assets/fonts/GeneralSans-Semibold.otf") format("opentype"); font-weight: 600; font-style: normal; font-display: swap; }
+    @font-face { font-family: "General Sans"; src: url("assets/fonts/GeneralSans-Bold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Manrope"; src: url("assets/fonts/Manrope-Light.ttf") format("truetype"); font-weight: 300; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Manrope"; src: url("assets/fonts/Manrope-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Manrope"; src: url("assets/fonts/Manrope-Medium.ttf") format("truetype"); font-weight: 500; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Manrope"; src: url("assets/fonts/Manrope-SemiBold.ttf") format("truetype"); font-weight: 600; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Manrope"; src: url("assets/fonts/Manrope-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+
+    :root {
+      --clf-klein-blue: #002FA7;
+      --clf-light-blue: #4185D0;
+      --clf-cream: #FEF9F6;
+      --clf-black: #0F0F0F;
+      --clf-cream-2: #F4EFEB;
+      --clf-cream-3: #E8E2DC;
+      --clf-ink: #0F0F0F;
+      --clf-ink-60: rgba(15, 15, 15, 0.60);
+      --clf-ink-40: rgba(15, 15, 15, 0.40);
+      --clf-ink-10: rgba(15, 15, 15, 0.08);
+      --clf-font-display: "General Sans", "Inter", system-ui, sans-serif;
+      --clf-font-body: "Manrope", "Inter", system-ui, sans-serif;
+      --clf-radius-md: 14px;
+      --clf-radius-lg: 22px;
+      --clf-radius-xl: 32px;
+      --clf-ease: cubic-bezier(0.32, 0.72, 0.24, 1);
+      --clf-dur-fast: 140ms;
+      --clf-dur-base: 240ms;
+      --clf-gutter: clamp(20px, 4vw, 64px);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--clf-cream); color: var(--clf-ink); font-family: var(--clf-font-body); letter-spacing: -0.02em; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    .mk-app { min-height: 100vh; }
+
+    /* ─── Buttons ─── */
+    .btn { font-family: var(--clf-font-display); font-weight: 500; font-size: 15px; letter-spacing: -0.02em; border: none; border-radius: 999px; padding: 14px 24px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; transition: background var(--clf-dur-base) var(--clf-ease), color var(--clf-dur-base) var(--clf-ease), transform var(--clf-dur-fast) var(--clf-ease); }
+    .btn:active { transform: translateY(1px); }
+    .btn--sm { font-size: 13px; padding: 10px 16px; }
+    .btn--lg { font-size: 17px; padding: 18px 28px; }
+    .btn--primary { background: var(--clf-klein-blue); color: var(--clf-cream); }
+    .btn--primary:hover { background: #003ED1; }
+    .btn--ghost-dark { background: transparent; color: var(--clf-ink); padding: 14px 4px; }
+    .btn--ghost-light { background: transparent; color: var(--clf-cream); padding: 10px 0; }
+
+    /* ─── SVG icon helper ─── */
+    .icon-svg { display: inline-flex; align-items: center; justify-content: center; }
+    .icon-svg svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ─── Header ─── */
+    .mk-header {
+      position: sticky; top: 0; z-index: 50;
+      display: grid; grid-template-columns: 1fr 2fr 1fr; align-items: center;
+      padding: 16px var(--clf-gutter);
+      background: rgba(254, 249, 246, 0.86); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--clf-ink-10);
+    }
+    .mk-header__brand { display: flex; align-items: center; gap: 10px; }
+    .mk-header__brand img { height: 26px; }
+    .mk-header__nav { display: flex; gap: 28px; justify-content: center; font-size: 14px; white-space: nowrap; }
+    .mk-header__nav a { transition: color var(--clf-dur-base) var(--clf-ease); }
+    .mk-header__nav a:hover { color: var(--clf-klein-blue); }
+    .mk-header__cta { justify-self: end; font-size: 13px; color: var(--clf-ink-60); display: inline-flex; align-items: center; gap: 6px; transition: color var(--clf-dur-base) var(--clf-ease); }
+    .mk-header__cta:hover { color: var(--clf-ink); }
+
+    /* ─── Hero ─── */
+    .mk-hero {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      padding: 32px var(--clf-gutter) 0;
+    }
+    .mk-hero__photo { background: var(--clf-black); border-radius: var(--clf-radius-lg); overflow: hidden; aspect-ratio: 4/5; }
+    .mk-hero__photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); }
+    .mk-hero__copy { padding: 24px 0 24px 56px; display: flex; flex-direction: column; gap: 24px; justify-content: center; }
+    .mk-hero__eyebrow { display: flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--clf-ink-60); font-weight: 500; }
+    .mk-hero__eyebrow .dot { color: var(--clf-ink-40); }
+    .mk-hero__title { font-family: var(--clf-font-display); font-weight: 600; font-size: clamp(40px, 4.5vw, 64px); letter-spacing: -0.035em; line-height: 0.98; margin: 0; max-width: 18ch; }
+    .mk-hero__sub { font-size: 16px; line-height: 1.5; color: var(--clf-ink-60); margin: 0; max-width: 50ch; }
+    .mk-hero__actions { display: flex; gap: 12px; }
+
+    /* ─── Reel ─── */
+    .mk-reel { padding: 96px var(--clf-gutter) 0; }
+    .mk-reel > header { display: grid; grid-template-columns: 60px 160px 1fr; gap: 20px; align-items: center; font-size: 12px; letter-spacing: 0.04em; color: var(--clf-ink-60); padding-bottom: 20px; border-bottom: 1px solid var(--clf-ink-10); }
+    .mk-reel__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; }
+    .mk-reel__card { display: flex; flex-direction: column; gap: 10px; cursor: pointer; transition: transform var(--clf-dur-base) var(--clf-ease); }
+    .mk-reel__card:hover { transform: translateY(-2px); }
+    .mk-reel__card .thumb { aspect-ratio: 4/5; border-radius: var(--clf-radius-md); overflow: hidden; background: var(--clf-black); position: relative; }
+    .mk-reel__card .thumb img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: filter var(--clf-dur-base) var(--clf-ease); }
+    .mk-reel__card:hover .thumb img { filter: grayscale(0.6); }
+    .mk-reel__card .play { position: absolute; left: 14px; bottom: 14px; width: 36px; height: 36px; border-radius: 999px; background: var(--clf-cream); color: var(--clf-ink); display: inline-flex; align-items: center; justify-content: center; }
+    .mk-reel__card .dur { position: absolute; right: 14px; bottom: 14px; font-size: 11px; letter-spacing: 0.04em; color: var(--clf-cream); background: rgba(15,15,15,.5); padding: 4px 8px; border-radius: 999px; }
+    .mk-reel__card .meta { display: flex; justify-content: space-between; font-size: 11px; letter-spacing: 0.04em; color: var(--clf-ink-60); text-transform: uppercase; }
+    .mk-reel__card h3 { font-family: var(--clf-font-display); font-weight: 600; font-size: 18px; letter-spacing: -0.025em; line-height: 1.15; margin: 0; }
+
+    /* ─── Script card ─── */
+    .mk-script { background: var(--clf-cream-2); margin: 96px var(--clf-gutter) 0; border-radius: var(--clf-radius-xl); padding: 56px; }
+    .mk-script > header { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; margin-bottom: 36px; }
+    .mk-script .badge { display: inline-block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--clf-klein-blue); background: rgba(0, 47, 167, 0.08); padding: 6px 12px; border-radius: 999px; margin-bottom: 14px; }
+    .mk-script h2 { font-family: var(--clf-font-display); font-weight: 600; font-size: 44px; letter-spacing: -0.03em; line-height: 1; margin: 0; }
+    .mk-script .right { display: flex; gap: 28px; font-size: 13px; color: var(--clf-ink-60); }
+    .mk-script .right b { color: var(--clf-ink); font-weight: 600; }
+    .mk-script__body { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .mk-script .block { display: flex; flex-direction: column; gap: 8px; padding: 20px; background: var(--clf-cream); border-radius: var(--clf-radius-md); border: 1px solid var(--clf-ink-10); }
+    .mk-script .lbl { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--clf-ink-40); font-weight: 500; }
+    .mk-script .block p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--clf-ink); }
+    .mk-script__es { grid-column: 1 / -1; padding: 24px; background: var(--clf-klein-blue); color: var(--clf-cream); border-radius: var(--clf-radius-md); display: flex; flex-direction: column; gap: 10px; }
+    .mk-script__es .lbl { color: rgba(254, 249, 246, 0.55); }
+    .mk-script__es p { font-size: 16px; line-height: 1.5; margin: 0; }
+
+    /* ─── Manifesto ─── */
+    .mk-manifesto { margin: 96px var(--clf-gutter) 0; background: var(--clf-klein-blue); color: var(--clf-cream); border-radius: var(--clf-radius-xl); padding: 80px 64px; display: flex; flex-direction: column; gap: 28px; }
+    .mk-manifesto .lbl { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(254, 249, 246, 0.5); }
+    .mk-manifesto p { font-family: var(--clf-font-display); font-weight: 600; font-size: clamp(40px, 5.5vw, 84px); letter-spacing: -0.035em; line-height: 0.98; margin: 0; }
+    .mk-manifesto .ghost { color: rgba(254, 249, 246, 0.55); }
+    .mk-manifesto .signoff { align-self: flex-end; font-family: var(--clf-font-display); font-weight: 500; font-size: 18px; color: rgba(254, 249, 246, 0.78); letter-spacing: -0.02em; }
+
+    /* ─── Tarjeta ─── */
+    .mk-tarjeta { padding: 96px var(--clf-gutter) 0; }
+    .mk-tarjeta > header { display: grid; grid-template-columns: 60px 160px 1fr; gap: 20px; align-items: center; font-size: 12px; letter-spacing: 0.04em; color: var(--clf-ink-60); padding-bottom: 20px; border-bottom: 1px solid var(--clf-ink-10); }
+    .mk-tarjeta__row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 28px; }
+    .mk-tarjeta .card { aspect-ratio: 1.65/1; border-radius: var(--clf-radius-md); padding: 28px; display: flex; flex-direction: column; justify-content: space-between; }
+    .mk-tarjeta .card.front { background: var(--clf-klein-blue); display: flex; align-items: center; justify-content: center; }
+    .mk-tarjeta .card.front img { width: 36%; }
+    .mk-tarjeta .card.back { background: var(--clf-cream-2); border: 1px solid var(--clf-ink-10); color: var(--clf-ink); }
+    .mk-tarjeta .card.back .name { font-family: var(--clf-font-display); font-weight: 600; font-size: 28px; letter-spacing: -0.03em; }
+    .mk-tarjeta .card.back .role { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--clf-ink-60); margin-top: 2px; }
+    .mk-tarjeta .card.back .meta { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--clf-ink); }
+    .mk-tarjeta__copy { margin-top: 32px; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+    .mk-tarjeta__copy h3 { font-family: var(--clf-font-display); font-weight: 600; font-size: 36px; letter-spacing: -0.03em; line-height: 1; margin: 0; }
+    .mk-tarjeta__copy p { font-size: 16px; line-height: 1.5; color: var(--clf-ink-60); margin: 0; max-width: 50ch; }
+
+    /* ─── Footer ─── */
+    .mk-footer { padding: 48px var(--clf-gutter) 28px; margin-top: 96px; border-top: 1px solid var(--clf-ink-10); }
+    .mk-footer .row { display: flex; justify-content: space-between; font-size: 12px; color: var(--clf-ink-40); }
+  </style>
+</head>
+<body>
+  <div class="mk-app">
+
+    <!-- ═══════ Header ═══════ -->
+    <header class="mk-header">
+      <a class="mk-header__brand" href="carreras-law-firm.html">
+        <img src="assets/logos/logotipo-v2-blue.png" alt="Carreras Law Firm">
+      </a>
+      <nav class="mk-header__nav">
+        <a href="#reel">Reel</a>
+        <a href="#scripts">Takes</a>
+        <a href="#about">Sobre Markin</a>
+        <a href="carreras-law-firm.html">La firma &rarr;</a>
+      </nav>
+      <a class="mk-header__cta" href="https://instagram.com/carreraslawfirm" target="_blank" rel="noreferrer">
+        <span class="icon-svg"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></span>
+        @carreraslawfirm
+      </a>
+    </header>
+
+    <!-- ═══════ Hero ═══════ -->
+    <section class="mk-hero" id="reel">
+      <div class="mk-hero__photo">
+        <img src="assets/photography/markin-portrait-05.jpg" alt="Markin">
+      </div>
+      <div class="mk-hero__copy">
+        <div class="mk-hero__eyebrow">
+          <span>The Adjuster Call</span>
+          <span class="dot">&middot;</span>
+          <span>Take 01 of 21</span>
+        </div>
+        <h1 class="mk-hero__title">
+          "I'm fine" is the worst thing you can say to an insurance adjuster after a crash.
+        </h1>
+        <p class="mk-hero__sub">
+          Cada semana grabo un video corto sobre como trabajan las aseguradoras en Texas. No para impresionar. Para que sepas que decir y que no decir cuando llamen.
+        </p>
+        <div class="mk-hero__actions">
+          <button class="btn btn--primary">
+            <span class="icon-svg"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></span>
+            Ver el video
+          </button>
+          <button class="btn btn--ghost-dark">Leer el guion &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ Reel Grid ═══════ -->
+    <section class="mk-reel" id="scripts">
+      <header>
+        <span>2.0</span>
+        <span>Takes</span>
+        <span>21 scripts &middot; 7 temas &middot; 3 frameworks</span>
+      </header>
+      <div class="mk-reel__grid">
+
+        <article class="mk-reel__card">
+          <div class="thumb">
+            <img src="assets/photography/markin-portrait-01.jpg" alt="">
+            <span class="play"><span class="icon-svg"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></span></span>
+            <span class="dur">60s</span>
+          </div>
+          <div class="meta"><span>Take 01 &middot; Strong Take</span><span>EN/ES</span></div>
+          <h3>The Adjuster Call</h3>
+        </article>
+
+        <article class="mk-reel__card">
+          <div class="thumb">
+            <img src="assets/photography/markin-portrait-02.jpg" alt="">
+            <span class="play"><span class="icon-svg"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></span></span>
+            <span class="dur">60s</span>
+          </div>
+          <div class="meta"><span>Take 02 &middot; Education</span><span>EN/ES</span></div>
+          <h3>The Bilingual Gap in TX PI</h3>
+        </article>
+
+        <article class="mk-reel__card">
+          <div class="thumb">
+            <img src="assets/photography/markin-portrait-03.jpg" alt="">
+            <span class="play"><span class="icon-svg"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></span></span>
+            <span class="dur">90s</span>
+          </div>
+          <div class="meta"><span>Take 03 &middot; Strong Take</span><span>EN/ES</span></div>
+          <h3>Why Clients Ghost Their Lawyers</h3>
+        </article>
+
+        <article class="mk-reel__card">
+          <div class="thumb">
+            <img src="assets/photography/markin-portrait-04.jpg" alt="">
+            <span class="play"><span class="icon-svg"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></span></span>
+            <span class="dur">60s</span>
+          </div>
+          <div class="meta"><span>Take 04 &middot; Education</span><span>EN/ES</span></div>
+          <h3>The Two-Week Settlement Trap</h3>
+        </article>
+
+        <article class="mk-reel__card">
+          <div class="thumb">
+            <img src="assets/photography/markin-portrait-05.jpg" alt="">
+            <span class="play"><span class="icon-svg"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></span></span>
+            <span class="dur">90s</span>
+          </div>
+          <div class="meta"><span>Take 05 &middot; Education</span><span>EN/ES</span></div>
+          <h3>What a PI Lawyer Actually Does</h3>
+        </article>
+
+        <article class="mk-reel__card">
+          <div class="thumb">
+            <img src="assets/photography/markin-portrait-06.jpg" alt="">
+            <span class="play"><span class="icon-svg"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></span></span>
+            <span class="dur">60s</span>
+          </div>
+          <div class="meta"><span>Take 06 &middot; Strong Take</span><span>EN/ES</span></div>
+          <h3>Good Lawyer vs. Good Law Firm</h3>
+        </article>
+
+        <article class="mk-reel__card">
+          <div class="thumb">
+            <img src="assets/photography/markin-portrait-07.jpg" alt="">
+            <span class="play"><span class="icon-svg"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></span></span>
+            <span class="dur">120s</span>
+          </div>
+          <div class="meta"><span>Take 07 &middot; Manifesto</span><span>EN/ES</span></div>
+          <h3>Why We Do Content This Way</h3>
+        </article>
+
+        <article class="mk-reel__card">
+          <div class="thumb">
+            <img src="assets/photography/markin-portrait-08.jpg" alt="">
+            <span class="play"><span class="icon-svg"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></span></span>
+            <span class="dur">60s</span>
+          </div>
+          <div class="meta"><span>Take 08 &middot; Strong Take</span><span>ES</span></div>
+          <h3>El minuto que decide tu caso</h3>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ═══════ Script Card ═══════ -->
+    <section class="mk-script">
+      <header>
+        <div class="left">
+          <span class="badge">Hook &rarr; Story &rarr; Points</span>
+          <h2>Take 01 — The Adjuster Call.</h2>
+        </div>
+        <div class="right">
+          <span><b>~60s</b> duracion</span>
+          <span><b>30</b> graphics</span>
+          <span><b>EN</b> + ES</span>
+        </div>
+      </header>
+
+      <div class="mk-script__body">
+        <div class="block">
+          <span class="lbl">Hook &middot; primeros 3 segundos</span>
+          <p>"I'm fine" is the worst thing you can say to an insurance adjuster after your crash. Let's break down how insurance companies treat injury claims.</p>
+        </div>
+        <div class="block">
+          <span class="lbl">Story</span>
+          <p>Last week I got a call from a client. By that time, she had already talked to the adjuster. During that call, the adjuster asked how she was, and she naturally said "I'm fine." A few days later, pain kicked in. She called the adjuster back. He pulled out the recording.</p>
+        </div>
+        <div class="block">
+          <span class="lbl">Point 01</span>
+          <p>This is classic insurance company playbook. They call you when everything is still fresh, they sound warm, friendly, helpful. That tone is intentional. The call is recorded.</p>
+        </div>
+        <div class="block">
+          <span class="lbl">Point 02</span>
+          <p>The "I'm fine" gets saved in your file. When things settle down and injuries appear days or weeks later, they use your words against your claim.</p>
+        </div>
+        <div class="mk-script__es">
+          <span class="lbl">ES &middot; Version en espanol</span>
+          <p>Raza, decir "estoy bien" o "no me paso nada" es lo peor que le puedes decir al ajustador despues de que te metieron un madrazo. La semana pasada me llamo una clienta...</p>
+          <button class="btn btn--ghost-light btn--sm">Leer todo en espanol &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ Manifesto ═══════ -->
+    <section class="mk-manifesto" id="about">
+      <span class="lbl">07 &middot; Manifesto</span>
+      <p>
+        La gente sigue a personas interesantes. <span class="ghost">Las firmas se contratan despues.</span>
+      </p>
+      <span class="signoff">— Markin</span>
+    </section>
+
+    <!-- ═══════ Tarjeta ═══════ -->
+    <section class="mk-tarjeta" id="contact">
+      <header>
+        <span>3.0</span>
+        <span>Hablemos</span>
+        <span>Tarjeta &middot; Markin</span>
+      </header>
+      <div class="mk-tarjeta__row">
+        <div class="card front">
+          <img src="assets/logos/logomark-v1-white.png" alt="">
+        </div>
+        <div class="card back">
+          <div>
+            <div class="name">markin carreras</div>
+            <div class="role">attorney at law &middot; injury &amp; insurance</div>
+          </div>
+          <div class="meta">
+            <span>(346) 680 2695</span>
+            <span>markin@carreraslawfirm.com</span>
+            <span>440 Louisiana St., Suite 972 &middot; Houston, TX 77002</span>
+          </div>
+        </div>
+      </div>
+      <div class="mk-tarjeta__copy">
+        <h3>Una llamada. Sin compromiso.</h3>
+        <p>Tu cuentas lo que paso. Yo te digo si tienes un caso. Si no, te lo digo igual.</p>
+        <a class="btn btn--primary btn--lg" href="tel:3466802695">
+          <span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          Llamame
+        </a>
+      </div>
+    </section>
+
+    <!-- ═══════ Footer ═══════ -->
+    <footer class="mk-footer">
+      <div class="row">
+        <span>Markin — Carreras Law Firm</span>
+        <span>&copy; 2026</span>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
