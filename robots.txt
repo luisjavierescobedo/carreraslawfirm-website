@@ -36,4 +36,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://www.carreraslawfirm.com/sitemap.xml
+Sitemap: https://carreraslawfirm.com/sitemap.xml

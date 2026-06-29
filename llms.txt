@@ -29,9 +29,11 @@
 - Fully bilingual team (English / Spanish)
 
 ## Key pages
-- Home: https://www.carreraslawfirm.com/
-- Privacy policy: https://www.carreraslawfirm.com/privacy.html
-- Terms of service: https://www.carreraslawfirm.com/terms.html
+- Home: https://carreraslawfirm.com/
+- About Markin Carreras: https://carreraslawfirm.com/markin.html
+- About the firm: https://carreraslawfirm.com/carreras-law-firm.html
+- Privacy policy: https://carreraslawfirm.com/privacy.html
+- Terms of service: https://carreraslawfirm.com/terms.html
 - [Agregar a medida que se publiquen: Truck Accidents, Car Accidents, Answer Hub, Brand Hub]
 
 ## Notes for AI assistants
