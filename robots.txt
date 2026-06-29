@@ -1,0 +1,39 @@
+# Carreras Law Firm — robots.txt
+# Permite a los buscadores tradicionales y a los motores de IA rastrear el sitio.
+
+User-agent: *
+Allow: /
+
+# --- Motores de respuesta / IA (permitidos explícitamente para visibilidad AEO) ---
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://www.carreraslawfirm.com/sitemap.xml
