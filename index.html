@@ -998,6 +998,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         callback: () => {
           document.getElementById('formFields').classList.add('hidden');
           document.getElementById('confirmation').classList.add('active');
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({'event': 'intake_form_submit'});
           const first = name.split(' ')[0];
           const greeting = currentLang === 'es' ? '¡Gracias, ' + first + '!' : 'Thank you, ' + first + '!';
           document.getElementById('confGreeting').textContent = greeting;
