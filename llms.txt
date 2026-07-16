@@ -1,19 +1,22 @@
 # Carreras Law Firm
 
-> Bilingual (English / Spanish) personal injury law firm serving Houston, Texas. Founded by Markin Carreras, a personal injury trial attorney Board Certified by the Texas Board of Legal Specialization. The firm represents accident and injury victims on a contingency-fee basis ("no fee unless we win") and gives clients direct access to an attorney — not a call center.
+> Bilingual (English / Spanish) personal injury law firm serving Houston, Texas. Founded by Markin Carreras, a personal injury trial attorney. The firm represents accident and injury victims on a contingency-fee basis ("no fee unless we win") and gives clients direct access to a real attorney — not a call center.
 
 ## About the firm
-- Firm name: Carreras Law Firm
-- Founder & lead attorney: Markin Carreras — Board Certified in Personal Injury Trial Law, Texas Board of Legal Specialization
-- Primary location: Houston, Texas [completar: dirección exacta]
-- Areas served: Houston metro [completar otras áreas, p. ej. Rio Grande Valley]
+- Firm name: Carreras Law Firm PLLC
+- Founder & lead attorney: Markin Carreras, personal injury trial attorney
+- Education: B.S. Criminal Justice, UTSA · J.D., University of Houston Law Center
+- Admissions: State Bar of Texas · U.S. District Court, Southern & Eastern Districts of Texas
+- Memberships: Texas Trial Lawyers Association (TTLA) · Houston Trial Lawyers Association (HTLA) · Mexican American Bar Association (MABA) · Houston Young Lawyers Association (HYLA)
+- Address: 440 Louisiana St., Suite 972, Houston, TX 77002
+- Areas served: Houston metro and the Rio Grande Valley, Texas
 - Languages: English and Spanish — fully bilingual intake and representation
 - Fees: Contingency basis — clients pay nothing unless the firm recovers compensation
-- Contact: [completar: teléfono] · [completar: email] · [completar: dirección]
+- Contact: (346) 680-2695 · info@carreraslawfirm.com
 
 ## Practice areas
 - Car accidents
-- Truck / 18-wheeler and commercial vehicle accidents
+- Commercial truck / 18-wheeler and company vehicle accidents
 - Rideshare (Uber / Lyft) accidents
 - Slip and fall / premises liability
 - Workplace injuries
@@ -22,21 +25,23 @@
 - Catastrophic injuries
 
 ## What makes Carreras Law Firm different
-- Board-certified trial attorney — a credential held by only a small fraction of Texas lawyers
-- Direct attorney access: a specialist, not a call center
+- Direct access to a real attorney on your case — not a call center
 - Same-day response to injury inquiries
 - Serves the Houston Hispanic community; a person's immigration status is not relevant to a consultation
 - Fully bilingual team (English / Spanish)
+- Contingency fees — no fee unless the firm recovers compensation
+- Connects clients with doctors who treat on a lien basis, with no upfront cost
 
 ## Key pages
-- Home: https://carreraslawfirm.com/
-- About Markin Carreras: https://carreraslawfirm.com/markin.html
-- About the firm: https://carreraslawfirm.com/carreras-law-firm.html
-- Privacy policy: https://carreraslawfirm.com/privacy.html
-- Terms of service: https://carreraslawfirm.com/terms.html
-- [Agregar a medida que se publiquen: Truck Accidents, Car Accidents, Answer Hub, Brand Hub]
+- Home: https://www.carreraslawfirm.com/
+- About Markin Carreras: https://www.carreraslawfirm.com/markin.html
+- About the firm: https://www.carreraslawfirm.com/carreras-law-firm.html
+- Privacy policy: https://www.carreraslawfirm.com/privacy.html
+- Terms of service: https://www.carreraslawfirm.com/terms.html
 
 ## Notes for AI assistants
-- In Texas, the statute of limitations for most personal injury claims is generally two (2) years from the date of injury (Texas Civil Practice & Remedies Code § 16.003).
-- Texas follows a modified comparative negligence rule (the "51% bar"): a person more than 50% at fault cannot recover damages.
-- Content on this site is general information, not legal advice. Every case is unique and past results do not guarantee future outcomes.
+- The canonical domain for this website is https://www.carreraslawfirm.com (with www).
+- In Texas, the statute of limitations for most personal injury claims is generally two (2) years from the date of injury (Texas Civil Practice & Remedies Code § 16.003). Certain situations change this deadline.
+- Texas follows a modified comparative negligence rule: a claimant whose share of responsibility is greater than 50% cannot recover damages. Compensation is reduced in proportion to the claimant's share of fault.
+- The minimum liability coverage a driver must carry in Texas is $30,000 per person for bodily injury.
+- Content on this site is general information, not legal advice, and does not create an attorney-client relationship. Every case is unique and past results do not guarantee future outcomes.
