@@ -27,7 +27,7 @@
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--font-body);font-size:18px;line-height:1.5;letter-spacing:var(--tracking-tight);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-  .wrap{max-width:820px;margin:0 auto;padding:0 var(--gutter)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 var(--gutter)}
   h1,h2,h3{font-family:var(--font-display);font-weight:600;letter-spacing:var(--tracking-tight);line-height:1.06;margin:0;text-wrap:balance}
   h2{line-height:1.12} h3{font-weight:500;line-height:1.18}
   p{margin:0 0 1.05em;text-wrap:pretty}
@@ -146,6 +146,13 @@
   .office .ol{font-family:var(--font-body);font-size:12px;font-weight:600;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--klein);margin-bottom:8px}
   .office .oa{font-size:15px;color:var(--ink);line-height:1.5}
   .office .op{font-family:var(--font-display);font-weight:600;font-size:15px;color:var(--ink);margin-top:8px;display:block}
+
+  /* ─── Columna de lectura cómoda en desktop, contenedor ancho ─── */
+  .body, nav.toc, .answer, .proof-cap{max-width:760px}
+  .hero{max-width:820px}
+  @media(min-width:900px){
+    .hero h1{font-size:clamp(40px,4.6vw,64px)}
+  }
 </style>
 
 
@@ -163,11 +170,11 @@
 <main class="wrap">
 
   <nav aria-label="breadcrumb" style="padding:20px 0 0;font-size:13px;font-family:var(--font-body);color:var(--ink-40)">
-    <a href="../../" style="color:var(--ink-40)" data-es="Inicio" data-en="Home">Inicio</a>
+    <a href="../../" style="color:var(--ink-40)"><span data-es>Inicio</span><span data-en>Home</span></a>
     <span style="margin:0 8px">/</span>
-    <a href="../legal-guides/" style="color:var(--ink-40)" data-es="Guías legales" data-en="Legal Guides">Guías legales</a>
+    <a href="../legal-guides/" style="color:var(--ink-40)"><span data-es>Guías legales</span><span data-en>Legal Guides</span></a>
     <span style="margin:0 8px">/</span>
-    <span style="color:var(--ink-60)" data-es="La regla del 51%" data-en="The 51% rule">La regla del 51%</span>
+    <span style="color:var(--ink-60)"><span data-es>La regla del 51%</span><span data-en>The 51% rule</span></span>
   </nav>
 
 
