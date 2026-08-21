@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guías Legales | Carreras Law Firm</title>
+<meta name="description" content="Guías legales claras sobre lesiones personales en Texas y el Valle del Río Grande. Información en español, escrita para que la entiendas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --klein:#002FA7; --klein-hover:#003ED1; --cream:#FEF9F6; --black:#0F0F0F;
+    --cream-2:#F4EFEB; --cream-3:#E8E2DC; --ink:#0F0F0F;
+    --ink-60:rgba(15,15,15,.60); --ink-40:rgba(15,15,15,.40); --ink-10:rgba(15,15,15,.08);
+    --display:"General Sans",system-ui,sans-serif; --body:"Manrope",system-ui,sans-serif;
+    --gutter:clamp(20px,4vw,64px); --max-w:1240px; --dur:240ms; --ease:cubic-bezier(.32,.72,.24,1);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);letter-spacing:-0.02em;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.03em;line-height:1.05;margin:0}
+  .wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--gutter)}
+
+  .header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px var(--gutter);background:rgba(254,249,246,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--ink-10)}
+  .header__logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:18px;color:var(--ink)}
+  .header__logo .m{width:26px;height:26px;border-radius:7px;background:var(--klein);position:relative;flex:0 0 auto}
+  .header__logo .m::after{content:"";position:absolute;inset:6px 6px auto auto;width:8px;height:8px;border-radius:2px;background:var(--cream)}
+  .header__nav{display:flex;gap:28px;font-size:14px}
+  .header__nav a:hover{color:var(--klein)}
+  .header__phone{font-size:14px;font-weight:600;color:var(--ink)}
+  @media(max-width:800px){.header__nav,.header__phone{display:none}}
+
+  .btn{font-family:var(--display);font-weight:500;font-size:15px;letter-spacing:-.02em;border:none;border-radius:999px;padding:14px 28px;cursor:pointer;display:inline-flex;align-items:center;gap:10px;white-space:nowrap;transition:background var(--dur) var(--ease),color var(--dur) var(--ease)}
+  .btn--primary{background:var(--klein);color:var(--cream)}
+  .btn--primary:hover{background:var(--klein-hover)}
+  .btn--sm{font-size:13px;padding:10px 18px}
+
+  .breadcrumb{padding:20px 0 0;font-size:13px;color:var(--ink-40)}
+  .breadcrumb a{color:var(--ink-40)}
+  .breadcrumb a:hover{color:var(--klein)}
+  .breadcrumb span{margin:0 8px}
+
+  .hero{padding:44px 0 30px;border-bottom:1px solid var(--ink-10)}
+  .hero .eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--klein);margin-bottom:16px}
+  .hero h1{font-size:clamp(36px,5vw,60px);max-width:16ch}
+  .hero p{font-size:19px;color:var(--ink-60);max-width:56ch;margin:18px 0 0;line-height:1.5}
+
+  .guides{padding:44px 0}
+  .guides-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  @media(max-width:720px){.guides-grid{grid-template-columns:1fr}}
+  .guide{display:block;background:#fff;border:1px solid var(--cream-3);border-radius:18px;padding:28px;transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease);position:relative}
+  .guide:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,47,167,.12)}
+  .guide .tag{display:inline-block;font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--klein);background:#EAF0FF;padding:5px 11px;border-radius:999px;margin-bottom:16px}
+  .guide h3{font-size:24px;line-height:1.12;margin-bottom:10px}
+  .guide p{font-size:15px;color:var(--ink-60);line-height:1.5;margin:0 0 18px}
+  .guide .more{font-family:var(--display);font-weight:600;font-size:15px;color:var(--klein);display:flex;align-items:center;gap:7px}
+
+  .soon{background:var(--cream-2);border:1px dashed var(--cream-3);border-radius:18px;padding:28px;display:flex;flex-direction:column;justify-content:center;text-align:center}
+  .soon .lbl{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-40);margin-bottom:8px}
+  .soon p{font-size:14px;color:var(--ink-40);margin:0}
+
+  .cta-band{background:var(--klein);color:var(--cream);border-radius:24px;padding:44px;text-align:center;margin:20px 0 60px}
+  .cta-band h2{color:var(--cream);font-size:clamp(26px,3.6vw,38px);margin-bottom:12px}
+  .cta-band p{color:rgba(254,249,246,.6);font-size:16px;max-width:46ch;margin:0 auto 24px}
+  .cta-band .btn--primary{background:var(--cream);color:var(--klein)}
+  .cta-band .btn--primary:hover{background:#fff}
+
+  .footer{background:var(--cream-2);padding:56px var(--gutter) 28px;border-top:1px solid var(--ink-10)}
+  .footer .fi{max-width:var(--max-w);margin:0 auto;font-size:14px;color:var(--ink-60)}
+  .footer .fi strong{font-family:var(--display);color:var(--ink)}
+  .footer .disc{font-size:12px;color:var(--ink-40);margin-top:16px;border-top:1px solid var(--ink-10);padding-top:16px;line-height:1.6}
+
+  [data-en]{display:none}
+  html[lang="en"] [data-es]{display:none}
+  html[lang="en"] [data-en]{display:revert}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="../../" class="header__logo"><span class="m"></span>Carreras Law Firm</a>
+  <nav class="header__nav">
+    <a href="../../#areas" data-en="Practice Areas" data-es="Áreas de Práctica">Áreas de Práctica</a>
+    <a href="../../#process" data-en="How We Work" data-es="Cómo Trabajamos">Cómo Trabajamos</a>
+    <a href="../legal-guides/" data-en="Legal Guides" data-es="Guías Legales" style="color:var(--klein)">Guías Legales</a>
+    <a href="../../#contact" data-en="Contact" data-es="Contacto">Contacto</a>
+  </nav>
+  <a class="btn btn--primary btn--sm" href="../../#intake" data-es="Consulta gratis" data-en="Free Consultation">Consulta gratis</a>
+</header>
+
+<div class="wrap">
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <a href="../../" data-es="Inicio" data-en="Home">Inicio</a>
+    <span>/</span>
+    <span style="color:var(--ink-60)" data-es="Guías legales" data-en="Legal Guides">Guías legales</span>
+  </nav>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow" data-es="Recursos" data-en="Resources">Recursos</div>
+    <h1 data-es="Guías legales, en español y sin letra chiquita">Legal guides, in plain language</h1>
+    <h1 data-en="Legal guides, in plain language" style="display:none">Legal guides, in plain language</h1>
+    <p data-es="Explicamos las leyes de lesiones personales de Texas de forma clara, para que entiendas tus derechos antes de tomar cualquier decisión. Sin tecnicismos innecesarios, escritas para el Valle.">We explain Texas personal injury law clearly, so you understand your rights before making any decision. No unnecessary jargon, written for the Valley.</p>
+    <p data-en="We explain Texas personal injury law clearly, so you understand your rights before making any decision. No unnecessary jargon, written for the Valley." style="display:none"></p>
+  </div>
+</section>
+
+<section class="guides">
+  <div class="wrap">
+    <div class="guides-grid">
+
+      <a class="guide" href="regla-51-texas.html">
+        <span class="tag" data-es="Culpa y compensación" data-en="Fault & compensation">Culpa y compensación</span>
+        <h3 data-es="La regla del 51% en Texas, explicada simple">The 51% rule in Texas, explained simply</h3>
+        <h3 data-en="The 51% rule in Texas, explained simply" style="display:none"></h3>
+        <p data-es="¿Puedes reclamar si tuviste algo de culpa en el accidente? Esta regla lo decide. Te la explicamos con un ejemplo con números del Valle.">Can you still claim if you were partly at fault? This rule decides. We explain it with a Valley example using real numbers.</p>
+        <p data-en="Can you still claim if you were partly at fault? This rule decides. We explain it with a Valley example using real numbers." style="display:none"></p>
+        <span class="more"><span data-es="Leer la guía" data-en="Read the guide">Leer la guía</span> →</span>
+      </a>
+
+      <div class="soon">
+        <div class="lbl" data-es="Próximamente" data-en="Coming soon">Próximamente</div>
+        <p data-es="Estamos preparando más guías sobre plazos, valor de tu caso, honorarios y tus derechos. Vuelve pronto.">We are preparing more guides on deadlines, case value, fees, and your rights. Check back soon.</p>
+        <p data-en="We are preparing more guides on deadlines, case value, fees, and your rights. Check back soon." style="display:none"></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="cta-band">
+    <h2 data-es="¿Tu duda no está en una guía?">Not sure a guide covers your question?</h2>
+    <h2 data-en="Not sure a guide covers your question?" style="display:none"></h2>
+    <p data-es="Cuéntanos qué pasó. Un abogado de nuestro equipo revisa tu caso, en español, sin costo y sin compromiso.">Tell us what happened. A lawyer on our team reviews your case, in Spanish, free and with no obligation.</p>
+    <p data-en="Tell us what happened. A lawyer on our team reviews your case, in Spanish, free and with no obligation." style="display:none"></p>
+    <a class="btn btn--primary" href="../../#intake" data-es="Consulta gratis" data-en="Free consultation">Consulta gratis</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="fi">
+    <strong>Carreras Law Firm</strong> · McAllen: 1200 Auburn Ave, Ste. 490, McAllen, TX 78504 · Houston: 440 Louisiana St., Suite 972, Houston, TX 77002 · (346) 680-2695
+    <div class="disc" data-es="Esta sección ofrece información general con fines educativos y no constituye asesoría legal ni crea una relación abogado-cliente. Cada caso es distinto; para orientación sobre tu situación, consulta directamente con un abogado.">This section offers general information for educational purposes and is not legal advice, nor does it create an attorney-client relationship. Every case is different; for guidance on your situation, consult directly with a lawyer.</div>
+    <div class="disc" data-en="This section offers general information for educational purposes and is not legal advice, nor does it create an attorney-client relationship. Every case is different; for guidance on your situation, consult directly with a lawyer." style="display:none"></div>
+  </div>
+</footer>
+
+<script>
+  function toggleLang(){
+    var l = document.documentElement.getAttribute('lang')==='es' ? 'en' : 'es';
+    document.documentElement.setAttribute('lang', l);
+  }
+</script>
+</body>
+</html>
