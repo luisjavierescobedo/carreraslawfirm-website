@@ -147,7 +147,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .header__nav .dropdown > a { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
     .header__nav .dropdown > a::after { content: "▾"; font-size: 10px; opacity: .6; }
     .header__nav .dropdown__menu { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(6px); background: var(--cream); border: 1px solid var(--cream-3); border-radius: 14px; padding: 8px; min-width: 220px; box-shadow: 0 12px 32px rgba(15,15,15,.12); opacity: 0; visibility: hidden; transition: opacity .2s var(--ease), transform .2s var(--ease); }
-    .header__nav .dropdown:hover .dropdown__menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    .header__nav .dropdown.open .dropdown__menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
     .header__nav .dropdown__menu a { display: block; padding: 11px 14px; border-radius: 9px; font-size: 14px; color: var(--ink); }
     .header__nav .dropdown__menu a:hover { background: var(--cream-2); color: var(--klein); }
     .header__nav .dropdown__menu .dd-desc { display: block; font-size: 12px; color: var(--ink-40); margin-top: 2px; }
@@ -434,8 +434,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#process" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</a>
       <a href="#results" data-en="Results" data-es="Resultados">Results</a>
       <a href="questions.html" data-en="Questions" data-es="Preguntas">Questions</a>
-      <span class="dropdown">
-        <a data-en="Resources" data-es="Recursos">Resources</a>
+      <span class="dropdown" id="resDropdown">
+        <a onclick="toggleDropdown(event)" data-en="Resources" data-es="Recursos">Resources</a>
         <span class="dropdown__menu">
           <a href="resources/legal-guides/">
             <span data-en="Legal Guides" data-es="Guías Legales">Legal Guides</span>
@@ -994,6 +994,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function toggleMobileNav() {
       document.getElementById('mobileNav').classList.toggle('open');
     }
+    function toggleDropdown(e) {
+      e.preventDefault(); e.stopPropagation();
+      document.getElementById('resDropdown').classList.toggle('open');
+    }
+    document.addEventListener('click', function(e) {
+      var dd = document.getElementById('resDropdown');
+      if (dd && !dd.contains(e.target)) dd.classList.remove('open');
+    });
 
     // ─── Intake form submission ───
     function submitIntake() {
