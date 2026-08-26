@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guías Legales | Carreras Law Firm</title>
-<meta name="description" content="Guías legales claras sobre lesiones personales en Texas y el Valle del Río Grande. Información en español, escrita para que la entiendas.">
+<title>Legal Guides | Carreras Law Firm</title>
+<meta name="description" content="Clear legal guides on personal injury in Texas and the Rio Grande Valley. Information in plain language, in English and Spanish.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
@@ -14,147 +14,275 @@
     --klein:#002FA7; --klein-hover:#003ED1; --cream:#FEF9F6; --black:#0F0F0F;
     --cream-2:#F4EFEB; --cream-3:#E8E2DC; --ink:#0F0F0F;
     --ink-60:rgba(15,15,15,.60); --ink-40:rgba(15,15,15,.40); --ink-10:rgba(15,15,15,.08);
+    --on-blue:#FEF9F6; --on-blue-muted:rgba(254,249,246,.55); --on-blue-line:rgba(254,249,246,.18);
     --display:"General Sans",system-ui,sans-serif; --body:"Manrope",system-ui,sans-serif;
-    --gutter:clamp(20px,4vw,64px); --max-w:1240px; --dur:240ms; --ease:cubic-bezier(.32,.72,.24,1);
+    --r-md:14px; --r-lg:22px; --r-xl:32px;
+    --ease:cubic-bezier(.32,.72,.24,1); --dur:240ms;
+    --gutter:clamp(20px,4vw,64px); --max-w:1240px;
+    --shadow-blue:0 12px 32px rgba(0,47,167,.18); --success:#1A7F37;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);letter-spacing:-0.02em;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
   h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.03em;line-height:1.05;margin:0}
-  .wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--gutter)}
 
-  .header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px var(--gutter);background:rgba(254,249,246,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--ink-10)}
-  .header__logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:18px;color:var(--ink)}
-  .header__logo .m{width:26px;height:26px;border-radius:7px;background:var(--klein);position:relative;flex:0 0 auto}
-  .header__logo .m::after{content:"";position:absolute;inset:6px 6px auto auto;width:8px;height:8px;border-radius:2px;background:var(--cream)}
-  .header__nav{display:flex;gap:28px;font-size:14px}
-  .header__nav a:hover{color:var(--klein)}
-  .header__phone{font-size:14px;font-weight:600;color:var(--ink)}
-  @media(max-width:800px){.header__nav,.header__phone{display:none}}
+  /* BASE (desktop) */
+/* ─── Buttons ─── */
+    .btn{font-family: var(--display); font-weight: 500; font-size: 15px; letter-spacing: -0.02em; border: none; border-radius: 999px; padding: 14px 28px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; transition: background var(--dur) var(--ease), color var(--dur) var(--ease), transform 140ms var(--ease);}
+.btn:active{transform: translateY(1px);}
+.btn--primary{background: var(--klein); color: var(--cream);}
+.btn--primary:hover{background: var(--klein-hover);}
+.btn--primary-lg{background: var(--klein); color: var(--cream); font-size: 17px; padding: 18px 32px;}
+.btn--primary-lg:hover{background: var(--klein-hover);}
+.btn--secondary{background: transparent; color: var(--ink); border: 1.5px solid var(--ink);}
+.btn--secondary:hover{background: var(--ink); color: var(--cream);}
+.btn--secondary-light{background: transparent; color: var(--cream); border: 1.5px solid var(--cream);}
+.btn--secondary-light:hover{background: var(--cream); color: var(--ink);}
+.btn--ghost{background: transparent; color: var(--klein); padding: 14px 4px;}
+.btn--sm{font-size: 13px; padding: 10px 16px;}
+.btn--full{width: 100%; justify-content: center;}
+/* ─── Header ─── */
+    .header{position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 16px var(--gutter); background: rgba(254,249,246,.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--ink-10);}
+.header__logo img{height: 22px;}
+.header__nav{display: flex; gap: 28px; font-size: 14px;}
+.header__nav a{transition: color var(--dur) var(--ease);}
+.header__nav a:hover{color: var(--klein);}
+/* ─── Dropdown Resources ─── */
+    .header__nav .dropdown{position: relative;}
+.header__nav .dropdown > a{display: inline-flex; align-items: center; gap: 5px; cursor: pointer;}
+.header__nav .dropdown > a::after{content: "▾"; font-size: 10px; opacity: .6;}
+.header__nav .dropdown__menu{position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(6px); background: var(--cream); border: 1px solid var(--cream-3); border-radius: 14px; padding: 8px; min-width: 220px; box-shadow: 0 12px 32px rgba(15,15,15,.12); opacity: 0; visibility: hidden; transition: opacity .2s var(--ease), transform .2s var(--ease);}
+.header__nav .dropdown:hover .dropdown__menu{opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);}
+.header__nav .dropdown__menu a{display: block; padding: 11px 14px; border-radius: 9px; font-size: 14px; color: var(--ink);}
+.header__nav .dropdown__menu a:hover{background: var(--cream-2); color: var(--klein);}
+.header__nav .dropdown__menu .dd-desc{display: block; font-size: 12px; color: var(--ink-40); margin-top: 2px;}
+.header__right{display: flex; gap: 14px; align-items: center;}
+.header__lang{font-size: 12px; letter-spacing: .06em; color: var(--ink-60); text-transform: uppercase; cursor: pointer;}
+.header__lang b{color: var(--ink);}
+.header__phone{font-size: 14px; font-weight: 600; color: var(--ink); display: flex; align-items: center; gap: 6px;}
+.header__hamburger{display: none; background: none; border: none; padding: 4px; cursor: pointer; color: var(--ink);}
+.header__hamburger svg{width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;}
+/* ─── Mobile nav overlay ─── */
+    .mobile-nav{display: none; position: fixed; inset: 0; z-index: 100; background: var(--black); color: var(--cream); flex-direction: column; padding: 0; opacity: 0; transition: opacity .28s var(--ease);}
+.mobile-nav.open{display: flex; opacity: 1;}
+.mobile-nav__top{display: flex; justify-content: space-between; align-items: center; padding: 16px var(--gutter);}
+.mobile-nav__close{background: none; border: none; padding: 8px; cursor: pointer; color: var(--cream);}
+.mobile-nav__close svg{width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round;}
+.mobile-nav__links{flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 var(--gutter); gap: 0;}
+.mobile-nav__links a{font-family: var(--display); font-weight: 500; font-size: 36px; letter-spacing: -0.03em; padding: 18px 0; border-bottom: 1px solid rgba(254,249,246,.1); display: block; color: var(--cream); transition: color .2s var(--ease);}
+.mobile-nav__links a:first-child{border-top: 1px solid rgba(254,249,246,.1);}
+.mobile-nav__links a:hover{color: rgba(254,249,246,.6);}
+.mobile-nav__actions{padding: 0 var(--gutter) 40px; display: flex; flex-direction: column; gap: 12px;}
+.mobile-nav__actions .btn--primary{background: var(--klein); color: var(--cream);}
+.mobile-nav__actions .btn--secondary{border-color: rgba(254,249,246,.3); color: var(--cream);}
+.mobile-nav__actions .btn--secondary:hover{background: var(--cream); color: var(--ink);}
+/* ─── Footer ─── */
+    .footer{background: var(--cream-2); padding: 64px var(--gutter) 96px; margin-top: 96px; border-top: 1px solid var(--ink-10);}
+.footer__row{display: grid; grid-template-columns: 240px 1fr; gap: 64px;}
+.footer__mark{height: 32px;}
+.footer__cols{display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;}
+.footer__cols .lbl{display: block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-40); margin-bottom: 14px;}
+.footer__cols a{display: block; font-size: 14px; line-height: 1.5; color: var(--ink); margin-bottom: 6px; transition: color var(--dur) var(--ease);}
+.footer__cols a:hover{color: var(--klein);}
+.footer__bot{display: flex; justify-content: space-between; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--ink-10); font-size: 12px; color: var(--ink-40);}
 
-  .btn{font-family:var(--display);font-weight:500;font-size:15px;letter-spacing:-.02em;border:none;border-radius:999px;padding:14px 28px;cursor:pointer;display:inline-flex;align-items:center;gap:10px;white-space:nowrap;transition:background var(--dur) var(--ease),color var(--dur) var(--ease)}
-  .btn--primary{background:var(--klein);color:var(--cream)}
-  .btn--primary:hover{background:var(--klein-hover)}
-  .btn--sm{font-size:13px;padding:10px 18px}
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .header__nav{display: none;}
+  .header__phone{display: none;}
+  .header__hamburger{display: block;}
+  .footer__row{grid-template-columns: 1fr; gap: 32px;}
+  .footer__cols{grid-template-columns: 1fr 1fr; gap: 24px;}
+  .footer__bot{flex-direction: column; gap: 6px;}
+}
 
-  .breadcrumb{padding:20px 0 0;font-size:13px;color:var(--ink-40)}
-  .breadcrumb a{color:var(--ink-40)}
-  .breadcrumb a:hover{color:var(--klein)}
-  .breadcrumb span{margin:0 8px}
+@media (max-width: 480px) {
+  .footer__cols{grid-template-columns: 1fr;}
+}
 
-  .hero{padding:44px 0 30px;border-bottom:1px solid var(--ink-10)}
-  .hero .eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--klein);margin-bottom:16px}
-  .hero h1{font-size:clamp(36px,5vw,60px);max-width:16ch}
-  .hero p{font-size:19px;color:var(--ink-60);max-width:56ch;margin:18px 0 0;line-height:1.5}
-
+  .article{max-width:var(--max-w);margin:0 auto;padding:0 var(--gutter)}
+  .breadcrumb{padding:24px 0 0;font-size:13px;color:var(--ink-40)}
+  .breadcrumb a{color:var(--ink-40)} .breadcrumb a:hover{color:var(--klein)}
+  .breadcrumb span.sep{margin:0 8px}
+  .ghero{padding:40px 0 30px;border-bottom:1px solid var(--ink-10)}
+  .ghero .eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--klein);margin-bottom:16px}
+  .ghero h1{font-size:clamp(36px,5vw,60px);max-width:16ch}
+  .ghero p{font-size:19px;color:var(--ink-60);max-width:56ch;margin:18px 0 0;line-height:1.5}
   .guides{padding:44px 0}
   .guides-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
   @media(max-width:720px){.guides-grid{grid-template-columns:1fr}}
-  .guide{display:block;background:#fff;border:1px solid var(--cream-3);border-radius:18px;padding:28px;transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease);position:relative}
+  .guide{display:block;background:#fff;border:1px solid var(--cream-3);border-radius:18px;padding:28px;transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
   .guide:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,47,167,.12)}
   .guide .tag{display:inline-block;font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--klein);background:#EAF0FF;padding:5px 11px;border-radius:999px;margin-bottom:16px}
   .guide h3{font-size:24px;line-height:1.12;margin-bottom:10px}
   .guide p{font-size:15px;color:var(--ink-60);line-height:1.5;margin:0 0 18px}
   .guide .more{font-family:var(--display);font-weight:600;font-size:15px;color:var(--klein);display:flex;align-items:center;gap:7px}
-
   .soon{background:var(--cream-2);border:1px dashed var(--cream-3);border-radius:18px;padding:28px;display:flex;flex-direction:column;justify-content:center;text-align:center}
   .soon .lbl{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-40);margin-bottom:8px}
   .soon p{font-size:14px;color:var(--ink-40);margin:0}
-
   .cta-band{background:var(--klein);color:var(--cream);border-radius:24px;padding:44px;text-align:center;margin:20px 0 60px}
   .cta-band h2{color:var(--cream);font-size:clamp(26px,3.6vw,38px);margin-bottom:12px}
   .cta-band p{color:rgba(254,249,246,.6);font-size:16px;max-width:46ch;margin:0 auto 24px}
   .cta-band .btn--primary{background:var(--cream);color:var(--klein)}
   .cta-band .btn--primary:hover{background:#fff}
-
-  .footer{background:var(--cream-2);padding:56px var(--gutter) 28px;border-top:1px solid var(--ink-10)}
-  .footer .fi{max-width:var(--max-w);margin:0 auto;font-size:14px;color:var(--ink-60)}
-  .footer .fi strong{font-family:var(--display);color:var(--ink)}
-  .footer .disc{font-size:12px;color:var(--ink-40);margin-top:16px;border-top:1px solid var(--ink-10);padding-top:16px;line-height:1.6}
-
-  [data-en]{display:none}
-  html[lang="en"] [data-es]{display:none}
-  html[lang="en"] [data-en]{display:revert}
 </style>
 </head>
 <body>
 
 <header class="header">
-  <a href="../../" class="header__logo"><span class="m"></span>Carreras Law Firm</a>
-  <nav class="header__nav">
-    <a href="../../#areas" data-en="Practice Areas" data-es="Áreas de Práctica">Áreas de Práctica</a>
-    <a href="../../#process" data-en="How We Work" data-es="Cómo Trabajamos">Cómo Trabajamos</a>
-    <a href="../legal-guides/" data-en="Legal Guides" data-es="Guías Legales" style="color:var(--klein)">Guías Legales</a>
-    <a href="../../#contact" data-en="Contact" data-es="Contacto">Contacto</a>
-  </nav>
-  <a class="btn btn--primary btn--sm" href="../../#intake" data-es="Consulta gratis" data-en="Free Consultation">Consulta gratis</a>
-</header>
+    <a class="header__logo" href="../../"><img src="../../assets/logos/wordmark-v2-black.png" alt="Carreras Law Firm"></a>
+    <nav class="header__nav">
+      <a href="../../#areas" data-en="Practice Areas" data-es="Áreas de Práctica">Practice Areas</a>
+      <a href="../../#process" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</a>
+      <a href="../../#results" data-en="Results" data-es="Resultados">Results</a>
+      <a href="../../questions.html" data-en="Questions" data-es="Preguntas">Questions</a>
+      <span class="dropdown" id="resDropdown">
+        <a onclick="toggleDropdown(event)" data-en="Resources" data-es="Recursos">Resources</a>
+        <span class="dropdown__menu">
+          <a href="../legal-guides/">
+            <span data-en="Legal Guides" data-es="Guías Legales">Legal Guides</span>
+            <span class="dd-desc" data-en="Plain-language legal explainers" data-es="Explicaciones legales claras">Plain-language legal explainers</span>
+          </a>
+        </span>
+      </span>
+      <a href="../../#contact" data-en="Contact" data-es="Contacto">Contact</a>
+    </nav>
+    <div class="header__right">
+      <span class="header__lang" onclick="toggleLang()" id="langToggle"><b>EN</b>&nbsp;&middot;&nbsp;ES</span>
+      <a class="btn btn--primary btn--sm" href="../../#intake">Free Consultation</a>
+      <button class="header__hamburger" onclick="toggleMobileNav()">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </header>
 
-<div class="wrap">
-  <nav class="breadcrumb" aria-label="breadcrumb">
-    <a href="../../" data-es="Inicio" data-en="Home">Inicio</a>
-    <span>/</span>
-    <span style="color:var(--ink-60)" data-es="Guías legales" data-en="Legal Guides">Guías legales</span>
-  </nav>
-</div>
-
-<section class="hero">
-  <div class="wrap">
-    <div class="eyebrow" data-es="Recursos" data-en="Resources">Recursos</div>
-    <h1 data-es="Guías legales, en español y sin letra chiquita">Legal guides, in plain language</h1>
-    <h1 data-en="Legal guides, in plain language" style="display:none">Legal guides, in plain language</h1>
-    <p data-es="Explicamos las leyes de lesiones personales de Texas de forma clara, para que entiendas tus derechos antes de tomar cualquier decisión. Sin tecnicismos innecesarios, escritas para el Valle.">We explain Texas personal injury law clearly, so you understand your rights before making any decision. No unnecessary jargon, written for the Valley.</p>
-    <p data-en="We explain Texas personal injury law clearly, so you understand your rights before making any decision. No unnecessary jargon, written for the Valley." style="display:none"></p>
-  </div>
-</section>
-
-<section class="guides">
-  <div class="wrap">
-    <div class="guides-grid">
-
-      <a class="guide" href="regla-51-texas.html">
-        <span class="tag" data-es="Culpa y compensación" data-en="Fault & compensation">Culpa y compensación</span>
-        <h3 data-es="La regla del 51% en Texas, explicada simple">The 51% rule in Texas, explained simply</h3>
-        <h3 data-en="The 51% rule in Texas, explained simply" style="display:none"></h3>
-        <p data-es="¿Puedes reclamar si tuviste algo de culpa en el accidente? Esta regla lo decide. Te la explicamos con un ejemplo con números del Valle.">Can you still claim if you were partly at fault? This rule decides. We explain it with a Valley example using real numbers.</p>
-        <p data-en="Can you still claim if you were partly at fault? This rule decides. We explain it with a Valley example using real numbers." style="display:none"></p>
-        <span class="more"><span data-es="Leer la guía" data-en="Read the guide">Leer la guía</span> →</span>
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav__top">
+      <img src="../../assets/logos/wordmark-v2-black.png" alt="Carreras Law Firm" style="height:22px;filter:invert(1) brightness(2)">
+      <button class="mobile-nav__close" onclick="toggleMobileNav()">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="mobile-nav__links">
+      <a href="../../#areas" onclick="toggleMobileNav()" data-en="Practice Areas" data-es="Áreas de Práctica">Practice Areas</a>
+      <a href="../../#process" onclick="toggleMobileNav()" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</a>
+      <a href="../../#results" onclick="toggleMobileNav()" data-en="Results" data-es="Resultados">Results</a>
+      <a href="../../questions.html" data-en="Questions" data-es="Preguntas">Questions</a>
+      <a href="../legal-guides/" data-en="Resources" data-es="Recursos">Resources</a>
+      <a href="../../#contact" onclick="toggleMobileNav()" data-en="Contact" data-es="Contacto">Contact</a>
+    </div>
+    <div class="mobile-nav__actions">
+      <a class="btn btn--primary btn--full" href="../../#intake" onclick="toggleMobileNav()">Free Consultation</a>
+      <a class="btn btn--secondary btn--full" href="tel:+13466802695">
+        <svg style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.6" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (346) 680-2695
       </a>
-
-      <div class="soon">
-        <div class="lbl" data-es="Próximamente" data-en="Coming soon">Próximamente</div>
-        <p data-es="Estamos preparando más guías sobre plazos, valor de tu caso, honorarios y tus derechos. Vuelve pronto.">We are preparing more guides on deadlines, case value, fees, and your rights. Check back soon.</p>
-        <p data-en="We are preparing more guides on deadlines, case value, fees, and your rights. Check back soon." style="display:none"></p>
-      </div>
-
+      <span class="header__lang" onclick="toggleLang()" style="text-align:center;padding:10px 0;color:rgba(254,249,246,.6)"><b style="color:#FEF9F6">EN</b>&nbsp;&middot;&nbsp;ES</span>
     </div>
   </div>
-</section>
 
-<section class="wrap">
+<div class="article">
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <a href="../../"><span data-en="Home" data-es="Inicio">Home</span></a>
+    <span class="sep">/</span>
+    <span style="color:var(--ink-60)"><span data-en="Legal Guides" data-es="Guías legales">Legal Guides</span></span>
+  </nav>
+
+  <section class="ghero">
+    <div class="eyebrow" data-en="Resources" data-es="Recursos">Resources</div>
+    <h1 data-en="Legal guides, in plain language" data-es="Guías legales, en español y sin letra chiquita">Legal guides, in plain language</h1>
+    <p data-en="We explain Texas personal injury law clearly, so you understand your rights before making any decision. No unnecessary jargon, written for the Valley." data-es="Explicamos las leyes de lesiones personales de Texas de forma clara, para que entiendas tus derechos antes de tomar cualquier decisión. Sin tecnicismos innecesarios, escritas para el Valle.">We explain Texas personal injury law clearly, so you understand your rights before making any decision. No unnecessary jargon, written for the Valley.</p>
+  </section>
+
+  <section class="guides">
+    <div class="guides-grid">
+      <a class="guide" href="regla-51-texas.html">
+        <span class="tag" data-en="Fault &amp; compensation" data-es="Culpa y compensación">Fault &amp; compensation</span>
+        <h3 data-en="The 51% rule in Texas, explained simply" data-es="La regla del 51% en Texas, explicada simple">The 51% rule in Texas, explained simply</h3>
+        <p data-en="Can you still claim if you were partly at fault? This rule decides. We explain it with a Valley example using real numbers." data-es="¿Puedes reclamar si tuviste algo de culpa en el accidente? Esta regla lo decide. Te la explicamos con un ejemplo con números del Valle.">Can you still claim if you were partly at fault? This rule decides. We explain it with a Valley example using real numbers.</p>
+        <span class="more"><span data-en="Read the guide" data-es="Leer la guía">Read the guide</span> →</span>
+      </a>
+      <div class="soon">
+        <div class="lbl" data-en="Coming soon" data-es="Próximamente">Coming soon</div>
+        <p data-en="We are preparing more guides on deadlines, case value, fees, and your rights. Check back soon." data-es="Estamos preparando más guías sobre plazos, valor de tu caso, honorarios y tus derechos. Vuelve pronto.">We are preparing more guides on deadlines, case value, fees, and your rights. Check back soon.</p>
+      </div>
+    </div>
+  </section>
+
   <div class="cta-band">
-    <h2 data-es="¿Tu duda no está en una guía?">Not sure a guide covers your question?</h2>
-    <h2 data-en="Not sure a guide covers your question?" style="display:none"></h2>
-    <p data-es="Cuéntanos qué pasó. Un abogado de nuestro equipo revisa tu caso, en español, sin costo y sin compromiso.">Tell us what happened. A lawyer on our team reviews your case, in Spanish, free and with no obligation.</p>
-    <p data-en="Tell us what happened. A lawyer on our team reviews your case, in Spanish, free and with no obligation." style="display:none"></p>
-    <a class="btn btn--primary" href="../../#intake" data-es="Consulta gratis" data-en="Free consultation">Consulta gratis</a>
+    <h2 data-en="Not sure a guide covers your question?" data-es="¿Tu duda no está en una guía?">Not sure a guide covers your question?</h2>
+    <p data-en="Tell us what happened. A lawyer on our team reviews your case, in Spanish, free and with no obligation." data-es="Cuéntanos qué pasó. Un abogado de nuestro equipo revisa tu caso, en español, sin costo y sin compromiso.">Tell us what happened. A lawyer on our team reviews your case, in Spanish, free and with no obligation.</p>
+    <a class="btn btn--primary" href="../../#intake" data-en="Free consultation" data-es="Consulta gratis">Free consultation</a>
   </div>
-</section>
+</div>
 
 <footer class="footer">
-  <div class="fi">
-    <strong>Carreras Law Firm</strong> · McAllen: 1200 Auburn Ave, Ste. 490, McAllen, TX 78504 · Houston: 440 Louisiana St., Suite 972, Houston, TX 77002 · (346) 680-2695
-    <div class="disc" data-es="Esta sección ofrece información general con fines educativos y no constituye asesoría legal ni crea una relación abogado-cliente. Cada caso es distinto; para orientación sobre tu situación, consulta directamente con un abogado.">This section offers general information for educational purposes and is not legal advice, nor does it create an attorney-client relationship. Every case is different; for guidance on your situation, consult directly with a lawyer.</div>
-    <div class="disc" data-en="This section offers general information for educational purposes and is not legal advice, nor does it create an attorney-client relationship. Every case is different; for guidance on your situation, consult directly with a lawyer." style="display:none"></div>
-  </div>
-</footer>
+    <div class="footer__row">
+      <div>
+        <img class="footer__mark" src="../../assets/logos/wordmark-v2-black.png" alt="Carreras Law Firm">
+        <div style="display:flex;gap:16px;align-items:center;margin-top:20px;">
+          <a href="https://www.htla.org/" target="_blank" rel="noreferrer"><img src="../../assets/associations/htla-logo.avif" alt="HTLA Member" style="height:40px;opacity:.7;transition:opacity .24s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"></a>
+          <a href="https://www.ttla.com/" target="_blank" rel="noreferrer"><img src="../../assets/associations/ttla-logo.webp" alt="TTLA Member" style="height:40px;opacity:.7;transition:opacity .24s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"></a>
+          <a href="https://www.hyla.org/" target="_blank" rel="noreferrer"><img src="../../assets/associations/hyla-logo.png" alt="HYLA Member" style="height:40px;opacity:.7;transition:opacity .24s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"></a>
+          <a href="https://www.mabah.com/" target="_blank" rel="noreferrer"><img src="../../assets/associations/maba-logo.png" alt="MABA Member" style="height:40px;opacity:.7;transition:opacity .24s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"></a>
+        </div>
+      </div>
+      <div class="footer__cols">
+        <div>
+          <span class="lbl" data-en="The Firm" data-es="La Firma">The Firm</span>
+          <a href="../../#areas" data-en="Practice Areas" data-es="Áreas de Práctica">Practice Areas</a>
+          <a href="../../#markin" data-en="About Markin" data-es="Sobre Markin">About Markin</a>
+          <a href="../../#results" data-en="Case Values" data-es="Valores de Caso">Case Values</a>
+          <a href="../../#process" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</a>
+          <a href="../../questions.html" data-en="Questions" data-es="Preguntas">Questions</a>
+        </div>
+        <div>
+          <span class="lbl" data-en="Contact" data-es="Contacto">Contact</span>
+          <a href="tel:+13466802695">(346) 680-2695</a>
+          <a class="sms-link" href="sms:+13466802695&body=Hi%2C%20I%20found%20you%20on%20your%20website.%20I%20need%20help%20with%20a%20case." data-en="Text us" data-es="Enviar texto">Text us</a>
+          <a class="wa-link" href="https://wa.me/13466802695?text=Hi%2C%20I%20found%20you%20on%20your%20website.%20I%20need%20help%20with%20a%20case." target="_blank" rel="noreferrer">WhatsApp</a>
+          <a href="mailto:info@carreraslawfirm.com">info@carreraslawfirm.com</a>
+          <a href="https://maps.google.com/?q=440+Louisiana+St+Suite+972+Houston+TX+77002" target="_blank" rel="noreferrer">440 Louisiana St., Suite 972<br>Houston, TX 77002</a>
+        </div>
+        <div>
+          <span class="lbl" data-en="Connect" data-es="Síguenos">Connect</span>
+          <a href="https://www.youtube.com/@CarrerasLawFirm" target="_blank" rel="noreferrer">YouTube</a>
+          <a href="https://www.instagram.com/carreraslawfirm" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://calendar.app.google/SapEjTV8U5ir7yfs7" target="_blank" rel="noreferrer" data-en="Book Video Consultation" data-es="Agendar Videollamada">Book Video Consultation</a>
+          <a href="https://drive.google.com/uc?export=download&id=1CPcfrh-4d4_hfvUZLu3CajHxWGuhhzSu" data-en="Save Our Number" data-es="Guarda Nuestro Número">Save Our Number</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>Carreras Law Firm PLLC</span>
+      <span style="display:flex;gap:16px;">
+        <a href="../../terms.html" style="color:var(--ink-60);text-decoration:underline;transition:color .24s" onmouseover="this.style.color='var(--klein)'" onmouseout="this.style.color='var(--ink-60)'" data-en="Terms of Service" data-es="T&eacute;rminos de Servicio">Terms of Service</a>
+        <a href="../../privacy.html" style="color:var(--ink-60);text-decoration:underline;transition:color .24s" onmouseover="this.style.color='var(--klein)'" onmouseout="this.style.color='var(--ink-60)'" data-en="Privacy Policy" data-es="Pol&iacute;tica de Privacidad">Privacy Policy</a>
+      </span>
+      <span data-en="&copy; 2026. All rights reserved." data-es="&copy; 2026. Todos los derechos reservados.">&copy; 2026. All rights reserved.</span>
+    </div>
+  </footer>
 
 <script>
-  function toggleLang(){
-    var l = document.documentElement.getAttribute('lang')==='es' ? 'en' : 'es';
-    document.documentElement.setAttribute('lang', l);
+  var currentLang = 'en';
+  function toggleLang() {
+    currentLang = currentLang === 'en' ? 'es' : 'en';
+    document.querySelectorAll('[data-en]').forEach(function(el) {
+      var text = el.getAttribute('data-' + currentLang);
+      if (text) { if (el.tagName === 'INPUT') { el.placeholder = text; } else { el.innerHTML = text; } }
+    });
+    document.querySelectorAll('.header__lang').forEach(function(el) {
+      el.innerHTML = currentLang === 'en' ? '<b>EN</b>&nbsp;&middot;&nbsp;ES' : 'EN&nbsp;&middot;&nbsp;<b>ES</b>';
+    });
+    document.documentElement.lang = currentLang;
   }
+  function toggleMobileNav() { document.getElementById('mobileNav').classList.toggle('open'); }
+  function toggleDropdown(e) { e.preventDefault(); e.stopPropagation(); document.getElementById('resDropdown').classList.toggle('open'); }
+  document.addEventListener('click', function(e) {
+    var dd = document.getElementById('resDropdown');
+    if (dd && !dd.contains(e.target)) dd.classList.remove('open');
+  });
 </script>
 </body>
 </html>
