@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Regla del 51% en Texas, Explicada | Carreras Law Firm</title>
+<meta name="description" content="En Texas, si tienes 51% o más de culpa en un accidente, no recibes compensación. Te explicamos la regla del 51% en español, con un ejemplo real del Valle.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --klein:#002FA7; --klein-soft:#E7ECF9; --cream:#FEF9F6; --ink:#0F0F0F; --ink-soft:#454140; --muted:#8A8380;
+    --line:#E8DFD8; --line-soft:#F0E9E3; --white:#FFFFFF;
+    --r-lg:22px; --r-md:14px; --gutter:clamp(20px,4vw,64px); --ease:cubic-bezier(.32,.72,.24,1);
+    --amber:#B45309; --amber-soft:#FBEfda;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:"Manrope",system-ui,sans-serif;font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:820px;margin:0 auto;padding:0 var(--gutter)}
+  h1,h2,h3{font-family:"General Sans","Manrope",sans-serif;font-weight:600;line-height:1.12;letter-spacing:-.02em;margin:0}
+  p{margin:0 0 1.1em}
+  a{color:var(--klein);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* pilot banner */
+  .pilot{background:var(--ink);color:#fff;text-align:center;font-family:"Manrope";font-size:13px;padding:9px 16px;letter-spacing:.01em}
+  .pilot strong{color:#FFD9A8}
+
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:20;background:rgba(254,249,246,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1100px;margin:0 auto;padding:14px var(--gutter)}
+  .brand{display:flex;align-items:center;gap:11px;font-family:"General Sans";font-weight:600;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .brand .m{width:26px;height:26px;border-radius:7px;background:var(--klein);position:relative;flex:0 0 auto}
+  .brand .m::after{content:"";position:absolute;inset:6px 6px auto auto;width:8px;height:8px;border-radius:2px;background:var(--cream)}
+  .nav-r{display:flex;align-items:center;gap:14px}
+  .phone{font-weight:600;font-size:15px;color:var(--ink);white-space:nowrap}
+  .langtog{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:"General Sans";font-size:12px;font-weight:600}
+  .langtog button{border:none;background:transparent;padding:6px 12px;cursor:pointer;color:var(--muted);font-family:inherit;font-weight:inherit}
+  .langtog button.on{background:var(--klein);color:#fff}
+  @media(max-width:600px){.phone{display:none}}
+
+  /* hero */
+  .hero{padding:56px 0 34px}
+  .kicker{font-family:"General Sans";font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--klein);margin-bottom:18px}
+  .hero h1{font-size:clamp(32px,5.4vw,50px)}
+  .readtime{display:flex;align-items:center;gap:14px;margin-top:20px;font-size:13.5px;color:var(--muted);font-family:"General Sans";font-weight:500}
+  .readtime .dot{width:4px;height:4px;border-radius:50%;background:var(--muted)}
+
+  /* direct answer box (AEO) */
+  .answer{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--klein);border-radius:var(--r-md);padding:22px 26px;margin:30px 0 8px;box-shadow:0 14px 34px -26px rgba(0,47,167,.45)}
+  .answer .lbl{font-family:"General Sans";font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--klein);margin-bottom:9px}
+  .answer p{font-size:19px;line-height:1.55;margin:0;font-weight:500}
+  .answer strong{color:var(--klein)}
+
+  /* TOC */
+  .toc{background:var(--klein-soft);border-radius:var(--r-md);padding:22px 26px;margin:34px 0}
+  .toc .lbl{font-family:"General Sans";font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--klein);margin-bottom:12px}
+  .toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+  .toc li{counter-increment:t;padding:5px 0;font-size:15.5px;display:flex;gap:11px;align-items:baseline}
+  .toc li::before{content:counter(t,decimal-leading-zero);font-family:"General Sans";font-size:12px;font-weight:600;color:var(--klein);flex:0 0 auto}
+  .toc a{color:var(--ink)}
+
+  /* body */
+  .body{padding:8px 0 20px}
+  .body section{padding:26px 0;border-top:1px solid var(--line-soft)}
+  .body section:first-child{border-top:none}
+  .body h2{font-size:clamp(23px,3.6vw,30px);margin-bottom:14px;scroll-margin-top:80px}
+  .body h3{font-size:19px;margin:20px 0 8px}
+  .body strong{font-weight:600}
+  .body .lead{font-size:18px;color:var(--ink-soft)}
+
+  /* example card with numbers */
+  .example{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px;margin:20px 0;box-shadow:0 18px 40px -30px rgba(15,15,15,.4)}
+  .example .et{font-family:"General Sans";font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+  .exrow{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--line-soft);gap:14px}
+  .exrow:last-of-type{border-bottom:none}
+  .exrow .k{font-size:15px;color:var(--ink-soft)}
+  .exrow .v{font-family:"General Sans";font-weight:600;font-size:17px;white-space:nowrap}
+  .exrow.total{border-top:2px solid var(--ink);margin-top:6px;padding-top:14px}
+  .exrow.total .v{color:var(--klein);font-size:22px}
+  .exrow .v.cut{color:var(--amber)}
+
+  /* callout */
+  .tip{background:var(--amber-soft);border-radius:var(--r-md);padding:18px 22px;margin:20px 0;font-size:15px;color:#6b3d08}
+  .tip .tl{font-family:"General Sans";font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+
+  /* CTA */
+  .cta{background:var(--klein);color:#fff;border-radius:var(--r-lg);padding:38px 34px;margin:40px 0 20px;text-align:center}
+  .cta h2{color:#fff;font-size:clamp(24px,4vw,32px);margin-bottom:12px}
+  .cta p{color:#D5DEF6;font-size:16.5px;max-width:46ch;margin:0 auto 22px}
+  .cta .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:999px;font-family:"General Sans";font-weight:600;font-size:16px;cursor:pointer}
+  .btn.primary{background:#fff;color:var(--klein)}
+  .btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+  .cta .fine{margin-top:18px;font-size:13px;color:#AFC0EC}
+
+  /* related */
+  .related{border:1px solid var(--line);border-radius:var(--r-md);padding:20px 24px;margin:20px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;background:var(--white)}
+  .related .rt{font-size:12px;font-family:"General Sans";font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+  .related .rl{font-size:17px;font-family:"General Sans";font-weight:600;color:var(--ink)}
+  .related .arrow{color:var(--klein);font-size:22px;flex:0 0 auto}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);margin-top:20px;padding:34px 0 50px;background:var(--white)}
+  .foot-in{max-width:1100px;margin:0 auto;padding:0 var(--gutter)}
+  .nap{font-size:14px;color:var(--ink-soft);margin-bottom:16px}
+  .nap strong{font-family:"General Sans";color:var(--ink)}
+  .disclaimer{font-size:12px;color:var(--muted);line-height:1.6;border-top:1px solid var(--line-soft);padding-top:16px}
+
+  [data-en]{display:none}
+  html[lang="en"] [data-es]{display:none}
+  html[lang="en"] [data-en]{display:revert}
+</style>
+</head>
+<body>
+
+<div class="pilot">
+  <span data-es>⚠ <strong>PÁGINA PILOTO</strong> · borrador para visualización · pendiente de revisión legal de Markin antes de publicar</span>
+  <span data-en>⚠ <strong>PILOT PAGE</strong> · draft for preview · pending Markin's legal review before publishing</span>
+</div>
+
+<header class="nav">
+  <div class="nav-in">
+    <div class="brand"><span class="m"></span>Carreras Law Firm</div>
+    <div class="nav-r">
+      <span class="phone">(346) 680-2695</span>
+      <div class="langtog">
+        <button id="btn-es" class="on" onclick="setLang('es')">ES</button>
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <div class="kicker" data-es>Guía legal · Texas</div>
+    <div class="kicker" data-en>Legal guide · Texas</div>
+    <h1>
+      <span data-es>La regla del 51% en Texas, explicada de forma simple</span>
+      <span data-en>The 51% rule in Texas, explained simply</span>
+    </h1>
+    <div class="readtime">
+      <span data-es>Lectura de 6 minutos</span><span data-en>6 minute read</span>
+      <span class="dot"></span>
+      <span data-es>Actualizado 2026</span><span data-en>Updated 2026</span>
+    </div>
+  </div>
+
+  <div class="answer">
+    <div class="lbl" data-es>La respuesta corta</div>
+    <div class="lbl" data-en>The short answer</div>
+    <p data-es>En Texas, si tuviste <strong>51% o más de culpa</strong> en tu accidente, la ley no te permite recibir ninguna compensación. Si tuviste <strong>50% o menos</strong>, sí puedes recibir compensación, pero se reduce según tu porcentaje de culpa.</p>
+    <p data-en>In Texas, if you were <strong>51% or more at fault</strong> for your accident, the law bars you from recovering any compensation. If you were <strong>50% or less</strong> at fault, you can recover, but your compensation is reduced by your percentage of fault.</p>
+  </div>
+
+  <nav class="toc">
+    <div class="lbl" data-es>En esta página</div>
+    <div class="lbl" data-en>On this page</div>
+    <ol>
+      <li><a href="#que-es" data-es>Qué es la regla del 51%</a><a href="#que-es" data-en>What the 51% rule is</a></li>
+      <li><a href="#compensacion" data-es>Cómo afecta tu compensación</a><a href="#compensacion" data-en>How it affects your compensation</a></li>
+      <li><a href="#ejemplo" data-es>Un ejemplo con números reales</a><a href="#ejemplo" data-en>A real-numbers example</a></li>
+      <li><a href="#quien-decide" data-es>Quién decide tu porcentaje de culpa</a><a href="#quien-decide" data-en>Who decides your percentage of fault</a></li>
+      <li><a href="#aseguradora" data-es>Por qué la aseguradora la usa en tu contra</a><a href="#aseguradora" data-en>Why insurers use it against you</a></li>
+      <li><a href="#proteger" data-es>Cómo proteger tu caso</a><a href="#proteger" data-en>How to protect your case</a></li>
+    </ol>
+  </nav>
+
+  <div class="body">
+
+    <section id="que-es">
+      <h2 data-es>¿Qué es la regla del 51% en Texas?</h2>
+      <h2 data-en>What is the 51% rule in Texas?</h2>
+      <p class="lead" data-es>La regla del 51% es la forma en que Texas reparte la culpa cuando más de una persona pudo haber contribuido a un accidente.</p>
+      <p class="lead" data-en>The 51% rule is how Texas divides fault when more than one person may have contributed to an accident.</p>
+      <p data-es>Su nombre técnico es <strong>"responsabilidad proporcional"</strong> (o <em>modified comparative negligence</em>). En palabras simples: la ley de Texas pone un límite. Si eres responsable de más de la mitad de lo que pasó —es decir, 51% o más— pierdes el derecho a reclamar. Ese límite del 51% es lo que le da nombre a la regla.</p>
+      <p data-en>Its technical name is <strong>"proportionate responsibility"</strong> (or modified comparative negligence). In plain words: Texas law sets a limit. If you are responsible for more than half of what happened — that is, 51% or more — you lose the right to claim. That 51% limit is what gives the rule its name.</p>
+      <p data-es>Esto es importante porque Texas es distinto de otros estados. En algunos lugares puedes reclamar aunque tengas la mayor parte de la culpa. <strong>En Texas no.</strong></p>
+      <p data-en>This matters because Texas is different from other states. In some places you can claim even if you hold most of the fault. <strong>In Texas, you cannot.</strong></p>
+    </section>
+
+    <section id="compensacion">
+      <h2 data-es>¿Cómo afecta mi compensación si tuve algo de culpa?</h2>
+      <h2 data-en>How does it affect my compensation if I was partly at fault?</h2>
+      <p data-es>Tener algo de culpa <strong>no significa que pierdas todo</strong>, siempre que te mantengas en 50% o menos. Lo que pasa es que tu compensación se reduce en la misma proporción de tu culpa.</p>
+      <p data-en>Being partly at fault <strong>does not mean you lose everything</strong>, as long as you stay at 50% or less. What happens is that your compensation is reduced by the same proportion as your fault.</p>
+      <h3 data-es>La escala, en pocas palabras</h3>
+      <h3 data-en>The scale, in a nutshell</h3>
+      <p data-es>Si tuviste <strong>0% de culpa</strong>, puedes reclamar el 100%. Si tuviste <strong>30% de culpa</strong>, recibes el 70%. Si tuviste <strong>50% de culpa</strong>, recibes la mitad. Pero si cruzas a <strong>51%</strong>, recibes <strong>nada</strong>. Por eso ese único punto porcentual —de 50% a 51%— es tan importante en Texas.</p>
+      <p data-en>If you were <strong>0% at fault</strong>, you can claim 100%. If you were <strong>30% at fault</strong>, you receive 70%. If you were <strong>50% at fault</strong>, you receive half. But if you cross into <strong>51%</strong>, you receive <strong>nothing</strong>. That is why that single percentage point — from 50% to 51% — matters so much in Texas.</p>
+    </section>
+
+    <section id="ejemplo">
+      <h2 data-es>Un ejemplo con números reales</h2>
+      <h2 data-en>A real-numbers example</h2>
+      <p data-es>Imagina un choque en la Expressway 83, entre McAllen y Pharr. Los daños de la víctima suman <strong>$100,000</strong> entre gastos médicos y pérdida de salario.</p>
+      <p data-en>Imagine a crash on Expressway 83, between McAllen and Pharr. The victim's damages total <strong>$100,000</strong> in medical bills and lost wages.</p>
+
+      <div class="example">
+        <div class="et" data-es>Si la corte determina 30% de culpa de la víctima</div>
+        <div class="et" data-en>If the court finds the victim 30% at fault</div>
+        <div class="exrow"><span class="k" data-es>Daños totales</span><span class="k" data-en>Total damages</span><span class="v">$100,000</span></div>
+        <div class="exrow"><span class="k" data-es>Reducción por 30% de culpa</span><span class="k" data-en>Reduction for 30% fault</span><span class="v cut">− $30,000</span></div>
+        <div class="exrow total"><span class="k" data-es>La víctima recibe</span><span class="k" data-en>The victim receives</span><span class="v">$70,000</span></div>
+      </div>
+
+      <div class="example">
+        <div class="et" data-es>Si la corte determina 51% de culpa de la víctima</div>
+        <div class="et" data-en>If the court finds the victim 51% at fault</div>
+        <div class="exrow"><span class="k" data-es>Daños totales</span><span class="k" data-en>Total damages</span><span class="v">$100,000</span></div>
+        <div class="exrow"><span class="k" data-es>Barrera del 51%</span><span class="k" data-en>The 51% bar</span><span class="v cut" data-es>bloquea todo</span><span class="v cut" data-en>bars everything</span></div>
+        <div class="exrow total"><span class="k" data-es>La víctima recibe</span><span class="k" data-en>The victim receives</span><span class="v" style="color:var(--amber)">$0</span></div>
+      </div>
+
+      <p data-es>La diferencia entre 50% y 51% de culpa puede ser la diferencia entre <strong>$50,000 y nada</strong>. Por eso pelear tu porcentaje de culpa no es un detalle — es todo el caso.</p>
+      <p data-en>The difference between 50% and 51% fault can be the difference between <strong>$50,000 and nothing</strong>. That is why fighting your percentage of fault is not a detail — it is the whole case.</p>
+    </section>
+
+    <section id="quien-decide">
+      <h2 data-es>¿Quién decide mi porcentaje de culpa?</h2>
+      <h2 data-en>Who decides my percentage of fault?</h2>
+      <p data-es>Al final, lo decide un <strong>jurado</strong> (o un juez, si el caso no llega a juicio). Pero mucho antes de eso, la <strong>aseguradora</strong> ya asignó su propia versión de tu culpa — y casi siempre la infla para pagarte menos o nada.</p>
+      <p data-en>Ultimately, a <strong>jury</strong> decides (or a judge, if the case does not reach trial). But long before that, the <strong>insurance company</strong> has already assigned its own version of your fault — and it almost always inflates it to pay you less, or nothing.</p>
+      <p data-es>Entre esos dos momentos está el trabajo de un abogado: reunir la evidencia —fotos, testigos, reportes, cámaras— que mantenga tu porcentaje de culpa lo más bajo posible.</p>
+      <p data-en>Between those two moments is a lawyer's work: gathering the evidence — photos, witnesses, reports, cameras — that keeps your percentage of fault as low as possible.</p>
+    </section>
+
+    <section id="aseguradora">
+      <h2 data-es>¿Por qué la aseguradora usa esta regla en mi contra?</h2>
+      <h2 data-en>Why does the insurance company use this rule against me?</h2>
+      <p data-es>Porque es su herramienta más barata. Si la aseguradora logra convencer de que tuviste <strong>51% o más</strong> de culpa, no te paga <strong>nada</strong> — legalmente. Por eso, desde la primera llamada, buscan que digas algo que suene a que fue tu responsabilidad.</p>
+      <p data-en>Because it is their cheapest tool. If the insurer can argue you were <strong>51% or more</strong> at fault, they owe you <strong>nothing</strong> — legally. That is why, from the very first call, they try to get you to say something that sounds like it was your fault.</p>
+      <div class="tip">
+        <div class="tl" data-es>Cuídate de esto</div>
+        <div class="tl" data-en>Watch out for this</div>
+        <span data-es>Un simple "lo siento" en la escena, o una frase mal dicha por teléfono con el ajustador, puede usarse para subir tu porcentaje de culpa. No admitas culpa antes de hablar con alguien de tu lado.</span>
+        <span data-en>A simple "I'm sorry" at the scene, or one misspoken phrase on the phone with the adjuster, can be used to raise your percentage of fault. Do not admit fault before speaking with someone on your side.</span>
+      </div>
+    </section>
+
+    <section id="proteger">
+      <h2 data-es>¿Cómo puedo proteger mi caso?</h2>
+      <h2 data-en>How can I protect my case?</h2>
+      <p data-es>Lo más importante sucede en los primeros días. Documenta todo lo que puedas de la escena, busca atención médica aunque te sientas bien, guarda cada reporte y recibo, y <strong>habla con un abogado antes que con la aseguradora del otro conductor.</strong></p>
+      <p data-en>The most important things happen in the first days. Document everything you can from the scene, seek medical care even if you feel fine, keep every report and receipt, and <strong>talk to a lawyer before talking to the other driver's insurance.</strong></p>
+      <p data-es>En Carreras Law Firm revisamos tu caso en español, sin costo, y te decimos con honestidad cómo se ve tu porcentaje de culpa antes de que la aseguradora lo decida por ti.</p>
+      <p data-en>At Carreras Law Firm we review your case in Spanish, at no cost, and tell you honestly how your percentage of fault looks before the insurance company decides it for you.</p>
+    </section>
+
+  </div>
+
+  <div class="cta">
+    <h2 data-es>Consulta gratis sobre tu caso</h2>
+    <h2 data-en>Free consultation about your case</h2>
+    <p data-es>Hablas directo con nuestro equipo, en español. Y no cobramos nada a menos que ganemos tu caso.</p>
+    <p data-en>You speak directly with our team, in Spanish. And we charge nothing unless we win your case.</p>
+    <div class="btns">
+      <span class="btn primary" data-es>Escríbenos por WhatsApp</span><span class="btn primary" data-en>Message us on WhatsApp</span>
+      <span class="btn ghost">(346) 680-2695</span>
+    </div>
+    <div class="fine" data-es>Consulta sin costo · No cobramos si no ganamos</div>
+    <div class="fine" data-en>Free consultation · No fee unless we win</div>
+  </div>
+
+  <a class="related" href="#">
+    <div>
+      <div class="rt" data-es>Página relacionada</div>
+      <div class="rt" data-en>Related page</div>
+      <div class="rl" data-es>Abogado de accidentes de camión en McAllen</div>
+      <div class="rl" data-en>Truck accident lawyer in McAllen</div>
+    </div>
+    <span class="arrow">→</span>
+  </a>
+
+</main>
+
+<footer>
+  <div class="foot-in">
+    <div class="nap">
+      <strong>Carreras Law Firm</strong> · 440 Louisiana St., Suite 972, Houston, TX 77002 · (346) 680-2695
+    </div>
+    <div class="disclaimer" data-es>
+      Esta página es información general con fines educativos y no constituye asesoría legal ni crea una relación abogado-cliente. Las leyes cambian y cada caso es distinto; consulta a un abogado sobre tu situación específica. La "regla del 51%" se refiere a la responsabilidad proporcional bajo la ley de Texas (Texas Civil Practice and Remedies Code, Capítulo 33).
+    </div>
+    <div class="disclaimer" data-en>
+      This page is general information for educational purposes and is not legal advice, nor does it create an attorney-client relationship. Laws change and every case is different; consult a lawyer about your specific situation. The "51% rule" refers to proportionate responsibility under Texas law (Texas Civil Practice and Remedies Code, Chapter 33).
+    </div>
+  </div>
+</footer>
+
+<script>
+  function setLang(l){
+    document.documentElement.setAttribute('lang', l);
+    document.getElementById('btn-es').classList.toggle('on', l==='es');
+    document.getElementById('btn-en').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>
