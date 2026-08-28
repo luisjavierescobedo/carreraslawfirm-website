@@ -141,6 +141,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .header__nav { display: flex; gap: 28px; font-size: 14px; }
     .header__nav a { transition: color var(--dur) var(--ease); }
     .header__nav a:hover { color: var(--klein); }
+
+    /* ─── Dropdown Resources ─── */
+    .header__nav .dropdown { position: relative; }
+    .header__nav .dropdown > a { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
+    .header__nav .dropdown > a::after { content: "▾"; font-size: 10px; opacity: .6; }
+    .header__nav .dropdown__menu { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(6px); background: var(--cream); border: 1px solid var(--cream-3); border-radius: 14px; padding: 8px; min-width: 220px; box-shadow: 0 12px 32px rgba(15,15,15,.12); opacity: 0; visibility: hidden; transition: opacity .2s var(--ease), transform .2s var(--ease); }
+    .header__nav .dropdown.open .dropdown__menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    .header__nav .dropdown__menu a { display: block; padding: 11px 14px; border-radius: 9px; font-size: 14px; color: var(--ink); }
+    .header__nav .dropdown__menu a:hover { background: var(--cream-2); color: var(--klein); }
+    .header__nav .dropdown__menu .dd-desc { display: block; font-size: 12px; color: var(--ink-40); margin-top: 2px; }
     .header__right { display: flex; gap: 14px; align-items: center; }
     .header__lang { font-size: 12px; letter-spacing: .06em; color: var(--ink-60); text-transform: uppercase; cursor: pointer; }
     .header__lang b { color: var(--ink); }
@@ -424,6 +434,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#process" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</a>
       <a href="#results" data-en="Results" data-es="Resultados">Results</a>
       <a href="questions.html" data-en="Questions" data-es="Preguntas">Questions</a>
+      <span class="dropdown" id="resDropdown">
+        <a onclick="toggleDropdown(event)" data-en="Resources" data-es="Recursos">Resources</a>
+        <span class="dropdown__menu">
+          <a href="resources/legal-guides/">
+            <span data-en="Legal Guides" data-es="Guías Legales">Legal Guides</span>
+            <span class="dd-desc" data-en="Plain-language legal explainers" data-es="Explicaciones legales claras">Plain-language legal explainers</span>
+          </a>
+        </span>
+      </span>
       <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
     </nav>
     <div class="header__right">
@@ -448,6 +467,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#process" onclick="toggleMobileNav()" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</a>
       <a href="#results" onclick="toggleMobileNav()" data-en="Results" data-es="Resultados">Results</a>
       <a href="questions.html" data-en="Questions" data-es="Preguntas">Questions</a>
+      <a href="resources/legal-guides/" data-en="Resources" data-es="Recursos">Resources</a>
       <a href="#contact" onclick="toggleMobileNav()" data-en="Contact" data-es="Contacto">Contact</a>
     </div>
     <div class="mobile-nav__actions">
@@ -974,6 +994,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function toggleMobileNav() {
       document.getElementById('mobileNav').classList.toggle('open');
     }
+    function toggleDropdown(e) {
+      e.preventDefault(); e.stopPropagation();
+      document.getElementById('resDropdown').classList.toggle('open');
+    }
+    document.addEventListener('click', function(e) {
+      var dd = document.getElementById('resDropdown');
+      if (dd && !dd.contains(e.target)) dd.classList.remove('open');
+    });
 
     // ─── Intake form submission ───
     function submitIntake() {
@@ -1077,7 +1105,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       // Anti-spam: honeypot check
       if (document.getElementById('consentWebsite').value) { closeConsent(); return; }
       // Anti-spam: timestamp check (must take at least 0.5 seconds)
-      if (Date.now() - consentOpenedAt < 500) { closeConsent(); return; }
+      if (Date.now() - consentOpenedAt < 2000) { closeConsent(); return; }
 
       if (!consentHasContactInfo) {
         const n = document.getElementById('consentName').value.trim();
