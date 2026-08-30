@@ -638,7 +638,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h4 data-en="Call us" data-es="Llámanos">Call us</h4>
       <p data-en="Speak directly with an attorney. Same-day response." data-es="Habla directo con un abogado. Respuesta el mismo día.">Speak directly with an attorney. Same-day response.</p>
     </a>
-    <a class="channel sms-link" href="sms:+13466802695&body=Hi%2C%20I%20found%20you%20on%20your%20website.%20I%20need%20help%20with%20a%20case.">
+    <a class="channel sms-link" href="sms:+13466802695?body=Hi%2C%20I%20found%20you%20on%20your%20website.%20I%20need%20help%20with%20a%20case.">
       <div class="channel__icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
       <h4 data-en="Text us" data-es="Mándanos un texto">Text us</h4>
       <p data-en="Prefer texting? We'll keep the conversation going on your terms." data-es="¿Prefieres texto? Mantenemos la conversación como te funcione.">Prefer texting? We'll keep the conversation going on your terms.</p>
@@ -924,7 +924,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div>
           <span class="lbl" data-en="Contact" data-es="Contacto">Contact</span>
           <a href="tel:+13466802695">(346) 680-2695</a>
-          <a class="sms-link" href="sms:+13466802695&body=Hi%2C%20I%20found%20you%20on%20your%20website.%20I%20need%20help%20with%20a%20case." data-en="Text us" data-es="Enviar texto">Text us</a>
+          <a class="sms-link" href="sms:+13466802695?body=Hi%2C%20I%20found%20you%20on%20your%20website.%20I%20need%20help%20with%20a%20case." data-en="Text us" data-es="Enviar texto">Text us</a>
           <a class="wa-link" href="https://wa.me/15559448864?text=Hi%2C%20I%20found%20you%20on%20your%20website.%20I%20need%20help%20with%20a%20case." target="_blank" rel="noreferrer">WhatsApp +1 (555) 944-8864</a>
           <a href="mailto:info@carreraslawfirm.com">info@carreraslawfirm.com</a>
           <a href="https://maps.google.com/?q=440+Louisiana+St+Suite+972+Houston+TX+77002" target="_blank" rel="noreferrer">440 Louisiana St., Suite 972<br>Houston, TX 77002</a>
@@ -990,7 +990,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     };
     function updateMessageLinks() {
       const msg = encodeURIComponent(preloadedMessages[currentLang]);
-      document.querySelectorAll('.sms-link').forEach(a => { a.href = 'sms:+13466802695&body=' + msg; });
+      document.querySelectorAll('.sms-link').forEach(a => { a.href = 'sms:+13466802695?body=' + msg; });
       document.querySelectorAll('.wa-link').forEach(a => { a.href = 'https://wa.me/15559448864?text=' + msg; });
     }
     function toggleLang() {
