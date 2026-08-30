@@ -4,30 +4,86 @@
 
   <url>
     <loc>https://www.carreraslawfirm.com/</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/practice-areas/</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/practice-areas/accidentes-auto-mcallen.html</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/practice-areas/accidentes-camion-mcallen.html</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/practice-areas/accidentes-auto-brownsville.html</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/practice-areas/accidentes-camion-brownsville.html</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/practice-areas/muerte-negligencia-valle.html</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/resources/legal-guides/</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/resources/legal-guides/regla-51-texas.html</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/personal-injury.html</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.carreraslawfirm.com/markin.html</loc>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.carreraslawfirm.com/carreras-law-firm.html</loc>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.carreraslawfirm.com/privacy.html</loc>
-    <lastmod>2026-07-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.7</priority>
   </url>
 
   <url>
@@ -35,6 +91,46 @@
     <lastmod>2026-07-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/questions.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carreraslawfirm.com/questions.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.carreraslawfirm.com/preguntas.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carreraslawfirm.com/questions.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/preguntas.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carreraslawfirm.com/questions.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.carreraslawfirm.com/preguntas.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carreraslawfirm.com/questions.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/privacy.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carreraslawfirm.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.carreraslawfirm.com/privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carreraslawfirm.com/privacy.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/privacidad.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carreraslawfirm.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.carreraslawfirm.com/privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carreraslawfirm.com/privacy.html"/>
   </url>
 
 </urlset>
