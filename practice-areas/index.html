@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice Areas | Carreras Law Firm</title>
+<meta name="description" content="Personal injury cases we handle across McAllen, Brownsville and the Rio Grande Valley. Car and truck accidents, wrongful death. Free consultation in Spanish.">
+<link rel="icon" type="image/png" href="../assets/profile/profile-blue-logomark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --klein:#002FA7; --klein-hover:#003ED1; --cream:#FEF9F6; --black:#0F0F0F;
+    --cream-2:#F4EFEB; --cream-3:#E8E2DC; --ink:#0F0F0F;
+    --ink-60:rgba(15,15,15,.60); --ink-40:rgba(15,15,15,.40); --ink-10:rgba(15,15,15,.08);
+    --on-blue:#FEF9F6; --on-blue-muted:rgba(254,249,246,.55); --on-blue-line:rgba(254,249,246,.18);
+    --display:"General Sans",system-ui,sans-serif; --body:"Manrope",system-ui,sans-serif;
+    --r-md:14px; --r-lg:22px; --r-xl:32px;
+    --ease:cubic-bezier(.32,.72,.24,1); --dur:240ms;
+    --gutter:clamp(20px,4vw,64px); --max-w:1240px;
+    --shadow-blue:0 12px 32px rgba(0,47,167,.18); --success:#1A7F37;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);letter-spacing:-0.02em;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.03em;line-height:1.05;margin:0}
+
+  /* BASE */
+/* ─── Buttons ─── */
+    .btn{font-family: var(--display); font-weight: 500; font-size: 15px; letter-spacing: -0.02em; border: none; border-radius: 999px; padding: 14px 28px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; transition: background var(--dur) var(--ease), color var(--dur) var(--ease), transform 140ms var(--ease);}
+.btn:active{transform: translateY(1px);}
+.btn--primary{background: var(--klein); color: var(--cream);}
+.btn--primary:hover{background: var(--klein-hover);}
+.btn--primary-lg{background: var(--klein); color: var(--cream); font-size: 17px; padding: 18px 32px;}
+.btn--primary-lg:hover{background: var(--klein-hover);}
+.btn--secondary{background: transparent; color: var(--ink); border: 1.5px solid var(--ink);}
+.btn--secondary:hover{background: var(--ink); color: var(--cream);}
+.btn--secondary-light{background: transparent; color: var(--cream); border: 1.5px solid var(--cream);}
+.btn--secondary-light:hover{background: var(--cream); color: var(--ink);}
+.btn--ghost{background: transparent; color: var(--klein); padding: 14px 4px;}
+.btn--sm{font-size: 13px; padding: 10px 16px;}
+.btn--full{width: 100%; justify-content: center;}
+/* ─── Header ─── */
+    .header{position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 16px var(--gutter); background: rgba(254,249,246,.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--ink-10);}
+.header__logo img{height: 22px;}
+.header__nav{display: flex; gap: 28px; font-size: 14px;}
+.header__nav a{transition: color var(--dur) var(--ease);}
+.header__nav a:hover{color: var(--klein);}
+/* ─── Dropdown Resources ─── */
+    .header__nav .dropdown{position: relative;}
+.header__nav .dropdown > a{display: inline-flex; align-items: center; gap: 5px; cursor: pointer;}
+.header__nav .dropdown > a::after{content: "▾"; font-size: 10px; opacity: .6;}
+.header__nav .dropdown__menu{position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(6px); background: var(--cream); border: 1px solid var(--cream-3); border-radius: 14px; padding: 8px; min-width: 220px; box-shadow: 0 12px 32px rgba(15,15,15,.12); opacity: 0; visibility: hidden; transition: opacity .2s var(--ease), transform .2s var(--ease);}
+.header__nav .dropdown.open .dropdown__menu{opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);}
+.header__nav .dropdown__menu a{display: block; padding: 11px 14px; border-radius: 9px; font-size: 14px; color: var(--ink);}
+.header__nav .dropdown__menu a:hover{background: var(--cream-2); color: var(--klein);}
+.header__nav .dropdown__menu .dd-desc{display: block; font-size: 12px; color: var(--ink-40); margin-top: 2px;}
+.header__right{display: flex; gap: 14px; align-items: center;}
+.header__lang{font-size: 12px; letter-spacing: .06em; color: var(--ink-60); text-transform: uppercase; cursor: pointer;}
+.header__lang b{color: var(--ink);}
+.header__phone{font-size: 14px; font-weight: 600; color: var(--ink); display: flex; align-items: center; gap: 6px;}
+.header__hamburger{display: none; background: none; border: none; padding: 4px; cursor: pointer; color: var(--ink);}
+.header__hamburger svg{width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;}
+/* ─── Mobile nav overlay ─── */
+    .mobile-nav{display: none; position: fixed; inset: 0; z-index: 100; background: var(--black); color: var(--cream); flex-direction: column; padding: 0; opacity: 0; transition: opacity .28s var(--ease);}
+.mobile-nav.open{display: flex; opacity: 1;}
+.mobile-nav__top{display: flex; justify-content: space-between; align-items: center; padding: 16px var(--gutter);}
+.mobile-nav__close{background: none; border: none; padding: 8px; cursor: pointer; color: var(--cream);}
+.mobile-nav__close svg{width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round;}
+.mobile-nav__links{flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 var(--gutter); gap: 0;}
+.mobile-nav__links a{font-family: var(--display); font-weight: 500; font-size: 36px; letter-spacing: -0.03em; padding: 18px 0; border-bottom: 1px solid rgba(254,249,246,.1); display: block; color: var(--cream); transition: color .2s var(--ease);}
+.mobile-nav__links a:first-child{border-top: 1px solid rgba(254,249,246,.1);}
+.mobile-nav__links a:hover{color: rgba(254,249,246,.6);}
+.mobile-nav__actions{padding: 0 var(--gutter) 40px; display: flex; flex-direction: column; gap: 12px;}
+.mobile-nav__actions .btn--primary{background: var(--klein); color: var(--cream);}
+.mobile-nav__actions .btn--secondary{border-color: rgba(254,249,246,.3); color: var(--cream);}
+.mobile-nav__actions .btn--secondary:hover{background: var(--cream); color: var(--ink);}
+/* ─── Footer ─── */
+    .footer{background: var(--cream-2); padding: 64px var(--gutter) 96px; margin-top: 96px; border-top: 1px solid var(--ink-10);}
+.footer__row{display: grid; grid-template-columns: 240px 1fr; gap: 64px;}
+.footer__mark{height: 32px;}
+.footer__cols{display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;}
+.footer__cols .lbl{display: block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-40); margin-bottom: 14px;}
+.footer__cols a{display: block; font-size: 14px; line-height: 1.5; color: var(--ink); margin-bottom: 6px; transition: color var(--dur) var(--ease);}
+.footer__cols a:hover{color: var(--klein);}
+.footer__bot{display: flex; justify-content: space-between; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--ink-10); font-size: 12px; color: var(--ink-40);}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .header__nav{display: none;}
+  .header__phone{display: none;}
+  .header__hamburger{display: block;}
+  .footer__row{grid-template-columns: 1fr; gap: 32px;}
+  .footer__cols{grid-template-columns: 1fr 1fr; gap: 24px;}
+  .footer__bot{flex-direction: column; gap: 6px;}
+}
+
+@media (max-width: 480px) {
+  .footer__cols{grid-template-columns: 1fr;}
+}
+
+  .article{max-width:var(--max-w);margin:0 auto;padding:0 var(--gutter)}
+  .breadcrumb{padding:24px 0 0;font-size:13px;color:var(--ink-40)}
+  .breadcrumb a{color:var(--ink-40)} .breadcrumb a:hover{color:var(--klein)}
+  .breadcrumb span.sep{margin:0 8px}
+  .ghero{padding:40px 0 30px;border-bottom:1px solid var(--ink-10)}
+  .ghero .eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--klein);margin-bottom:16px}
+  .ghero h1{font-size:clamp(36px,5vw,60px);max-width:18ch}
+  .ghero p{font-size:19px;color:var(--ink-60);max-width:58ch;margin:18px 0 0;line-height:1.5}
+  .pa-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;padding:44px 0}
+  @media(max-width:720px){.pa-grid{grid-template-columns:1fr}}
+  .pa-card{display:block;background:#fff;border:1px solid var(--cream-3);border-radius:18px;padding:28px;transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
+  .pa-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,47,167,.12)}
+  .pa-card h3{font-size:23px;line-height:1.14;margin-bottom:10px;color:var(--klein)}
+  .pa-card p{font-size:15px;color:var(--ink-60);line-height:1.5;margin:0 0 18px}
+  .pa-card .more{font-family:var(--display);font-weight:600;font-size:15px;color:var(--klein)}
+  .cta-band{background:var(--klein);color:var(--cream);border-radius:24px;padding:44px;text-align:center;margin:0 0 60px}
+  .cta-band h2{color:var(--cream);font-size:clamp(26px,3.6vw,38px);margin-bottom:12px}
+  .cta-band p{color:rgba(254,249,246,.6);font-size:16px;max-width:46ch;margin:0 auto 24px}
+  .cta-band .btn--primary{background:var(--cream);color:var(--klein)}
+  .cta-band .btn--primary:hover{background:#fff}
+</style>
+</head>
+<body>
+
+<header class="header">
+    <a class="header__logo" href="../"><img src="../assets/logos/wordmark-v2-black.png" alt="Carreras Law Firm"></a>
+    <nav class="header__nav">
+      <span class="dropdown" id="paDropdown">
+        <a onclick="toggleDropdown(event, 'paDropdown')" data-en="Practice Areas" data-es="Áreas de Práctica">Practice Areas</a>
+        <span class="dropdown__menu">
+          <a href="./">
+            <span data-en="All practice areas" data-es="Todas las áreas">All practice areas</span>
+            <span class="dd-desc" data-en="Cases we handle in the Valley" data-es="Casos que llevamos en el Valle">Cases we handle in the Valley</span>
+          </a>
+          <a href="accidentes-auto-mcallen.html">
+            <span data-en="Car accidents · McAllen" data-es="Accidentes de auto · McAllen">Car accidents · McAllen</span>
+          </a>
+          <a href="accidentes-camion-mcallen.html">
+            <span data-en="Truck accidents · McAllen" data-es="Accidentes de camión · McAllen">Truck accidents · McAllen</span>
+          </a>
+          <a href="accidentes-auto-brownsville.html">
+            <span data-en="Car accidents · Brownsville" data-es="Accidentes de auto · Brownsville">Car accidents · Brownsville</span>
+          </a>
+          <a href="accidentes-camion-brownsville.html">
+            <span data-en="Truck accidents · Brownsville" data-es="Accidentes de camión · Brownsville">Truck accidents · Brownsville</span>
+          </a>
+          <a href="muerte-negligencia-valle.html">
+            <span data-en="Wrongful death · The Valley" data-es="Muerte por negligencia · el Valle">Wrongful death · The Valley</span>
+          </a>
+        </span>
+      </span>
+      <a href="../#process" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</a>
+      <a href="../#results" data-en="Results" data-es="Resultados">Results</a>
+      <a href="questions.html" data-en="Questions" data-es="Preguntas">Questions</a>
+      <span class="dropdown" id="resDropdown">
+        <a onclick="toggleDropdown(event, 'resDropdown')" data-en="Resources" data-es="Recursos">Resources</a>
+        <span class="dropdown__menu">
+          <a href="../resources/legal-guides/">
+            <span data-en="Legal Guides" data-es="Guías Legales">Legal Guides</span>
+            <span class="dd-desc" data-en="Plain-language legal explainers" data-es="Explicaciones legales claras">Plain-language legal explainers</span>
+          </a>
+        </span>
+      </span>
+      <a href="../#contact" data-en="Contact" data-es="Contacto">Contact</a>
+    </nav>
+    <div class="header__right">
+      <span class="header__lang" onclick="toggleLang()" id="langToggle"><b>EN</b>&nbsp;&middot;&nbsp;ES</span>
+      <a class="btn btn--primary btn--sm" href="../#intake">Free Consultation</a>
+      <button class="header__hamburger" onclick="toggleMobileNav()">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </header>
+
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav__top">
+      <img src="../assets/logos/wordmark-v2-black.png" alt="Carreras Law Firm" style="height:22px;filter:invert(1) brightness(2)">
+      <button class="mobile-nav__close" onclick="toggleMobileNav()">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="mobile-nav__links">
+      <a href="../practice-areas/" onclick="toggleMobileNav()" data-en="Practice Areas" data-es="Áreas de Práctica">Practice Areas</a>
+      <a href="../#process" onclick="toggleMobileNav()" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</a>
+      <a href="../#results" onclick="toggleMobileNav()" data-en="Results" data-es="Resultados">Results</a>
+      <a href="../questions.html" data-en="Questions" data-es="Preguntas">Questions</a>
+      <a href="../resources/legal-guides/" data-en="Resources" data-es="Recursos">Resources</a>
+      <a href="../#contact" onclick="toggleMobileNav()" data-en="Contact" data-es="Contacto">Contact</a>
+    </div>
+    <div class="mobile-nav__actions">
+      <a class="btn btn--primary btn--full" href="../#intake" onclick="toggleMobileNav()">Free Consultation</a>
+      <a class="btn btn--secondary btn--full" href="tel:+13466802695">
+        <svg style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.6" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (346) 680-2695
+      </a>
+      <span class="header__lang" onclick="toggleLang()" style="text-align:center;padding:10px 0;color:rgba(254,249,246,.6)"><b style="color:#FEF9F6">EN</b>&nbsp;&middot;&nbsp;ES</span>
+    </div>
+  </div>
+
+<div class="article">
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <a href="../"><span data-en="Home" data-es="Inicio">Home</span></a>
+    <span class="sep">/</span>
+    <span style="color:var(--ink-60)"><span data-en="Practice Areas" data-es="Áreas de práctica">Practice Areas</span></span>
+  </nav>
+
+  <section class="ghero">
+    <div class="eyebrow" data-en="Practice Areas" data-es="Áreas de práctica">Practice Areas</div>
+    <h1 data-en="The cases we handle in the Valley" data-es="Los casos que llevamos en el Valle">The cases we handle in the Valley</h1>
+    <p data-en="Personal injury across McAllen, Brownsville and the Rio Grande Valley. If you got hurt because of someone else, this is our territory. Free consultation in Spanish." data-es="Lesiones personales en McAllen, Brownsville y el Valle del Río Grande. Si te lastimaste por culpa de alguien más, ese es nuestro territorio. Consulta gratis en español.">Personal injury across McAllen, Brownsville and the Rio Grande Valley. If you got hurt because of someone else, this is our territory. Free consultation in Spanish.</p>
+  </section>
+
+  <section class="pa-grid">
+    
+      <a class="pa-card" href="accidentes-auto-mcallen.html">
+        <h3 data-en="Car accidents · McAllen" data-es="Accidentes de auto · McAllen">Car accidents · McAllen</h3>
+        <p data-en="If a car crash in McAllen hurt you, we recover what is fair." data-es="Si un choque de auto en McAllen te lesionó, recuperamos lo justo.">If a car crash in McAllen hurt you, we recover what is fair.</p>
+        <span class="more"><span data-en="Read more" data-es="Ver más">Read more</span> →</span>
+      </a>
+      <a class="pa-card" href="accidentes-camion-mcallen.html">
+        <h3 data-en="Truck accidents · McAllen" data-es="Accidentes de camión · McAllen">Truck accidents · McAllen</h3>
+        <p data-en="18-wheeler crashes bring more parties and bigger policies. We go after all of it." data-es="Los choques de tráiler traen más partes y pólizas más grandes. Vamos tras todo.">18-wheeler crashes bring more parties and bigger policies. We go after all of it.</p>
+        <span class="more"><span data-en="Read more" data-es="Ver más">Read more</span> →</span>
+      </a>
+      <a class="pa-card" href="accidentes-auto-brownsville.html">
+        <h3 data-en="Car accidents · Brownsville" data-es="Accidentes de auto · Brownsville">Car accidents · Brownsville</h3>
+        <p data-en="Brownsville is the biggest city in the Valley. We help you recover what is fair." data-es="Brownsville es la ciudad más grande del Valle. Te ayudamos a recuperar lo justo.">Brownsville is the biggest city in the Valley. We help you recover what is fair.</p>
+        <span class="more"><span data-en="Read more" data-es="Ver más">Read more</span> →</span>
+      </a>
+      <a class="pa-card" href="accidentes-camion-brownsville.html">
+        <h3 data-en="Truck accidents · Brownsville" data-es="Accidentes de camión · Brownsville">Truck accidents · Brownsville</h3>
+        <p data-en="Commercial truck crashes near the border. We know how to handle them." data-es="Choques de camión comercial cerca de la frontera. Sabemos manejarlos.">Commercial truck crashes near the border. We know how to handle them.</p>
+        <span class="more"><span data-en="Read more" data-es="Ver más">Read more</span> →</span>
+      </a>
+      <a class="pa-card" href="muerte-negligencia-valle.html">
+        <h3 data-en="Wrongful death · The Valley" data-es="Muerte por negligencia · el Valle">Wrongful death · The Valley</h3>
+        <p data-en="When negligence takes a life, we fight for your family with the care it deserves." data-es="Cuando la negligencia cobra una vida, peleamos por tu familia con el cuidado que merece.">When negligence takes a life, we fight for your family with the care it deserves.</p>
+        <span class="more"><span data-en="Read more" data-es="Ver más">Read more</span> →</span>
+      </a>
+  </section>
+
+  <div class="cta-band">
+    <h2 data-en="Not sure which area fits your case?" data-es="¿No sabes cuál área aplica a tu caso?">Not sure which area fits your case?</h2>
+    <p data-en="Tell us what happened. A lawyer reviews your case, in Spanish, free and with no obligation." data-es="Cuéntanos qué pasó. Un abogado revisa tu caso, en español, sin costo y sin compromiso.">Tell us what happened. A lawyer reviews your case, in Spanish, free and with no obligation.</p>
+    <a class="btn btn--primary" href="../#intake" data-en="Free consultation" data-es="Consulta gratis">Free consultation</a>
+  </div>
+</div>
+
+<footer class="footer">
+    <div class="footer__row">
+      <div>
+        <img class="footer__mark" src="../assets/logos/wordmark-v2-black.png" alt="Carreras Law Firm">
+        <div style="display:flex;gap:16px;align-items:center;margin-top:20px;">
+          <a href="https://www.htla.org/" target="_blank" rel="noreferrer"><img src="../assets/associations/htla-logo.avif" alt="HTLA Member" style="height:40px;opacity:.7;transition:opacity .24s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"></a>
+          <a href="https://www.ttla.com/" target="_blank" rel="noreferrer"><img src="../assets/associations/ttla-logo.webp" alt="TTLA Member" style="height:40px;opacity:.7;transition:opacity .24s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"></a>
+          <a href="https://www.hyla.org/" target="_blank" rel="noreferrer"><img src="../assets/associations/hyla-logo.png" alt="HYLA Member" style="height:40px;opacity:.7;transition:opacity .24s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"></a>
+          <a href="https://www.mabah.com/" target="_blank" rel="noreferrer"><img src="../assets/associations/maba-logo.png" alt="MABA Member" style="height:40px;opacity:.7;transition:opacity .24s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"></a>
+        </div>
+      </div>
+      <div class="footer__cols">
+        <div>
+          <span class="lbl" data-en="The Firm" data-es="La Firma">The Firm</span>
+          <a href="../#areas" data-en="Practice Areas" data-es="Áreas de Práctica">Practice Areas</a>
+          <a href="../#markin" data-en="About Markin" data-es="Sobre Markin">About Markin</a>
+          <a href="../#results" data-en="Case Values" data-es="Valores de Caso">Case Values</a>
+          <a href="../#process" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</a>
+          <a href="../questions.html" data-en="Questions" data-es="Preguntas">Questions</a>
+        </div>
+        <div>
+          <span class="lbl" data-en="Contact" data-es="Contacto">Contact</span>
+          <a href="tel:+13466802695">(346) 680-2695</a>
+          <a class="sms-link" href="sms:+13466802695&body=Hi%2C%20I%20found%20you%20on%20your%20website.%20I%20need%20help%20with%20a%20case." data-en="Text us" data-es="Enviar texto">Text us</a>
+          <a class="wa-link" href="https://wa.me/15559448864?text=Hi%2C%20I%20found%20you%20on%20your%20website.%20I%20need%20help%20with%20a%20case." target="_blank" rel="noreferrer">WhatsApp +1 (555) 944-8864</a>
+          <a href="mailto:info@carreraslawfirm.com">info@carreraslawfirm.com</a>
+          <a href="https://maps.google.com/?q=440+Louisiana+St+Suite+972+Houston+TX+77002" target="_blank" rel="noreferrer">440 Louisiana St., Suite 972<br>Houston, TX 77002</a>
+        </div>
+        <div>
+          <span class="lbl" data-en="Connect" data-es="Síguenos">Connect</span>
+          <a href="https://www.youtube.com/@CarrerasLawFirm" target="_blank" rel="noreferrer">YouTube</a>
+          <a href="https://www.instagram.com/carreraslawfirm" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://calendar.app.google/SapEjTV8U5ir7yfs7" target="_blank" rel="noreferrer" data-en="Book Video Consultation" data-es="Agendar Videollamada">Book Video Consultation</a>
+          <a href="https://drive.google.com/uc?export=download&id=1CPcfrh-4d4_hfvUZLu3CajHxWGuhhzSu" data-en="Save Our Number" data-es="Guarda Nuestro Número">Save Our Number</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>Carreras Law Firm PLLC</span>
+      <span style="display:flex;gap:16px;">
+        <a href="../terms.html" style="color:var(--ink-60);text-decoration:underline;transition:color .24s" onmouseover="this.style.color='var(--klein)'" onmouseout="this.style.color='var(--ink-60)'" data-en="Terms of Service" data-es="T&eacute;rminos de Servicio">Terms of Service</a>
+        <a href="../privacy.html" style="color:var(--ink-60);text-decoration:underline;transition:color .24s" onmouseover="this.style.color='var(--klein)'" onmouseout="this.style.color='var(--ink-60)'" data-en="Privacy Policy" data-es="Pol&iacute;tica de Privacidad">Privacy Policy</a>
+      </span>
+      <span data-en="&copy; 2026. All rights reserved." data-es="&copy; 2026. Todos los derechos reservados.">&copy; 2026. All rights reserved.</span>
+    </div>
+  </footer>
+
+<script>
+  var currentLang = 'en';
+  function toggleLang() {
+    currentLang = currentLang === 'en' ? 'es' : 'en';
+    document.querySelectorAll('[data-en]').forEach(function(el) {
+      var text = el.getAttribute('data-' + currentLang);
+      if (text) { if (el.tagName === 'INPUT') { el.placeholder = text; } else { el.innerHTML = text; } }
+    });
+    document.querySelectorAll('.header__lang').forEach(function(el) {
+      el.innerHTML = currentLang === 'en' ? '<b>EN</b>&nbsp;&middot;&nbsp;ES' : 'EN&nbsp;&middot;&nbsp;<b>ES</b>';
+    });
+    document.documentElement.lang = currentLang;
+    document.querySelectorAll('.wa-link').forEach(function(el){ var h=el.getAttribute('data-wa-'+currentLang); if(h) el.setAttribute('href',h); });
+  }
+  function toggleMobileNav() { document.getElementById('mobileNav').classList.toggle('open'); }
+  function toggleDropdown(e, id) {
+    e.preventDefault(); e.stopPropagation();
+    var el = document.getElementById(id);
+    // cerrar los otros dropdowns
+    document.querySelectorAll('.dropdown.open').forEach(function(d){ if(d.id!==id) d.classList.remove('open'); });
+    el.classList.toggle('open');
+  }
+  document.addEventListener('click', function(e) {
+    document.querySelectorAll('.dropdown').forEach(function(dd){
+      if (!dd.contains(e.target)) dd.classList.remove('open');
+    });
+  });
+</script>
+</body>
+</html>
