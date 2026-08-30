@@ -430,12 +430,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <header class="header">
     <a class="header__logo" href="#"><img src="assets/logos/wordmark-v2-black.png" alt="Carreras Law Firm"></a>
     <nav class="header__nav">
-      <a href="#areas" data-en="Practice Areas" data-es="Áreas de Práctica">Practice Areas</a>
+      <span class="dropdown" id="paDropdown">
+        <a onclick="toggleDropdown(event, 'paDropdown')" data-en="Practice Areas" data-es="Áreas de Práctica">Practice Areas</a>
+        <span class="dropdown__menu">
+          <a href="practice-areas/">
+            <span data-en="All practice areas" data-es="Todas las áreas">All practice areas</span>
+            <span class="dd-desc" data-en="Cases we handle in the Valley" data-es="Casos que llevamos en el Valle">Cases we handle in the Valley</span>
+          </a>
+          <a href="practice-areas/accidentes-auto-mcallen.html">
+            <span data-en="Car accidents · McAllen" data-es="Accidentes de auto · McAllen">Car accidents · McAllen</span>
+          </a>
+          <a href="practice-areas/accidentes-camion-mcallen.html">
+            <span data-en="Truck accidents · McAllen" data-es="Accidentes de camión · McAllen">Truck accidents · McAllen</span>
+          </a>
+          <a href="practice-areas/accidentes-auto-brownsville.html">
+            <span data-en="Car accidents · Brownsville" data-es="Accidentes de auto · Brownsville">Car accidents · Brownsville</span>
+          </a>
+          <a href="practice-areas/accidentes-camion-brownsville.html">
+            <span data-en="Truck accidents · Brownsville" data-es="Accidentes de camión · Brownsville">Truck accidents · Brownsville</span>
+          </a>
+          <a href="practice-areas/muerte-negligencia-valle.html">
+            <span data-en="Wrongful death · The Valley" data-es="Muerte por negligencia · el Valle">Wrongful death · The Valley</span>
+          </a>
+        </span>
+      </span>
       <a href="#process" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</a>
       <a href="#results" data-en="Results" data-es="Resultados">Results</a>
       <a href="questions.html" data-en="Questions" data-es="Preguntas">Questions</a>
       <span class="dropdown" id="resDropdown">
-        <a onclick="toggleDropdown(event)" data-en="Resources" data-es="Recursos">Resources</a>
+        <a onclick="toggleDropdown(event, 'resDropdown')" data-en="Resources" data-es="Recursos">Resources</a>
         <span class="dropdown__menu">
           <a href="resources/legal-guides/">
             <span data-en="Legal Guides" data-es="Guías Legales">Legal Guides</span>
@@ -463,7 +486,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </button>
     </div>
     <div class="mobile-nav__links">
-      <a href="#areas" onclick="toggleMobileNav()" data-en="Practice Areas" data-es="Áreas de Práctica">Practice Areas</a>
+      <a href="practice-areas/" onclick="toggleMobileNav()" data-en="Practice Areas" data-es="Áreas de Práctica">Practice Areas</a>
       <a href="#process" onclick="toggleMobileNav()" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</a>
       <a href="#results" onclick="toggleMobileNav()" data-en="Results" data-es="Resultados">Results</a>
       <a href="questions.html" data-en="Questions" data-es="Preguntas">Questions</a>
@@ -892,7 +915,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="footer__cols">
         <div>
           <span class="lbl" data-en="The Firm" data-es="La Firma">The Firm</span>
-          <a href="#areas" data-en="Practice Areas" data-es="Áreas de Práctica">Practice Areas</a>
+          <a href="practice-areas/" data-en="Practice Areas" data-es="Áreas de Práctica">Practice Areas</a>
           <a href="#markin" data-en="About Markin" data-es="Sobre Markin">About Markin</a>
           <a href="#results" data-en="Case Values" data-es="Valores de Caso">Case Values</a>
           <a href="#process" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</a>
@@ -994,13 +1017,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function toggleMobileNav() {
       document.getElementById('mobileNav').classList.toggle('open');
     }
-    function toggleDropdown(e) {
+    function toggleDropdown(e, id) {
       e.preventDefault(); e.stopPropagation();
-      document.getElementById('resDropdown').classList.toggle('open');
+      var el = document.getElementById(id);
+      document.querySelectorAll('.dropdown.open').forEach(function(d){ if(d.id!==id) d.classList.remove('open'); });
+      el.classList.toggle('open');
     }
     document.addEventListener('click', function(e) {
-      var dd = document.getElementById('resDropdown');
-      if (dd && !dd.contains(e.target)) dd.classList.remove('open');
+      document.querySelectorAll('.dropdown').forEach(function(dd){
+        if (!dd.contains(e.target)) dd.classList.remove('open');
+      });
     });
 
     // ─── Intake form submission ───
