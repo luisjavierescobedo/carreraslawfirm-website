@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abogado de Accidentes de Camión en Mission | Carreras Law Firm</title>
+<meta name="description" content="Abogado de accidentes de camión en Mission y el Valle. Choques con tráiler y camión comercial. Consulta gratis en español.">
+<link rel="icon" type="image/png" href="../../assets/profile/profile-blue-logomark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- NOTA LEGAL PARA REVISIÓN DE MARKIN: FMCSA (reglas federales de transporte). Preservar caja negra/bitácoras. Múltiples responsables (conductor, empresa, cargador). Regla del 51%. [REVISAR MARKIN] -->
+<style>
+  :root{
+    --klein:#002FA7; --klein-hover:#003ED1; --cream:#FEF9F6; --black:#0F0F0F;
+    --cream-2:#F4EFEB; --cream-3:#E8E2DC; --ink:#0F0F0F;
+    --ink-60:rgba(15,15,15,.60); --ink-40:rgba(15,15,15,.40); --ink-10:rgba(15,15,15,.08);
+    --on-blue:#FEF9F6; --on-blue-muted:rgba(254,249,246,.55); --on-blue-line:rgba(254,249,246,.18);
+    --display:"General Sans",system-ui,sans-serif; --body:"Manrope",system-ui,sans-serif;
+    --r-md:14px; --r-lg:22px; --r-xl:32px; --ease:cubic-bezier(.32,.72,.24,1); --dur:240ms;
+    --gutter:clamp(20px,4vw,64px); --max-w:1240px; --shadow-blue:0 12px 32px rgba(0,47,167,.18);
+    --success:#1A7F37; --amber:#9A6B14; --amber-bg:#FBF3E4;
+  }
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  [data-en]{display:none} html[lang="en"] [data-en]{display:revert} html[lang="en"] [data-es]{display:none}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.5;letter-spacing:-0.02em;-webkit-font-smoothing:antialiased}
+  a{color:var(--klein);text-decoration:none}
+  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.03em;line-height:1.06;margin:0}
+  p{margin:0 0 1.05em}
+  /* SHARED */
+/* ─── Buttons ─── */
+    .btn{font-family: var(--display); font-weight: 500; font-size: 15px; letter-spacing: -0.02em; border: none; border-radius: 999px; padding: 14px 28px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; transition: background var(--dur) var(--ease), color var(--dur) var(--ease), transform 140ms var(--ease);}
+.btn:active{transform: translateY(1px);}
+.btn--primary{background: var(--klein); color: var(--cream);}
+.btn--primary:hover{background: var(--klein-hover);}
+.btn--primary-lg{background: var(--klein); color: var(--cream); font-size: 17px; padding: 18px 32px;}
+.btn--primary-lg:hover{background: var(--klein-hover);}
+.btn--secondary{background: transparent; color: var(--ink); border: 1.5px solid var(--ink);}
+.btn--secondary:hover{background: var(--ink); color: var(--cream);}
+.btn--secondary-light{background: transparent; color: var(--cream); border: 1.5px solid var(--cream);}
+.btn--secondary-light:hover{background: var(--cream); color: var(--ink);}
+.btn--ghost{background: transparent; color: var(--klein); padding: 14px 4px;}
+.btn--sm{font-size: 13px; padding: 10px 16px;}
+.btn--full{width: 100%; justify-content: center;}
+/* ─── Header ─── */
+    .header{position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 16px var(--gutter); background: rgba(254,249,246,.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--ink-10);}
+.header__logo img{height: 22px;}
+.header__nav{display: flex; gap: 28px; font-size: 14px;}
+.header__nav a{transition: color var(--dur) var(--ease);}
+.header__nav a:hover{color: var(--klein);}
+/* ─── Dropdown Resources ─── */
+    .header__nav .dropdown{position: relative;}
+.header__nav .dropdown > a{display: inline-flex; align-items: center; gap: 5px; cursor: pointer;}
+.header__nav .dropdown > a::after{content: "▾"; font-size: 10px; opacity: .6;}
+.header__nav .dropdown__menu{position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(6px); background: var(--cream); border: 1px solid var(--cream-3); border-radius: 14px; padding: 8px; min-width: 220px; box-shadow: 0 12px 32px rgba(15,15,15,.12); opacity: 0; visibility: hidden; transition: opacity .2s var(--ease), transform .2s var(--ease);}
+.header__nav .dropdown.open .dropdown__menu{opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);}
+.header__nav .dropdown__menu a{display: block; padding: 11px 14px; border-radius: 9px; font-size: 14px; color: var(--ink);}
+.header__nav .dropdown__menu a:hover{background: var(--cream-2); color: var(--klein);}
+.header__nav .dropdown__menu .dd-desc{display: block; font-size: 12px; color: var(--ink-40); margin-top: 2px;}
+.header__right{display: flex; gap: 14px; align-items: center;}
+.header__lang{font-size: 12px; letter-spacing: .06em; color: var(--ink-60); text-transform: uppercase; cursor: pointer;}
+.header__lang b{color: var(--ink);}
+.header__phone{font-size: 14px; font-weight: 600; color: var(--ink); display: flex; align-items: center; gap: 6px;}
+.header__hamburger{display: none; background: none; border: none; padding: 4px; cursor: pointer; color: var(--ink);}
+.header__hamburger svg{width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;}
+/* ─── Mobile nav overlay ─── */
+    .mobile-nav{display: none; position: fixed; inset: 0; z-index: 100; background: var(--black); color: var(--cream); flex-direction: column; padding: 0; opacity: 0; transition: opacity .28s var(--ease);}
+.mobile-nav.open{display: flex; opacity: 1;}
+.mobile-nav__top{display: flex; justify-content: space-between; align-items: center; padding: 16px var(--gutter);}
+.mobile-nav__close{background: none; border: none; padding: 8px; cursor: pointer; color: var(--cream);}
+.mobile-nav__close svg{width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round;}
+.mobile-nav__links{flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 var(--gutter); gap: 0;}
+.mobile-nav__links a{font-family: var(--display); font-weight: 500; font-size: 36px; letter-spacing: -0.03em; padding: 18px 0; border-bottom: 1px solid rgba(254,249,246,.1); display: block; color: var(--cream); transition: color .2s var(--ease);}
+.mobile-nav__links a:first-child{border-top: 1px solid rgba(254,249,246,.1);}
+.mobile-nav__links a:hover{color: rgba(254,249,246,.6);}
+.mobile-nav__actions{padding: 0 var(--gutter) 40px; display: flex; flex-direction: column; gap: 12px;}
+.mobile-nav__actions .btn--primary{background: var(--klein); color: var(--cream);}
+.mobile-nav__actions .btn--secondary{border-color: rgba(254,249,246,.3); color: var(--cream);}
+.mobile-nav__actions .btn--secondary:hover{background: var(--cream); color: var(--ink);}
+/* ─── Footer ─── */
+    .footer{background: var(--cream-2); padding: 64px var(--gutter) 96px; margin-top: 96px; border-top: 1px solid var(--ink-10);}
+.footer__row{display: grid; grid-template-columns: 240px 1fr; gap: 64px;}
+.footer__mark{height: 32px;}
+.footer__cols{display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;}
+.footer__cols .lbl{display: block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-40); margin-bottom: 14px;}
+.footer__cols a{display: block; font-size: 14px; line-height: 1.5; color: var(--ink); margin-bottom: 6px; transition: color var(--dur) var(--ease);}
+.footer__cols a:hover{color: var(--klein);}
+.footer__bot{display: flex; justify-content: space-between; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--ink-10); font-size: 12px; color: var(--ink-40);}
+
+@media (max-width: 768px) {
+  .header__nav{display: none;}
+  .header__phone{display: none;}
+  .header__hamburger{display: block;}
+  .footer__row{grid-template-columns: 1fr; gap: 32px;}
+  .footer__cols{grid-template-columns: 1fr 1fr; gap: 24px;}
+  .footer__bot{flex-direction: column; gap: 6px;}
+}
+
+@media (max-width: 480px) {
+  .footer__cols{grid-template-columns: 1fr;}
+}
+.langtog{display:flex;border:1px solid var(--cream-3);border-radius:999px;overflow:hidden;margin-left:8px}
+.langtog button{border:none;background:transparent;padding:6px 12px;cursor:pointer;color:var(--ink-40);font-weight:600;font-size:13px;font-family:var(--display)}
+.langtog button.on{background:var(--klein);color:var(--cream)}
+
+  .article{max-width:var(--max-w);margin:0 auto;padding:0 var(--gutter)}
+  .breadcrumb{padding:24px 0 0;font-size:13px;color:var(--ink-40)}
+  .breadcrumb a{color:var(--ink-40)} .breadcrumb a:hover{color:var(--klein)} .breadcrumb span.sep{margin:0 8px}
+  .hero{padding:36px 0 20px;max-width:820px}
+  .kicker{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--klein);margin-bottom:16px}
+  .hero h1{font-size:clamp(38px,5vw,58px);line-height:1.0}
+  .hero .sub{font-size:20px;color:var(--ink-60);margin-top:20px;max-width:56ch}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+  .btn{text-decoration:none}
+  .statband{background:var(--klein);color:var(--on-blue);border-radius:var(--r-xl);padding:30px 32px;margin:32px 0;max-width:820px}
+  .statband .st{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:var(--on-blue-muted);margin-bottom:16px}
+  .statband .statgrid{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+  .statband .v{font-family:var(--display);font-size:clamp(44px,7vw,72px);font-weight:600;line-height:1;color:var(--cream)}
+  .statband .l{font-size:16px;color:var(--on-blue-muted);line-height:1.5;flex:1;min-width:220px}
+  .local{background:var(--cream-2);border-radius:var(--r-md);padding:20px 24px;margin:24px 0;max-width:820px;font-size:16px;color:var(--ink-60);line-height:1.55}
+  .local strong{color:var(--klein);font-family:var(--display);font-weight:600}
+  .answer{background:#fff;border:1px solid var(--cream-3);border-left:4px solid var(--klein);border-radius:var(--r-md);padding:22px 26px;margin:24px 0;box-shadow:var(--shadow-blue);max-width:820px}
+  .answer .lbl{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--klein);margin-bottom:9px}
+  .answer p{font-size:19px;line-height:1.5;margin:0;font-weight:500}
+  .answer strong{color:var(--klein)}
+  .toc{background:var(--cream-2);border-radius:var(--r-md);padding:22px 26px;margin:34px 0;max-width:820px}
+  .toc .lbl{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--klein);margin-bottom:12px}
+  .toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+  .toc li{counter-increment:t;padding:5px 0;font-size:16px;display:flex;gap:11px;align-items:baseline}
+  .toc li::before{content:counter(t,decimal-leading-zero);font-family:var(--display);font-size:12px;font-weight:600;color:var(--klein);flex:0 0 auto}
+  .toc a{color:var(--ink)} .toc a:hover{color:var(--klein)}
+  .body{max-width:760px;padding:8px 0 20px}
+  .body section{padding:28px 0;border-top:1px solid var(--ink-10)}
+  .body section:first-child{border-top:none}
+  .body h2{font-size:clamp(26px,3.4vw,34px);margin-bottom:14px;scroll-margin-top:90px}
+  .body p{font-size:18px;color:var(--ink)}
+  .body ul{margin:0 0 1.05em;padding-left:0;list-style:none}
+  .body ul li{position:relative;padding:9px 0 9px 30px;border-bottom:1px solid var(--ink-10)}
+  .body ul li::before{content:"";position:absolute;left:4px;top:17px;width:12px;height:12px;border-radius:50%;background:var(--klein)}
+  .body ul li:last-child{border-bottom:none}
+  .body strong{color:var(--ink)}
+  .tip{background:var(--amber-bg);border-radius:var(--r-md);padding:18px 22px;margin:24px 0;font-size:16px;color:#5a4a23;max-width:760px}
+  .tip .tl{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+  .related{border:1px solid var(--cream-3);border-radius:var(--r-md);padding:20px 24px;margin:24px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;background:#fff;max-width:760px;transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
+  .related:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,47,167,.10)}
+  .related .rt{font-size:12px;font-family:var(--display);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-40);margin-bottom:5px}
+  .related .rl{font-size:18px;font-family:var(--display);font-weight:600;color:var(--ink)}
+  .related .arrow{color:var(--klein);font-size:24px;flex:0 0 auto}
+  .midcta{background:var(--cream-2);border-radius:var(--r-lg);padding:28px 30px;margin:30px 0;max-width:760px;text-align:center}
+  .midcta .mt{font-family:var(--display);font-weight:600;font-size:clamp(18px,2.4vw,24px);margin-bottom:16px;color:var(--ink)}
+  .midcta .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .cta{background:var(--klein);color:var(--on-blue);border-radius:var(--r-xl);padding:40px 34px;margin:40px 0 20px;text-align:center;max-width:var(--max-w)}
+  .cta h2{color:var(--cream);font-size:clamp(26px,4vw,40px);margin-bottom:12px}
+  .cta p{color:var(--on-blue-muted);font-size:17px;max-width:48ch;margin:0 auto 22px}
+  .cta .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .cta .btn--primary{background:var(--cream);color:var(--klein)} .cta .btn--primary:hover{background:#fff}
+  .cta .btn--ghost-light{background:transparent;color:var(--cream);border:1.5px solid var(--cream);padding:14px 28px}
+  .cta .btn--ghost-light:hover{background:var(--cream);color:var(--klein)}
+  .cta .fine{margin-top:18px;font-size:13px;color:var(--on-blue-muted)}
+  .offices{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px auto 40px;max-width:760px}
+  @media(max-width:600px){.offices{grid-template-columns:1fr}}
+  .office{background:#fff;border:1px solid var(--cream-3);border-radius:var(--r-md);padding:18px 20px}
+  .office .ol{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--klein);margin-bottom:8px;font-family:var(--display)}
+  .office .oa{font-size:15px;color:var(--ink);line-height:1.5}
+  .office .op{font-family:var(--display);font-weight:600;font-size:15px;color:var(--ink);margin-top:8px;display:block}
+  .disclaimer{margin:36px 0 12px;padding:24px 28px;background:var(--cream-2);border-radius:var(--r-md);font-family:var(--body);font-size:15px;line-height:1.7;color:var(--ink)}
+  .disclaimer .dt{font-family:var(--display);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-60);margin-bottom:12px}
+  .disclaimer p{margin:0}
+</style>
+</head>
+<body>
+
+<header class="header">
+    <a class="header__logo" href="../../"><img src="../../assets/logos/wordmark-v2-black.png" alt="Carreras Law Firm"></a>
+    <nav class="header__nav">
+      <span class="dropdown" id="paDropdown">
+        <a onclick="toggleDropdown(event, 'paDropdown')"><span data-es>Áreas de Práctica</span><span data-en>Practice Areas</span></a>
+        <span class="dropdown__menu">
+          <a href="../../practice-areas/">
+            <span><span data-es>Todas las áreas</span><span data-en>All practice areas</span></span>
+            <span class="dd-desc"><span data-es>Casos que llevamos en el Valle</span><span data-en>Cases we handle in the Valley</span></span>
+          </a>
+          <a href="../../practice-areas/accidentes-auto-mcallen.html">
+            <span><span data-es>Accidentes de auto · McAllen</span><span data-en>Car accidents · McAllen</span></span>
+          </a>
+          <a href="../../practice-areas/accidentes-camion-mcallen.html">
+            <span><span data-es>Accidentes de camión · McAllen</span><span data-en>Truck accidents · McAllen</span></span>
+          </a>
+          <a href="../../practice-areas/accidentes-auto-brownsville.html">
+            <span><span data-es>Accidentes de auto · Brownsville</span><span data-en>Car accidents · Brownsville</span></span>
+          </a>
+          <a href="../../practice-areas/accidentes-camion-brownsville.html">
+            <span><span data-es>Accidentes de camión · Brownsville</span><span data-en>Truck accidents · Brownsville</span></span>
+          </a>
+          <a href="../../practice-areas/muerte-negligencia-valle.html">
+            <span><span data-es>Muerte por negligencia · el Valle</span><span data-en>Wrongful death · The Valley</span></span>
+          </a>
+        </span>
+      </span>
+      <a href="../../#process"><span data-es>Cómo Trabajamos</span><span data-en>How We Work</span></a>
+      <a href="../../#results"><span data-es>Resultados</span><span data-en>Results</span></a>
+      <a href="questions.html"><span data-es>Preguntas</span><span data-en>Questions</span></a>
+      <span class="dropdown" id="resDropdown">
+        <a onclick="toggleDropdown(event, 'resDropdown')"><span data-es>Recursos</span><span data-en>Resources</span></a>
+        <span class="dropdown__menu">
+          <a href="../../resources/legal-guides/">
+            <span><span data-es>Guías Legales</span><span data-en>Legal Guides</span></span>
+            <span class="dd-desc"><span data-es>Explicaciones legales claras</span><span data-en>Plain-language legal explainers</span></span>
+          </a>
+        </span>
+      </span>
+      <a href="../../#contact"><span data-es>Contacto</span><span data-en>Contact</span></a>
+    </nav>
+    <div class="header__right">
+      <div class="langtog"><button id="btn-es" class="on" onclick="setLang('es')">ES</button><button id="btn-en" onclick="setLang('en')">EN</button></div>
+      <a class="btn btn--primary btn--sm" href="../../#intake">Free Consultation</a>
+      <button class="header__hamburger" onclick="toggleMobileNav()">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </header>
+
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav__top">
+      <img src="../../assets/logos/wordmark-v2-black.png" alt="Carreras Law Firm" style="height:22px;filter:invert(1) brightness(2)">
+      <button class="mobile-nav__close" onclick="toggleMobileNav()">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="mobile-nav__links">
+      <a href="practice-areas/" onclick="toggleMobileNav()"><span data-es>Áreas de Práctica</span><span data-en>Practice Areas</span></a>
+      <a href="../../#process" onclick="toggleMobileNav()"><span data-es>Cómo Trabajamos</span><span data-en>How We Work</span></a>
+      <a href="../../#results" onclick="toggleMobileNav()"><span data-es>Resultados</span><span data-en>Results</span></a>
+      <a href="../../questions.html"><span data-es>Preguntas</span><span data-en>Questions</span></a>
+      <a href="../../resources/legal-guides/"><span data-es>Recursos</span><span data-en>Resources</span></a>
+      <a href="../../#contact" onclick="toggleMobileNav()"><span data-es>Contacto</span><span data-en>Contact</span></a>
+    </div>
+    <div class="mobile-nav__actions">
+      <a class="btn btn--primary btn--full" href="../../#intake" onclick="toggleMobileNav()">Free Consultation</a>
+      <a class="btn btn--secondary btn--full" href="tel:+13466802695">
+        <svg style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.6" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (346) 680-2695
+      </a>
+      <span class="header__lang" onclick="toggleLang()" style="text-align:center;padding:10px 0;color:rgba(254,249,246,.6)"><b style="color:#FEF9F6">EN</b>&nbsp;&middot;&nbsp;ES</span>
+    </div>
+  </div>
+
+<div class="article">
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <a href="../../"><span data-es>Inicio</span><span data-en>Home</span></a>
+    <span class="sep">/</span>
+    <a href="../"><span data-es>Áreas de práctica</span><span data-en>Practice Areas</span></a>
+    <span class="sep">/</span>
+    <span style="color:var(--ink-60)"><span data-es>Abogado de accidentes de camión en Mission</span><span data-en>Truck accident lawyer in Mission</span></span>
+  </nav>
+
+  <div class="hero">
+    <div class="kicker"><span data-es>Área de práctica · Mission, TX</span><span data-en>Practice area · Mission, TX</span></div>
+    <h1><span data-es>Abogado de accidentes de camión en Mission</span><span data-en>Truck accident lawyer in Mission</span></h1>
+    <p class="sub"><span data-es>Un choque con un camión comercial en Mission no es como un choque de auto: hay más partes, pólizas más grandes y empresas que se protegen rápido. Sabemos cómo ir tras todo eso.</span><span data-en>A crash with a commercial truck in Mission is not like a car crash: there are more parties, bigger policies, and companies that protect themselves fast. We know how to go after all of it.</span></p>
+    <div class="hero-cta">
+      <a class="btn btn--primary" href="../../#intake"><span data-es>Solicita tu evaluación gratis</span><span data-en>Get a free case review</span></a>
+      <a class="btn btn--secondary wa-link" data-wa-es="https://wa.me/15559448864?text=Hola%2C%20tuve%20un%20accidente%20de%20cami%C3%B3n%20en%20Mission%20y%20necesito%20ayuda%20con%20mi%20caso." data-wa-en="https://wa.me/15559448864?text=Hi%2C%20I%20had%20a%20truck%20accident%20in%20Mission%20and%20I%20need%20help%20with%20my%20case." href="https://wa.me/15559448864?text=Hola%2C%20tuve%20un%20accidente%20de%20cami%C3%B3n%20en%20Mission%20y%20necesito%20ayuda%20con%20mi%20caso." target="_blank" rel="noopener"><span data-es>O escríbenos por WhatsApp</span><span data-en>Or message us on WhatsApp</span></a>
+    </div>
+  </div>
+
+  <div class="statband">
+    <div class="st"><span data-es>El contexto en el Valle</span><span data-en>The context in the Valley</span></div>
+    <div class="statgrid">
+      <div class="v">16,601</div>
+      <div class="l"><span data-es>choques en el condado de Hidalgo en 2024 (TxDOT); Mission comparte el corredor de carga que cruza por el Puente Anzalduas.</span><span data-en>crashes in Hidalgo County in 2024 (TxDOT); Mission shares the cargo corridor crossing through the Anzalduas Bridge.</span></div>
+    </div>
+  </div>
+
+  <div class="local">
+    <strong><span data-es>El contexto local:</span><span data-en>Local context:</span></strong>
+    <span data-es> En Mission, el Puente Internacional Anzalduas conecta el oeste de la ciudad con Reynosa, y la arteria I-2/US-83 mueve gran parte del tráfico local.</span><span data-en> In Mission, the Anzalduas International Bridge connects the west side of the city with Reynosa, and the I-2/US-83 artery carries much of the local traffic.</span>
+  </div>
+
+  <div class="answer">
+    <div class="lbl"><span data-es>Lo primero que debes saber</span><span data-en>The first thing you should know</span></div>
+    <p><span data-es>Si un camión comercial te lesionó en Mission y no fue tu culpa, puedes reclamar compensación. Estos casos son más complejos que un choque normal: pueden ser responsables el conductor, la empresa de transporte y hasta quien cargó el camión. En Texas recuperas <strong>si tu responsabilidad es del 50% o menos</strong>.</span><span data-en>If a commercial truck hurt you in Mission and it was not your fault, you can claim compensation. These cases are more complex than a normal crash: the driver, the trucking company, and even whoever loaded the truck may be responsible. In Texas you recover <strong>if your responsibility is 50% or less</strong>.</span></p>
+  </div>
+
+  <nav class="toc">
+    <div class="lbl"><span data-es>En esta página</span><span data-en>On this page</span></div>
+    <ol>
+      <li><a href="#distinto"><span data-es>Por qué un caso de camión es distinto</span><span data-en>Why a truck case is different</span></a></li>
+      <li><a href="#evidencia"><span data-es>La evidencia que desaparece rápido</span><span data-en>The evidence that disappears fast</span></a></li>
+      <li><a href="#responsables"><span data-es>Quiénes pueden ser responsables</span><span data-en>Who can be held responsible</span></a></li>
+      <li><a href="#fmcsa"><span data-es>Las reglas federales (FMCSA)</span><span data-en>The federal rules (FMCSA)</span></a></li>
+      <li><a href="#ayuda"><span data-es>Cómo te ayuda Carreras Law Firm</span><span data-en>How Carreras Law Firm helps</span></a></li>
+    </ol>
+  </nav>
+
+  <div class="body">
+    <section id="distinto">
+      <h2><span data-es>Por qué un caso de camión es distinto</span><span data-en>Why a truck case is different</span></h2>
+      <p><span data-es>Un tráiler cargado puede pesar 20 o 30 veces más que un auto. Por eso, cuando choca, las lesiones son mucho más graves. Pero la diferencia legal es todavía mayor: detrás del conductor hay una empresa, sus aseguradoras y sus abogados, que se activan de inmediato para limitar lo que pagan.</span><span data-en>A loaded 18-wheeler can weigh 20 or 30 times more than a car. That is why, when it crashes, the injuries are far more serious. But the legal difference is even bigger: behind the driver there is a company, its insurers, and its lawyers, who activate immediately to limit what they pay.</span></p>
+      <p><span data-es>Enfrentar eso solo, mientras te recuperas, es casi imposible. Estos casos se ganan con rapidez y con conocimiento de cómo operan las empresas de transporte.</span><span data-en>Facing that alone, while you recover, is nearly impossible. These cases are won with speed and with knowledge of how trucking companies operate.</span></p>
+    </section>
+    <section id="evidencia">
+      <h2><span data-es>La evidencia que desaparece rápido</span><span data-en>The evidence that disappears fast</span></h2>
+      <p><span data-es>En un accidente de camión, la evidencia clave puede desaparecer en días si nadie la solicita formalmente:</span><span data-en>In a truck accident, key evidence can disappear in days if no one formally requests it:</span></p>
+      <ul>
+        <li><span data-es>La "caja negra" del camión, que registra velocidad y frenado.</span><span data-en>The truck's "black box," which records speed and braking.</span></li>
+        <li><span data-es>Las bitácoras de horas del conductor (para ver si iba fatigado).</span><span data-en>The driver's hours-of-service logs (to see if they were fatigued).</span></li>
+        <li><span data-es>Los registros de mantenimiento del vehículo.</span><span data-en>The vehicle's maintenance records.</span></li>
+        <li><span data-es>Las cámaras del camión o de negocios cercanos.</span><span data-en>The truck's cameras or those of nearby businesses.</span></li>
+        <li><span data-es>Los registros de la carga y su peso.</span><span data-en>The cargo records and its weight.</span></li>
+      </ul>
+    </section>
+    <section id="responsables">
+      <h2><span data-es>Quiénes pueden ser responsables</span><span data-en>Who can be held responsible</span></h2>
+      <p><span data-es>A diferencia de un choque de autos, en un caso de camión puede haber varios responsables, y eso puede significar más de una póliza de seguro para cubrir tus daños:</span><span data-en>Unlike a car crash, a truck case can have several responsible parties, and that can mean more than one insurance policy to cover your damages:</span></p>
+      <ul>
+        <li><span data-es>El conductor del camión.</span><span data-en>The truck driver.</span></li>
+        <li><span data-es>La empresa de transporte que lo emplea.</span><span data-en>The trucking company that employs them.</span></li>
+        <li><span data-es>El dueño del camión, si es distinto.</span><span data-en>The owner of the truck, if different.</span></li>
+        <li><span data-es>La empresa que cargó la mercancía.</span><span data-en>The company that loaded the cargo.</span></li>
+        <li><span data-es>El fabricante, si falló una pieza.</span><span data-en>The manufacturer, if a part failed.</span></li>
+      </ul>
+    </section>
+    <section id="fmcsa">
+      <h2><span data-es>Las reglas federales que protegen tu caso</span><span data-en>The federal rules that protect your case</span></h2>
+      <p><span data-es>Los camiones comerciales están regulados por reglas federales (la FMCSA): cuántas horas puede manejar un conductor, cómo debe mantenerse el vehículo, cómo se asegura la carga. Cuando una empresa rompe esas reglas y causa un accidente, eso fortalece mucho tu caso.</span><span data-en>Commercial trucks are governed by federal rules (the FMCSA): how many hours a driver can drive, how the vehicle must be maintained, how cargo must be secured. When a company breaks those rules and causes an accident, that greatly strengthens your case.</span></p>
+      <p><span data-es>Saber qué reglas aplican y cómo probar que se violaron es parte de lo que hace la diferencia entre una oferta baja y una compensación justa.</span><span data-en>Knowing which rules apply and how to prove they were violated is part of what makes the difference between a low offer and fair compensation.</span></p>
+    </section>
+    <section id="ayuda">
+      <h2><span data-es>Cómo te ayuda Carreras Law Firm</span><span data-en>How Carreras Law Firm helps</span></h2>
+      <p><span data-es>Actuamos rápido para preservar la evidencia del camión antes de que desaparezca, identificamos a cada parte responsable, y lidiamos con las aseguradoras de la empresa y sus abogados. Manejamos todo en español, de principio a fin.</span><span data-en>We act fast to preserve the truck evidence before it disappears, identify every responsible party, and deal with the company's insurers and their lawyers. We handle everything in Spanish, start to finish.</span></p>
+      <p><span data-es>No cobramos nada a menos que ganemos. La consulta es gratis y sin compromiso.</span><span data-en>We charge nothing unless we win. The consultation is free and with no obligation.</span></p>
+    </section>
+
+    <div class="disclaimer" aria-label="Legal disclaimer">
+      <div class="dt"><span data-es>Aviso Legal</span><span data-en>Legal Disclaimer</span></div>
+      <p><span data-es>Esta página es publicada por Carreras Law Firm, PLLC únicamente con fines informativos y educativos generales. No constituye asesoría legal ni sustituye la consulta con un abogado licenciado sobre tu situación específica. Cada caso es diferente y las leyes cambian con el tiempo. Leer esta página, o comunicarte con nuestra firma a través de este sitio web, no crea una relación abogado-cliente. Por favor no envíes información confidencial hasta que se haya establecido por escrito una relación abogado-cliente. Nada en esta página garantiza un resultado en particular. Si sufriste lesiones en Texas, contáctanos para una consulta gratuita con un abogado. El abogado Markin Carreras tiene licencia para ejercer en Texas. Oficina principal en Houston, Texas.</span><span data-en>This page is provided by Carreras Law Firm, PLLC for general informational and educational purposes only. It is not legal advice and is not a substitute for advice from a licensed attorney about your specific situation. Every case is different, and the law changes over time. Reading this page, or contacting our firm through this website, does not create an attorney-client relationship. Please do not send confidential information until an attorney-client relationship has been established in writing. Nothing on this page guarantees any particular result. If you have been injured in Texas, contact Carreras Law Firm, PLLC for a free consultation with an attorney. Attorney Markin Carreras is licensed to practice law in Texas. Principal office in Houston, Texas.</span></p>
+    </div>
+  </div>
+
+  <div class="tip">
+    <div class="tl"><span data-es>Cada hora cuenta</span><span data-en>Every hour counts</span></div>
+    <span data-es>Las empresas de transporte envían investigadores al lugar el mismo día. La caja negra y las bitácoras pueden borrarse o sobrescribirse. Actuar rápido protege la evidencia que necesitas.</span><span data-en>Trucking companies send investigators to the scene the same day. The black box and logs can be erased or overwritten. Acting fast protects the evidence you need.</span>
+  </div>
+
+  <a class="related" href="accidentes-auto-mission.html">
+    <div>
+      <div class="rt"><span data-es>Relacionado</span><span data-en>Related</span></div>
+      <div class="rl"><span data-es>Abogado de accidentes de auto en Mission</span><span data-en>Car accident lawyer in Mission</span></div>
+    </div>
+    <span class="arrow">→</span>
+  </a>
+
+  <div class="midcta">
+    <div class="mt"><span data-es>¿Un camión te lastimó en Mission? Cuéntanos qué pasó.</span><span data-en>Did a truck hurt you in Mission? Tell us what happened.</span></div>
+    <div class="btns">
+      <a class="btn btn--primary" href="../../#intake"><span data-es>Solicita tu evaluación gratis</span><span data-en>Get a free case review</span></a>
+      <a class="btn btn--secondary wa-link" data-wa-es="https://wa.me/15559448864?text=Hola%2C%20tuve%20un%20accidente%20de%20cami%C3%B3n%20en%20Mission%20y%20necesito%20ayuda%20con%20mi%20caso." data-wa-en="https://wa.me/15559448864?text=Hi%2C%20I%20had%20a%20truck%20accident%20in%20Mission%20and%20I%20need%20help%20with%20my%20case." href="https://wa.me/15559448864?text=Hola%2C%20tuve%20un%20accidente%20de%20cami%C3%B3n%20en%20Mission%20y%20necesito%20ayuda%20con%20mi%20caso." target="_blank" rel="noopener"><span data-es>WhatsApp</span><span data-en>WhatsApp</span></a>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h2><span data-es>Cuéntanos qué pasó</span><span data-en>Tell us what happened</span></h2>
+    <p><span data-es>Un abogado de nuestro equipo revisa tu caso, en español, y te dice con honestidad qué opciones tienes. Gratis y sin compromiso.</span><span data-en>A lawyer on our team reviews your case, in Spanish, and tells you honestly what options you have. Free and with no obligation.</span></p>
+    <div class="btns">
+      <a class="btn btn--primary" href="../../#intake"><span data-es>Solicita tu evaluación gratis</span><span data-en>Get a free case review</span></a>
+      <a class="btn btn--ghost-light wa-link" data-wa-es="https://wa.me/15559448864?text=Hola%2C%20tuve%20un%20accidente%20de%20cami%C3%B3n%20en%20Mission%20y%20necesito%20ayuda%20con%20mi%20caso." data-wa-en="https://wa.me/15559448864?text=Hi%2C%20I%20had%20a%20truck%20accident%20in%20Mission%20and%20I%20need%20help%20with%20my%20case." href="https://wa.me/15559448864?text=Hola%2C%20tuve%20un%20accidente%20de%20cami%C3%B3n%20en%20Mission%20y%20necesito%20ayuda%20con%20mi%20caso." target="_blank" rel="noopener"><span data-es>O escríbenos por WhatsApp</span><span data-en>Or message us on WhatsApp</span></a>
+    </div>
+    <div class="fine"><span data-es>Consulta sin costo · No cobramos si no ganamos</span><span data-en>Free consultation · No fee unless we win</span></div>
+  </div>
+
+  <div class="offices">
+    <div class="office">
+      <div class="ol"><span data-es>Oficina McAllen</span><span data-en>McAllen Office</span></div>
+      <div class="oa">1200 Auburn Ave, Ste. 490<br>McAllen, TX 78504</div>
+      <span class="op">(346) 680-2695</span>
+    </div>
+    <div class="office">
+      <div class="ol"><span data-es>Oficina Houston</span><span data-en>Houston Office</span></div>
+      <div class="oa">440 Louisiana St., Suite 972<br>Houston, TX 77002</div>
+      <span class="op">(346) 680-2695</span>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    <span data-es>Esta página es información general, no asesoría legal para tu caso específico. Cada situación es distinta. Contáctanos para una evaluación de tu caso.</span>
+    <span data-en>This page is general information, not legal advice for your specific case. Every situation is different. Contact us for a review of your case.</span>
+  </div>
+</div>
+
+<footer class="footer">
+    <div class="footer__row">
+      <div>
+        <img class="footer__mark" src="../../assets/logos/wordmark-v2-black.png" alt="Carreras Law Firm">
+        <div style="display:flex;gap:16px;align-items:center;margin-top:20px;">
+          <a href="https://www.htla.org/" target="_blank" rel="noreferrer"><img src="../../assets/associations/htla-logo.avif" alt="HTLA Member" style="height:40px;opacity:.7;transition:opacity .24s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"></a>
+          <a href="https://www.ttla.com/" target="_blank" rel="noreferrer"><img src="../../assets/associations/ttla-logo.webp" alt="TTLA Member" style="height:40px;opacity:.7;transition:opacity .24s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"></a>
+          <a href="https://www.hyla.org/" target="_blank" rel="noreferrer"><img src="../../assets/associations/hyla-logo.png" alt="HYLA Member" style="height:40px;opacity:.7;transition:opacity .24s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"></a>
+          <a href="https://www.mabah.com/" target="_blank" rel="noreferrer"><img src="../../assets/associations/maba-logo.png" alt="MABA Member" style="height:40px;opacity:.7;transition:opacity .24s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"></a>
+        </div>
+      </div>
+      <div class="footer__cols">
+        <div>
+          <span class="lbl"><span data-es>La Firma</span><span data-en>The Firm</span></span>
+          <a href="practice-areas/"><span data-es>Áreas de Práctica</span><span data-en>Practice Areas</span></a>
+          <a href="../../#markin"><span data-es>Sobre Markin</span><span data-en>About Markin</span></a>
+          <a href="../../#results"><span data-es>Valores de Caso</span><span data-en>Case Values</span></a>
+          <a href="../../#process"><span data-es>Cómo Trabajamos</span><span data-en>How We Work</span></a>
+          <a href="../../questions.html"><span data-es>Preguntas</span><span data-en>Questions</span></a>
+        </div>
+        <div>
+          <span class="lbl"><span data-es>Contacto</span><span data-en>Contact</span></span>
+          <a href="tel:+13466802695">(346) 680-2695</a>
+          <a class="sms-link" href="sms:+13466802695?body=Hi%2C%20I%20found%20you%20on%20your%20website.%20I%20need%20help%20with%20a%20case."><span data-es>Enviar texto</span><span data-en>Text us</span></a>
+          <a class="wa-link" href="https://wa.me/15559448864?text=Hi%2C%20I%20found%20you%20on%20your%20website.%20I%20need%20help%20with%20a%20case." target="_blank" rel="noreferrer">WhatsApp +1 (555) 944-8864</a>
+          <a href="mailto:info@carreraslawfirm.com">info@carreraslawfirm.com</a>
+          <a href="https://maps.google.com/?q=440+Louisiana+St+Suite+972+Houston+TX+77002" target="_blank" rel="noreferrer">440 Louisiana St., Suite 972<br>Houston, TX 77002</a>
+        </div>
+        <div>
+          <span class="lbl"><span data-es>Síguenos</span><span data-en>Connect</span></span>
+          <a href="https://www.youtube.com/@CarrerasLawFirm" target="_blank" rel="noreferrer">YouTube</a>
+          <a href="https://www.instagram.com/carreraslawfirm" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://calendar.app.google/SapEjTV8U5ir7yfs7" target="_blank" rel="noreferrer"><span data-es>Agendar Videollamada</span><span data-en>Book Video Consultation</span></a>
+          <a href="https://drive.google.com/uc?export=download&id=1CPcfrh-4d4_hfvUZLu3CajHxWGuhhzSu"><span data-es>Guarda Nuestro Número</span><span data-en>Save Our Number</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>Carreras Law Firm PLLC</span>
+      <span style="display:flex;gap:16px;">
+        <a href="../../terms.html" style="color:var(--ink-60);text-decoration:underline;transition:color .24s" onmouseover="this.style.color='var(--klein)'" onmouseout="this.style.color='var(--ink-60)'"><span data-es>T&eacute;rminos de Servicio</span><span data-en>Terms of Service</span></a>
+        <a href="../../privacy.html" style="color:var(--ink-60);text-decoration:underline;transition:color .24s" onmouseover="this.style.color='var(--klein)'" onmouseout="this.style.color='var(--ink-60)'"><span data-es>Pol&iacute;tica de Privacidad</span><span data-en>Privacy Policy</span></a>
+      </span>
+      <span><span data-es>&copy; 2026. Todos los derechos reservados.</span><span data-en>&copy; 2026. All rights reserved.</span></span>
+    </div>
+  </footer>
+
+<script>
+  function setLang(l){
+    document.documentElement.setAttribute('lang', l);
+    var be=document.getElementById('btn-es'), bn=document.getElementById('btn-en');
+    if(be) be.classList.toggle('on', l==='es'); if(bn) bn.classList.toggle('on', l==='en');
+    document.querySelectorAll('.wa-link').forEach(function(el){ var h=el.getAttribute('data-wa-'+l); if(h) el.setAttribute('href',h); });
+  }
+  function toggleMobileNav(){ document.getElementById('mobileNav').classList.toggle('open'); }
+  function toggleDropdown(e,id){ e.preventDefault(); e.stopPropagation(); var el=document.getElementById(id); document.querySelectorAll('.dropdown.open').forEach(function(d){ if(d.id!==id) d.classList.remove('open'); }); el.classList.toggle('open'); }
+  document.addEventListener('click',function(e){ document.querySelectorAll('.dropdown').forEach(function(dd){ if(!dd.contains(e.target)) dd.classList.remove('open'); }); });
+</script>
+</body>
+</html>
