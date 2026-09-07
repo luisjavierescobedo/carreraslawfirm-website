@@ -4,15 +4,85 @@
 
   <url>
     <loc>https://www.carreraslawfirm.com/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://www.carreraslawfirm.com/practice-areas/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/practice-areas/accidentes-de-auto.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/practice-areas/accidentes-de-camion.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/practice-areas/accidentes-de-motocicleta.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/practice-areas/accidentes-de-peaton.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/practice-areas/compensacion-laboral.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/practice-areas/lesion-cerebral.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/practice-areas/lesiones-catastroficas.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/practice-areas/muerte-por-negligencia.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/practice-areas/resbalon-y-caida.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carreraslawfirm.com/practice-areas/responsabilidad-de-predios.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
