@@ -142,6 +142,12 @@
   .body strong{color:var(--ink)}
   .tip{background:var(--amber-bg);border-radius:var(--r-md);padding:18px 22px;margin:24px 0;font-size:16px;color:#5a4a23;max-width:760px}
   .tip .tl{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+  .proof{margin:36px 0}
+  .proof-figure{position:relative;border-radius:var(--r-xl,32px);overflow:hidden;box-shadow:0 12px 32px rgba(15,15,15,.14);background:#111}
+  .proof-figure img{display:block;width:100%;height:auto;filter:grayscale(1) contrast(1.05);max-height:440px;object-fit:cover}
+  .proof-figure::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.20;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");mix-blend-mode:overlay}
+  .small{font-size:13px;color:#666;margin-top:12px;max-width:760px;line-height:1.5}
+  .small a{color:inherit;text-decoration:underline}
   .related{border:1px solid var(--cream-3);border-radius:var(--r-md);padding:20px 24px;margin:24px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;background:#fff;max-width:760px;transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
   .related:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,47,167,.10)}
   .related .rt{font-size:12px;font-family:var(--display);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-40);margin-bottom:5px}
@@ -266,16 +272,23 @@
   </div>
 
   <div class="statband">
-    <div class="st"><span data-es>El contexto en el Valle</span><span data-en>The context in the Valley</span></div>
+    <div class="st"><span data-es>El contexto en el Valle</span><span data-en>The Valley context</span></div>
     <div class="statgrid">
-      <div class="v">3</div>
-      <div class="l"><span data-es>categorías define la ley de Texas para quien entra a una propiedad (invitado, licenciatario, intruso), y el deber del dueño cambia según cuál te aplique. Eso decide gran parte de tu caso.</span><span data-en>categories Texas law defines for someone entering a property (invitee, licensee, trespasser), and the owner's duty changes depending on which applies to you. That decides much of your case.</span></div>
+      <div class="v"><span data-es>$5 mil millones</span><span data-en>$5 billion</span></div>
+      <div class="l"><span data-es>de dólares en ventas gravables generó McAllen durante 2025, según la Ciudad de McAllen. Es un municipio de 150,000 habitantes que ocupa el tercer lugar de todo Texas en impuesto sobre ventas per cápita entre ciudades de más de 100,000 residentes.</span><span data-en>in taxable sales is what McAllen generated in 2025, according to the City of McAllen. That is a city of 150,000 residents ranking third in all of Texas in sales tax per capita among cities with more than 100,000 people.</span></div>
     </div>
   </div>
 
   <div class="local">
     <strong><span data-es>El contexto local:</span><span data-en>Local context:</span></strong>
-    <span data-es> En McAllen, la Expressway 83 (I-2/US-83) y los cruces hacia el Puente McAllen-Hidalgo-Reynosa y el Puente Anzalduas concentran gran parte del tráfico de la ciudad.</span><span data-en> In McAllen, Expressway 83 (I-2/US-83) and the crossings toward the McAllen-Hidalgo-Reynosa and Anzalduas bridges carry much of the city's traffic.</span>
+    <span data-es> Ese número confirma algo que cualquiera que viva aquí ya sabe. En McAllen se compra mucho más de lo que la población sugiere. El comercio de la ciudad no lo sostienen sus 150,000 residentes, sino casi un millón de personas en el condado de Hidalgo más los compradores que cruzan de Reynosa y Monterrey. En febrero de 2026 la Ciudad reportó la asignación mensual de impuesto sobre ventas más alta de su historia, $12.6 millones de dólares, y un crecimiento de 49.7% desde 2020.</span><span data-en> That number confirms what anyone who lives here already knows. McAllen buys far more than its population suggests. The city's commerce is not carried by its 150,000 residents alone. It is carried by nearly a million people across Hidalgo County plus the shoppers who cross over from Reynosa and Monterrey. In February 2026 the City reported the highest monthly sales tax allocation in its history, $12.6 million, along with 49.7% growth since 2020.</span>
+    <p><span data-es>Para un caso de responsabilidad de predios eso importa por una razón muy concreta. Cada una de esas compras es una persona que entró a una tienda, a un restaurante, a un centro comercial o a un estacionamiento como cliente. Y en Texas un cliente es un "invitado" (invitee), la categoría a la que el dueño de la propiedad le debe el mayor deber de cuidado: no basta con advertirte del peligro que ya conoce, también tiene la obligación de inspeccionar razonablemente su propiedad para encontrar los que todavía no conoce.</span><span data-en>For a premises liability case, that matters for one very concrete reason. Every one of those purchases is a person who walked into a store, a restaurant, a mall, or a parking lot as a customer. And in Texas, a customer is an invitee, the category owed the highest duty of care by the property owner. Warning you about a hazard the owner already knows about is not enough. The owner also has a duty to reasonably inspect the property for the hazards it has not found yet.</span></p>
+    <p><span data-es>Un piso comercial con ese nivel de tráfico se moja, se ensucia y se desgasta más rápido de lo que un negocio con poco personal alcanza a atender. Ahí es exactamente donde ocurren estos casos, y ahí es donde el dueño quiere que la conversación termine en "fue un accidente".</span><span data-en>A commercial floor carrying that much traffic gets wet, gets dirty, and wears down faster than a short staffed business can keep up with. That is exactly where these cases happen, and it is exactly where the owner wants the conversation to end at "it was just an accident."</span></p>
+    <p class="small"><span data-es>Fuente: <a href="https://www.mcallen.net/docs/default-source/office-of-communications/news-release---historic-_12-6-million-sales-tax-allocation-highlights-mcallens-rising-economic-influence-02-17-2026.pdf?sfvrsn=2" target="_blank" rel="noopener">Ciudad de McAllen</a>, comunicado de prensa del 17 de febrero de 2026.</span><span data-en>Source: <a href="https://www.mcallen.net/docs/default-source/office-of-communications/news-release---historic-_12-6-million-sales-tax-allocation-highlights-mcallens-rising-economic-influence-02-17-2026.pdf?sfvrsn=2" target="_blank" rel="noopener">City of McAllen</a> press release, February 17, 2026.</span></p>
+  </div>
+
+  <div class="proof">
+    <div class="proof-figure"><img src="../../assets/photography/responsabilidad-predios-mcallen.jpg" alt=""></div>
   </div>
 
   <div class="answer">

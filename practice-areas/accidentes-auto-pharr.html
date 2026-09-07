@@ -142,6 +142,12 @@
   .body strong{color:var(--ink)}
   .tip{background:var(--amber-bg);border-radius:var(--r-md);padding:18px 22px;margin:24px 0;font-size:16px;color:#5a4a23;max-width:760px}
   .tip .tl{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+  .proof{margin:36px 0}
+  .proof-figure{position:relative;border-radius:var(--r-xl,32px);overflow:hidden;box-shadow:0 12px 32px rgba(15,15,15,.14);background:#111}
+  .proof-figure img{display:block;width:100%;height:auto;filter:grayscale(1) contrast(1.05);max-height:440px;object-fit:cover}
+  .proof-figure::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.20;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");mix-blend-mode:overlay}
+  .small{font-size:13px;color:#666;margin-top:12px;max-width:760px;line-height:1.5}
+  .small a{color:inherit;text-decoration:underline}
   .related{border:1px solid var(--cream-3);border-radius:var(--r-md);padding:20px 24px;margin:24px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;background:#fff;max-width:760px;transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
   .related:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,47,167,.10)}
   .related .rt{font-size:12px;font-family:var(--display);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-40);margin-bottom:5px}
@@ -258,7 +264,7 @@
   <div class="hero">
     <div class="kicker"><span data-es>Área de práctica · Pharr, TX</span><span data-en>Practice area · Pharr, TX</span></div>
     <h1><span data-es>Abogado de accidentes de auto en Pharr</span><span data-en>Car accident lawyer in Pharr</span></h1>
-    <p class="sub"><span data-es>Si te lesionaste en un choque de auto en Pharr, la aseguradora ya está trabajando para pagarte menos. Nosotros trabajamos para que recuperes lo justo, en español y sin costo inicial.</span><span data-en>If you were hurt in a car crash in Pharr, the insurance company is already working to pay you less. We work so you recover what is fair, in Spanish and with no upfront cost.</span></p>
+    <p class="sub"><span data-es>Si te lesionaste en un choque de auto en Pharr, la aseguradora ya está trabajando para pagarte menos. Nosotros trabajamos para que recuperes lo justo, en español y sin costo inicial.</span><span data-en>If you were hurt in a car crash in Pharr, the insurance company is already working to pay you less. We work so you recover what is fair, with no upfront cost.</span></p>
     <div class="hero-cta">
       <a class="btn btn--primary" href="../../#intake"><span data-es>Solicita tu evaluación gratis</span><span data-en>Get a free case review</span></a>
       <a class="btn btn--secondary wa-link" data-wa-es="https://wa.me/15559448864?text=Hola%2C%20tuve%20un%20accidente%20de%20auto%20en%20Pharr%20y%20necesito%20ayuda%20con%20mi%20caso." data-wa-en="https://wa.me/15559448864?text=Hi%2C%20I%20had%20a%20car%20accident%20in%20Pharr%20and%20I%20need%20help%20with%20my%20case." href="https://wa.me/15559448864?text=Hola%2C%20tuve%20un%20accidente%20de%20auto%20en%20Pharr%20y%20necesito%20ayuda%20con%20mi%20caso." target="_blank" rel="noopener"><span data-es>O escríbenos por WhatsApp</span><span data-en>Or message us on WhatsApp</span></a>
@@ -276,6 +282,10 @@
   <div class="local">
     <strong><span data-es>El contexto local:</span><span data-en>Local context:</span></strong>
     <span data-es> En Pharr, el Puente Internacional Pharr-Reynosa es el cruce comercial de carga más transitado de la región, con la US-281 y Cage Blvd moviendo miles de vehículos y camiones al día.</span><span data-en> In Pharr, the Pharr-Reynosa International Bridge is the busiest commercial cargo crossing in the region, with US-281 and Cage Blvd moving thousands of vehicles and trucks a day.</span>
+  </div>
+
+  <div class="proof">
+    <div class="proof-figure"><img src="../../assets/photography/accidentes-auto-pharr.jpg" alt=""></div>
   </div>
 
   <div class="answer">
@@ -305,6 +315,10 @@
         <li><span data-es>No admitas culpa ni des declaraciones a la otra aseguradora.</span><span data-en>Do not admit fault or give statements to the other insurer.</span></li>
         <li><span data-es>Guarda todo: el reporte, las facturas médicas, los gastos.</span><span data-en>Keep everything: the report, medical bills, expenses.</span></li>
       </ul>
+      <div class="tip">
+        <div class="tl"><span data-es>El paso más importante</span><span data-en>The most important step</span></div>
+        <span data-es>Consigue un abogado antes de hablar con la aseguradora. Es el único paso de esta lista que sigue trabajando a tu favor todos los días siguientes, no solo el día del choque.</span><span data-en>Get a lawyer before you talk to the insurance company. It is the one step on this list that keeps working for you every day after the crash, not just on the day it happened.</span>
+      </div>
     </section>
     <section id="culpa">
       <h2><span data-es>La regla del 51% y tu compensación</span><span data-en>The 51% rule and your compensation</span></h2>
@@ -318,8 +332,14 @@
     </section>
     <section id="plazo">
       <h2><span data-es>El plazo para reclamar en Texas</span><span data-en>The deadline to claim in Texas</span></h2>
-      <p><span data-es>En Texas, por lo general tienes dos años desde la fecha del accidente para presentar un reclamo por lesiones. Puede sonar a mucho tiempo, pero no lo es: la evidencia se pierde, los testigos se olvidan, y construir un caso sólido toma tiempo.</span><span data-en>In Texas, you generally have two years from the date of the accident to file an injury claim. It may sound like a lot of time, but it is not: evidence is lost, witnesses forget, and building a solid case takes time.</span></p>
-      <p><span data-es>Si una entidad de gobierno está involucrada, los plazos pueden ser aún más cortos. Por eso conviene hablar con alguien pronto, aunque no tengas prisa por demandar.</span><span data-en>If a government entity is involved, the deadlines can be even shorter. That is why it is worth talking to someone soon, even if you are in no rush to sue.</span></p>
+      <p><span data-es>Lo ideal es contratar a un abogado y arrancar de inmediato. Entre más pronto empieces, mejor queda armado el caso.</span><span data-en>The ideal move is to hire a lawyer and start right away. The sooner you start, the better the case gets built.</span></p>
+      <p><span data-es>Dicho eso, en Texas por lo general tienes dos años desde la fecha del accidente para demandar. Y aquí hay algo que casi nadie te explica: abrir un reclamo con la aseguradora no detiene ese reloj. Puedes pasar meses negociando de buena fe, creer que tu caso va avanzando, y aun así perder el derecho a demandar cuando se cumplen los dos años.</span><span data-en>That said, in Texas you generally have two years from the date of the accident to file a lawsuit. And here is something almost nobody explains to you: opening a claim with the insurance company does not stop that clock. You can spend months negotiating in good faith, believe your case is moving along, and still lose your right to sue when the two years run out.</span></p>
+      <p><span data-es>Tener ese plazo tampoco significa que el caso valga lo mismo el primer mes que el mes veintitrés. Lo que cambia con el tiempo no es tu derecho. Es la evidencia que sigue existiendo.</span><span data-en>Having that window also does not mean the case is worth the same in month one as it is in month twenty three. What changes over time is not your right. It is the evidence that still exists.</span></p>
+      <p><span data-es>Hay evidencia que se borra sola. Los videos de cámaras en cruces viales, en negocios y en estacionamientos se sobrescriben automáticamente, muchas veces en cuestión de días o semanas. Si nadie los solicita a tiempo, se pierden y no se recuperan. Por eso actuar rápido importa de verdad.</span><span data-en>Some evidence deletes itself. Camera footage from intersections, businesses, and parking lots gets overwritten automatically, often within days or weeks. If nobody requests it in time, it is gone and it does not come back. That is why moving quickly genuinely matters.</span></p>
+      <p><span data-es>Pero un video no es lo único que arma un caso. El reporte de la policía, las fotos del lugar, tus registros médicos, los testigos, los datos del vehículo, los registros de mantenimiento y el historial del otro conductor son fuentes que muchas veces siguen disponibles aunque ya te estés acercando a los dos años. Que haya pasado tiempo no significa automáticamente que ya no tengas caso.</span><span data-en>But video is not the only thing that builds a case. The police report, photos from the scene, your medical records, witnesses, vehicle data, maintenance records, and the other driver's history are all sources that are often still available even as you approach the two year mark. Time having passed does not automatically mean you no longer have a case.</span></p>
+      <p><span data-es>Hay una excepción importante. Si una entidad de gobierno está involucrada, como una ciudad, un condado o un distrito escolar, el plazo para dar aviso puede ser de seis meses o menos, y algunas ciudades lo exigen en cuestión de semanas. Ese es el escenario donde esperar sí te puede costar el reclamo completo.</span><span data-en>There is one important exception. If a government entity is involved, such as a city, a county, or a school district, the deadline to give notice can be six months or less, and some cities require it within weeks. That is the scenario where waiting really can cost you the entire claim.</span></p>
+      <p><span data-es>Entonces la respuesta honesta es esta. Si el accidente fue apenas, actúa hoy. Si ya pasó tiempo, no asumas que perdiste tu oportunidad. Cuéntanos qué pasó y te decimos con qué evidencia se puede trabajar todavía.</span><span data-en>So here is the honest answer. If the crash just happened, act today. If time has already passed, do not assume you missed your chance. Tell us what happened and we will tell you what evidence can still be worked with.</span></p>
+      <p class="small">Texas Civil Practice &amp; Remedies Code §16.003; Texas Tort Claims Act §101.101.</p>
     </section>
     <section id="ayuda">
       <h2><span data-es>Cómo te ayuda Carreras Law Firm</span><span data-en>How Carreras Law Firm helps</span></h2>

@@ -142,6 +142,12 @@
   .body strong{color:var(--ink)}
   .tip{background:var(--amber-bg);border-radius:var(--r-md);padding:18px 22px;margin:24px 0;font-size:16px;color:#5a4a23;max-width:760px}
   .tip .tl{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+  .proof{margin:36px 0}
+  .proof-figure{position:relative;border-radius:var(--r-xl,32px);overflow:hidden;box-shadow:0 12px 32px rgba(15,15,15,.14);background:#111}
+  .proof-figure img{display:block;width:100%;height:auto;filter:grayscale(1) contrast(1.05);max-height:440px;object-fit:cover}
+  .proof-figure::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.20;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");mix-blend-mode:overlay}
+  .small{font-size:13px;color:#666;margin-top:12px;max-width:760px;line-height:1.5}
+  .small a{color:inherit;text-decoration:underline}
   .related{border:1px solid var(--cream-3);border-radius:var(--r-md);padding:20px 24px;margin:24px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;background:#fff;max-width:760px;transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
   .related:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,47,167,.10)}
   .related .rt{font-size:12px;font-family:var(--display);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-40);margin-bottom:5px}
@@ -276,6 +282,10 @@
   <div class="local">
     <strong><span data-es>El contexto local:</span><span data-en>Local context:</span></strong>
     <span data-es> En McAllen, la Expressway 83 (I-2/US-83) y los cruces hacia el Puente McAllen-Hidalgo-Reynosa y el Puente Anzalduas concentran gran parte del tráfico de la ciudad.</span><span data-en> In McAllen, Expressway 83 (I-2/US-83) and the crossings toward the McAllen-Hidalgo-Reynosa and Anzalduas bridges carry much of the city's traffic.</span>
+  </div>
+
+  <div class="proof">
+    <div class="proof-figure"><img src="../../assets/photography/lesiones-catastroficas-mcallen.jpg" alt=""></div>
   </div>
 
   <div class="answer">
