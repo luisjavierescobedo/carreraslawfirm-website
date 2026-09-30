@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -164,6 +164,12 @@
   .office .ol{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--klein);margin-bottom:8px;font-family:var(--display)}
   .office .oa{font-size:15px;color:var(--ink);line-height:1.5}
   .office .op{font-family:var(--display);font-weight:600;font-size:15px;color:var(--ink);margin-top:8px;display:block}
+  
+  /* Imagen destacada (B&N) */
+  .proof{margin:36px 0;max-width:var(--max-w)}
+  .proof-figure{position:relative;border-radius:var(--r-xl);overflow:hidden;box-shadow:0 12px 32px rgba(15,15,15,.14);background:#111}
+  .proof-figure img{display:block;width:100%;height:auto;max-height:440px;object-fit:cover}
+
   .disclaimer{max-width:760px;margin:20px auto 40px;font-size:12px;color:var(--ink-40);line-height:1.5}
 </style>
 </head>
@@ -197,7 +203,7 @@
       </span>
       <a href="../../#process"><span data-es>Cómo Trabajamos</span><span data-en>How We Work</span></a>
       <a href="../../#results"><span data-es>Resultados</span><span data-en>Results</span></a>
-      <a href="questions.html"><span data-es>Preguntas</span><span data-en>Questions</span></a>
+      <a href="../questions.html"><span data-es>Preguntas</span><span data-en>Questions</span></a>
       <span class="dropdown" id="resDropdown">
         <a onclick="toggleDropdown(event, 'resDropdown')"><span data-es>Recursos</span><span data-en>Resources</span></a>
         <span class="dropdown__menu">
@@ -210,7 +216,7 @@
       <a href="../../#contact"><span data-es>Contacto</span><span data-en>Contact</span></a>
     </nav>
     <div class="header__right">
-      <div class="langtog"><button id="btn-es" class="on" onclick="setLang('es')">ES</button><button id="btn-en" onclick="setLang('en')">EN</button></div>
+      <div class="langtog"><button id="btn-es" onclick="setLang('es')">ES</button><button id="btn-en" class="on" onclick="setLang('en')">EN</button></div>
       <a class="btn btn--primary btn--sm" href="../../#intake">Free Consultation</a>
       <button class="header__hamburger" onclick="toggleMobileNav()">
         <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -260,6 +266,11 @@
       <a class="btn btn--secondary wa-link" data-wa-es="https://wa.me/15559448864?text=Hola%2C%20tuve%20un%20accidente%20de%20cami%C3%B3n%20en%20San%20Juan%20y%20necesito%20ayuda%20con%20mi%20caso." data-wa-en="https://wa.me/15559448864?text=Hi%2C%20I%20had%20a%20truck%20accident%20in%20San%20Juan%20and%20I%20need%20help%20with%20my%20case." href="https://wa.me/15559448864?text=Hola%2C%20tuve%20un%20accidente%20de%20cami%C3%B3n%20en%20San%20Juan%20y%20necesito%20ayuda%20con%20mi%20caso." target="_blank" rel="noopener"><span data-es>O escríbenos por WhatsApp</span><span data-en>Or message us on WhatsApp</span></a>
     </div>
   </div>
+
+  <div class="proof">
+    <div class="proof-figure"><img src="../assets/practice-areas/accidentes-camion-sanjuan.jpg" alt="" loading="lazy"></div>
+  </div>
+
   <div class="statband">
     <div class="st"><span data-es>El contexto en el Valle</span><span data-en>The context in the Valley</span></div>
     <div class="statgrid">
