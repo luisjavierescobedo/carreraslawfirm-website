@@ -198,19 +198,19 @@
 
   <section class="guides">
     <div class="guides-grid">
-      <a class="guide" href="regla-51-texas.html">
+      <a class="guide" href="texas-51-percent-rule.html" data-href-en="texas-51-percent-rule.html" data-href-es="regla-51-texas.html">
         <span class="tag" data-en="Fault &amp; compensation" data-es="Culpa y compensación">Fault &amp; compensation</span>
         <h3 data-en="The 51% rule in Texas, explained simply" data-es="La regla del 51% en Texas, explicada simple">The 51% rule in Texas, explained simply</h3>
         <p data-en="Can you still claim if you were partly at fault? This rule decides. We explain it with a Valley example using real numbers." data-es="¿Puedes reclamar si tuviste algo de culpa en el accidente? Esta regla lo decide. Te la explicamos con un ejemplo con números del Valle.">Can you still claim if you were partly at fault? This rule decides. We explain it with a Valley example using real numbers.</p>
         <span class="more"><span data-en="Read the guide" data-es="Leer la guía">Read the guide</span> →</span>
       </a>
-      <a class="guide" href="primeros-pasos-accidente-camion-texas.html">
+      <a class="guide" href="what-to-do-after-truck-accident-texas.html" data-href-en="what-to-do-after-truck-accident-texas.html" data-href-es="primeros-pasos-accidente-camion-texas.html">
         <span class="tag" data-en="Truck accidents" data-es="Accidentes de camión">Truck accidents</span>
         <h3 data-en="What to do after a truck accident in Texas" data-es="Qué hacer después de un accidente de camión en Texas">What to do after a truck accident in Texas</h3>
         <p data-en="The first steps after an 18-wheeler crash, and why truck cases are different. Protect your health and your claim." data-es="Los primeros pasos tras un choque con tráiler, y por qué los casos de camión son distintos. Protege tu salud y tu reclamo.">The first steps after an 18-wheeler crash, and why truck cases are different. Protect your health and your claim.</p>
         <span class="more"><span data-en="Read the guide" data-es="Leer la guía">Read the guide</span> →</span>
       </a>
-      <a class="guide" href="reclamo-de-lesiones-sin-papeles-texas.html">
+      <a class="guide" href="injury-claim-texas-without-papers.html" data-href-en="injury-claim-texas-without-papers.html" data-href-es="reclamo-de-lesiones-sin-papeles-texas.html">
         <span class="tag" data-en="Your rights" data-es="Tus derechos">Your rights</span>
         <h3 data-en="Can you file an injury claim in Texas without papers?" data-es="¿Puedes reclamar por lesiones en Texas sin papeles?">Can you file an injury claim in Texas without papers?</h3>
         <p data-en="Your immigration status does not take away your right to a claim. What the law says and what to expect." data-es="Tu estatus migratorio no te quita el derecho a reclamar. Qué dice la ley y qué esperar.">Your immigration status does not take away your right to a claim. What the law says and what to expect.</p>
@@ -289,6 +289,10 @@
       el.innerHTML = currentLang === 'en' ? '<b>EN</b>&nbsp;&middot;&nbsp;ES' : 'EN&nbsp;&middot;&nbsp;<b>ES</b>';
     });
     document.documentElement.lang = currentLang;
+    document.querySelectorAll('[data-href-en]').forEach(function(el) {
+      var h = el.getAttribute('data-href-' + currentLang);
+      if (h) { el.setAttribute('href', h); }
+    });
   }
   function toggleMobileNav() { document.getElementById('mobileNav').classList.toggle('open'); }
   function toggleDropdown(e) { e.preventDefault(); e.stopPropagation(); document.getElementById('resDropdown').classList.toggle('open'); }
